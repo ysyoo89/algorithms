@@ -9,4 +9,9 @@ public class StringAnswer {
         }
         return result;
     }
+
+    public static int numJewelsInStones(String jewels, String stones) {
+        int result = 0;
+        return 0;
+    }
 }
