@@ -21,6 +21,8 @@ public class StringQuestion {
      * (대신 문자의 대소문자를 구분하여야 한다. a , A 는 다른 문자로 본다)
      */
     public int stoneAnswer() {
-        return 0;
+        String jewels = "aA";
+        String stones = "aAAbBBCC";
+        return StringAnswer.numJewelsInStones(jewels, stones);
     }
 }
