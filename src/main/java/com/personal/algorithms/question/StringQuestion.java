@@ -19,6 +19,7 @@ public class StringQuestion {
      * 보석과 돌을 나타내는 문자열을 줬을 때
      * 돌에 구성되어 있는 문자열 내에 보석은 몇개가 있는지 확인하라.
      * (대신 문자의 대소문자를 구분하여야 한다. a , A 는 다른 문자로 본다)
+     * 커밋 테스트
      */
     public int stoneAnswer() {
         String jewels = "aA";
