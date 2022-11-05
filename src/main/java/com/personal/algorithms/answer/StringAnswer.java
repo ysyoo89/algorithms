@@ -21,4 +21,11 @@ public class StringAnswer {
 
         return result;
     }
+
+    public static String interpret(String command) {
+        String result = command;
+        result = result.replace("()", "o");
+        result = result.replace("(al)", "al");
+        return result;
+    }
 }

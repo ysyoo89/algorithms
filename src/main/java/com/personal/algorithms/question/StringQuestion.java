@@ -25,4 +25,12 @@ public class StringQuestion {
         String stones = "aAAbBBCC";
         return StringAnswer.numJewelsInStones(jewels, stones);
     }
+
+    /**
+     * G = G, () = o, (al) = al 로 변환하는 문자열을 리턴하는 걸 만들어라.
+     */
+    public String interpretAnswer() {
+        String interpret = "G()()(al)";
+        return StringAnswer.interpret(interpret);
+    }
 }
