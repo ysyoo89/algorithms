@@ -3,6 +3,8 @@ package com.personal.algorithms.question;
 import com.personal.algorithms.answer.StringAnswer;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StringQuestion {
 
@@ -32,5 +34,13 @@ public class StringQuestion {
     public String interpretAnswer() {
         String interpret = "G()()(al)";
         return StringAnswer.interpret(interpret);
+    }
+
+    /**
+     * 엑셀시트와 같은 모양의 시작 행과 마지막 행의 정보를 받았을 때
+     * 그 사이에 존재하는 시트의 정보를 모두 담는 List를 만들어라.
+     */
+    public List<String> cellsInRages() {
+        return null;
     }
 }
