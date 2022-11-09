@@ -41,6 +41,8 @@ public class StringQuestion {
      * 그 사이에 존재하는 시트의 정보를 모두 담는 List를 만들어라.
      */
     public List<String> cellsInRages() {
-        return null;
+        String s = "A1:B4";
+        return StringAnswer.cellsInRages(s);
+
     }
 }
