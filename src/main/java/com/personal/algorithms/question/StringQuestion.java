@@ -45,4 +45,13 @@ public class StringQuestion {
         return StringAnswer.cellsInRages(s);
 
     }
+
+    /**
+     * 주어진 키(string)를 통해 메세지(string) 의 암호를 해석하는 알고리즘을 구하여라
+     * 키에 맞는 문자열을 아래 문자 순서대로 변경하라
+     * 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'
+     */
+    public String decodeMessage(String key, String message) {
+        return "";
+    }
 }
