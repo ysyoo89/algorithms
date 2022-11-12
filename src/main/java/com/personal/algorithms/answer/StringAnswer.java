@@ -1,6 +1,7 @@
 package com.personal.algorithms.answer;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class StringAnswer {
@@ -46,5 +47,24 @@ public class StringAnswer {
             }
         }
         return ans;
+    }
+
+    public static String decodeMessage(String key, String message) {
+        List<Character> map = new ArrayList<>();
+        char[] dft = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        for (int i = 0; i < key.length(); i++) {
+            if (!map.contains(key.charAt(i)) && key.charAt(i) != ' ') {
+                map.add(key.charAt(i));
+            }
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < message.length(); i++) {
+            if (message.charAt(i) == ' ') {
+                result.append(' ');
+            } else {
+                result.append(dft[map.indexOf(message.charAt(i))]);
+            }
+        }
+        return result.toString();
     }
 }

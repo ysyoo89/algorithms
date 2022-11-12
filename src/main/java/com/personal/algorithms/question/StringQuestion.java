@@ -51,7 +51,9 @@ public class StringQuestion {
      * 키에 맞는 문자열을 아래 문자 순서대로 변경하라
      * 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'
      */
-    public String decodeMessage(String key, String message) {
-        return "";
+    public String decodeMessage() {
+        String key = "the quick brown fox jumps over the lazy dog";
+        String message = "vkbs bs t suepuv";
+        return StringAnswer.decodeMessage(key, message);
     }
 }
