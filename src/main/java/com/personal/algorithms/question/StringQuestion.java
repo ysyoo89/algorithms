@@ -56,4 +56,13 @@ public class StringQuestion {
         String message = "vkbs bs t suepuv";
         return StringAnswer.decodeMessage(key, message);
     }
+
+    /**
+     * 주어진 메세지 값에 'L', 'R' 두 개의 문자의 개수가 동일한 문자열의 개수를 찾아라
+     *
+     *
+     */
+    public int balancedStringSplit(String s) {
+        return 0;
+    }
 }
