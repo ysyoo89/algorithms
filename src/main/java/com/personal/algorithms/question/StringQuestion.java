@@ -59,10 +59,11 @@ public class StringQuestion {
 
     /**
      * 주어진 메세지 값에 'L', 'R' 두 개의 문자의 개수가 동일한 문자열의 개수를 찾아라
-     *
-     *
+     * "LRLRLLRR" : 3
+     * "LLRLRRLLRR" : 2
      */
-    public int balancedStringSplit(String s) {
-        return 0;
+    public int balancedStringSplit() {
+        String s = "LRLLRLRR";
+        return StringAnswer.balancedStringSplit(s);
     }
 }

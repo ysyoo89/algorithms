@@ -67,4 +67,21 @@ public class StringAnswer {
         }
         return result.toString();
     }
+
+    public static int balancedStringSplit(String s) {
+        int result = 0;
+        int strCount= 0;
+        for (int i = 0; i< s.length(); i++) {
+            int temp = s.charAt(i);
+            if (temp == 'L') {
+                strCount++;
+            } else {
+                strCount--;
+            }
+            if (strCount == 0) {
+                result++;
+            }
+        }
+        return result;
+    }
 }
