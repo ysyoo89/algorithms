@@ -1,8 +1,6 @@
 package com.personal.algorithms.answer;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class StringAnswer {
 
@@ -83,5 +81,23 @@ public class StringAnswer {
             }
         }
         return result;
+    }
+
+    public static String sortSentence(String s) {
+        String result = "";
+        Map<Integer, String> resultMap = new HashMap<>();
+        String[] splitString = s.split(" ");
+        for (int i = 0; i < splitString.length; i++) {
+            int index = splitString[i].charAt(splitString[i].length()-1);
+            resultMap.put(index, splitString[i].substring(0, splitString[i].length()-1));
+        }
+        Object[] tempMap = resultMap.keySet().toArray();
+        Arrays.sort(tempMap);
+        for (Integer nKey : resultMap.keySet())
+        {
+            result = result + resultMap.get(nKey) + " ";
+        }
+
+        return result.substring(0, result.length()-1);
     }
 }

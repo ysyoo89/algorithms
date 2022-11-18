@@ -66,4 +66,13 @@ public class StringQuestion {
         String s = "LRLLRLRR";
         return StringAnswer.balancedStringSplit(s);
     }
+
+    /**
+     * 공백에 임의의 번호를 추가한 문자열을 번호 순서대로 재 정렬하여 노출하라
+     * "is2 This1 sentence4 a3" -> "This is a sentence"
+     */
+    public String sortSentence() {
+        String s = "is2 This1 sentence4 a3";
+        return StringAnswer.sortSentence(s);
+    }
 }
