@@ -82,7 +82,6 @@ public class StringQuestion {
      * 리스트에 type, color, name이 담겨있는 리스트에서
      * 해당 값과 같은 목록을 가지고 있는 리스트의 개수를 리턴하라.
      * [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver" : 1
-     * @return
      */
     public int countMatches() {
         List<String> itemDetail1 = new ArrayList<>(Arrays.asList("phone","blue","pixel"));
@@ -92,5 +91,13 @@ public class StringQuestion {
         String ruleKey = "color";
         String ruleValue = "silver";
         return StringAnswer.countMatches(items, ruleKey, ruleValue);
+    }
+
+    /**
+     * 판그램은 모든 알파벳이 전부 하나씩은 존재하는 단어를 말한다.
+     * 주어진 문자열이 판그램에 해당하는지 확인하는 알고리즘을 구현해라.
+     */
+    public boolean checkIfPangram() {
+        return true;
     }
 }

@@ -110,4 +110,25 @@ public class StringAnswer {
         }
         return result;
     }
+
+    public static boolean checkIfPangram(String sentence) {
+         /* 최초 풀이
+
+        HashSet<Character> checkPangram = new HashSet<>();
+        for (int i = 0; i < sentence.length(); i++) {
+            checkPangram.add(sentence.charAt(i));
+        }
+        return checkPangram.size() == 26;
+
+        */
+
+        // 개선안
+        for (int i=0;i<26; ++i) {
+            char currentChar = (char)('a' + i);
+            if (sentence.indexOf(currentChar) == -1) {
+                return false;
+            }
+        }
+       return true;
+    }
 }
