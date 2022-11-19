@@ -75,4 +75,14 @@ public class StringQuestion {
         String s = "is2 This1 sentence4 a3";
         return StringAnswer.sortSentence(s);
     }
+
+    /**
+     * 리스트에 type, color, name이 담겨있는 리스트에서
+     * 해당 값과 같은 목록을 가지고 있는 리스트의 개수를 리턴하라.
+     * [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver" : 1
+     * @return
+     */
+    public int countMatches() {
+        return 0;
+    }
 }
