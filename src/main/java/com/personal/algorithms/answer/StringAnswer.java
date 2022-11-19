@@ -84,20 +84,13 @@ public class StringAnswer {
     }
 
     public static String sortSentence(String s) {
-        String result = "";
-        Map<Integer, String> resultMap = new HashMap<>();
-        String[] splitString = s.split(" ");
-        for (int i = 0; i < splitString.length; i++) {
-            int index = splitString[i].charAt(splitString[i].length()-1);
-            resultMap.put(index, splitString[i].substring(0, splitString[i].length()-1));
+        String[] splitStrings = s.split(" ");
+        String[] resultStrings = new String[splitStrings.length];
+        for (int i = 0; i < splitStrings.length; i++) {
+            int lastNumber = splitStrings[i].length()-1;
+            char lastNumberChar = splitStrings[i].charAt(lastNumber);
+            resultStrings[lastNumberChar - '0' - 1] = splitStrings[i].substring(0, lastNumber);
         }
-        Object[] tempMap = resultMap.keySet().toArray();
-        Arrays.sort(tempMap);
-        for (Integer nKey : resultMap.keySet())
-        {
-            result = result + resultMap.get(nKey) + " ";
-        }
-
-        return result.substring(0, result.length()-1);
+        return String.join(" ", resultStrings);
     }
 }
