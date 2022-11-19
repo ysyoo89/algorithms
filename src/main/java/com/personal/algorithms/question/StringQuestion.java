@@ -3,6 +3,8 @@ package com.personal.algorithms.question;
 import com.personal.algorithms.answer.StringAnswer;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -83,6 +85,12 @@ public class StringQuestion {
      * @return
      */
     public int countMatches() {
-        return 0;
+        List<String> itemDetail1 = new ArrayList<>(Arrays.asList("phone","blue","pixel"));
+        List<String> itemDetail2 = new ArrayList<>(Arrays.asList("computer","silver","lenovo"));
+        List<String> itemDetail3 = new ArrayList<>(Arrays.asList("phone","gold","iphone"));
+        List<List<String>> items = new ArrayList<>(Arrays.asList(itemDetail1, itemDetail2, itemDetail3));
+        String ruleKey = "color";
+        String ruleValue = "silver";
+        return StringAnswer.countMatches(items, ruleKey, ruleValue);
     }
 }
