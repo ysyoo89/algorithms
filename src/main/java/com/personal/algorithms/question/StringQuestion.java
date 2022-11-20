@@ -98,6 +98,14 @@ public class StringQuestion {
      * 주어진 문자열이 판그램에 해당하는지 확인하는 알고리즘을 구현해라.
      */
     public boolean checkIfPangram() {
+        String s = "abcdefghijklmnopqrstuvwxyz";
+        return StringAnswer.checkIfPangram(s);
+    }
+
+    /**
+     * 주어진 두 개의 문자배열내에 문자를 합쳤을 때 두 문자열이 같으면 true, 다르다면 false를 리턴하는 알고리즘을 구현하라
+     */
+    public boolean arrayStringsAreEqual() {
         return true;
     }
 }
