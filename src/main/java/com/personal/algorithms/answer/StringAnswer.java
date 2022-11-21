@@ -137,4 +137,22 @@ public class StringAnswer {
         String word2String = String.join("", word2);
         return word1String.equals(word2String);
     }
+
+    public static int uniqueMorseRepresentations(String[] words) {
+        HashSet<String> stringBuilders = new HashSet<>();
+        for (String str : words) {
+            stringBuilders.add(changeString(str));
+        }
+        return stringBuilders.size();
+    }
+
+    private static String changeString(String str) {
+        String[] mos = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",
+                ".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        StringBuilder builder = new StringBuilder();
+        for (char c : str.toCharArray()) {
+            builder.append(mos[(int)c - 97]);
+        }
+        return builder.toString();
+    }
 }

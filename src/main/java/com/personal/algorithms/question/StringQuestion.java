@@ -110,4 +110,13 @@ public class StringQuestion {
         String[] word2 = {"a", "bc"};
         return StringAnswer.arrayStringsAreEqual(word1, word2);
     }
+
+    /**
+     * 모스 부호의 모양이
+     * @return
+     */
+    public int uniqueMorseRepresentations() {
+        String[] words = {"gin","zen","gig","msg"};
+        return StringAnswer.uniqueMorseRepresentations(words);
+    }
 }
