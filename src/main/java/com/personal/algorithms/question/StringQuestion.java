@@ -112,11 +112,18 @@ public class StringQuestion {
     }
 
     /**
-     * 모스 부호의 모양이
-     * @return
+     * 문자열을 모스부호로 변형했을 때 모스 부호의 모습이 동일한 모습을 제외한 개수를 구하여라
      */
     public int uniqueMorseRepresentations() {
         String[] words = {"gin","zen","gig","msg"};
         return StringAnswer.uniqueMorseRepresentations(words);
+    }
+
+    /**
+     * 주어진 수식내에 ()의 최대 뎁스의 카운트를 구하여라
+     */
+    public int  maxDepth() {
+        String s = "(1+(2*3)+((8)/4))+1";
+        return StringAnswer.maxDepth(s);
     }
 }

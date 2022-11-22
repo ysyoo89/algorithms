@@ -155,4 +155,19 @@ public class StringAnswer {
         }
         return builder.toString();
     }
+
+    public static int maxDepth(String s) {
+        int result = 0;
+        int temp = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch == '(') {
+                temp++;
+                result = Math.max(result, temp);
+            } else if (ch == ')') {
+                temp--;
+                result = Math.max(result, temp);
+            }
+        }
+        return result;
+    }
 }
