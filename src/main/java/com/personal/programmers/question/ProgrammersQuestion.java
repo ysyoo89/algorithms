@@ -15,4 +15,15 @@ public class ProgrammersQuestion {
         int[] arrayB = {5,17};
         return ProgrammersAnswer.cardDivide(arrayA, arrayB);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/136798
+     * 약수를 구한 뒤 약수의 크기가 한계치를 넘으면 power 값으로 처리하는 알고리즘
+     */
+    public int divisionSum() {
+        int number = 5;
+        int limit = 3;
+        int power = 2;
+        return ProgrammersAnswer.divisionSum(number, limit, power);
+    }
 }

@@ -47,4 +47,31 @@ public class ProgrammersAnswer {
         }
         return true;
     }
+
+    public static int divisionSum(int number, int limit, int power) {
+        int result = 0;
+        for (int i = 1; i <= number; i++) {
+            result += divisionNumber(i, limit, power);
+        }
+        return result;
+    }
+
+    private static int divisionNumber(int number, int limit, int power) {
+        int result = 0;
+        if (number == 1) return 1;
+        else {
+            for (int i = 1; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    result++;
+                    if (number / i != i) {
+                        result++;
+                    }
+                }
+            }
+        }
+        if (limit < result) {
+            result = power;
+        }
+        return result;
+    }
 }
