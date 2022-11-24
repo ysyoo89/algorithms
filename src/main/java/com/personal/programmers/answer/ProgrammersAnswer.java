@@ -1,6 +1,9 @@
 package com.personal.programmers.answer;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProgrammersAnswer {
 
@@ -73,5 +76,15 @@ public class ProgrammersAnswer {
             result = power;
         }
         return result;
+    }
+
+    public static int appleBox(int k, int m, int[] score) {
+        Arrays.sort(score);
+        int rage = score.length/ m;
+        for (int i = rage; i >= 0; i-- ) {
+            int min = score[i * m];
+        }
+
+        return 0;
     }
 }

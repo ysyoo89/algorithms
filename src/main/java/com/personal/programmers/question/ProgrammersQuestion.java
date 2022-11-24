@@ -26,4 +26,11 @@ public class ProgrammersQuestion {
         int power = 2;
         return ProgrammersAnswer.divisionSum(number, limit, power);
     }
+
+    public int appleBox() {
+        int k = 3;
+        int m = 4;
+        int[] score = {1,2,3,1,2,3,1};
+        return ProgrammersAnswer.appleBox(k,m,score);
+    }
 }
