@@ -27,6 +27,11 @@ public class ProgrammersQuestion {
         return ProgrammersAnswer.divisionSum(number, limit, power);
     }
 
+    /**
+     * 사과 1박스의 담을 수 있는 개수 m, 사과의 최대 상품 등급 k, 수확한 사과 score를 한 상자에 담았을 때
+     * 가장 높은 가격을 받을 수 있는 알고리즘을 구하여라
+     * @return
+     */
     public int appleBox() {
         int k = 3;
         int m = 4;
