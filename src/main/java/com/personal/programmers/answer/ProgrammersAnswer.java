@@ -80,11 +80,18 @@ public class ProgrammersAnswer {
 
     public static int appleBox(int k, int m, int[] score) {
         Arrays.sort(score);
-        int rage = score.length/ m;
-        for (int i = rage; i >= 0; i-- ) {
-            int min = score[i * m];
+        int boxStock = 0;
+        int boxScore = Integer.MAX_VALUE;
+        int result = 0;
+        for (int i = score.length -1; i >= 0; i--) {
+            if (boxStock < m) {
+                boxScore = Math.min(boxScore, score[i]);
+                boxStock++;
+            } else if (boxStock == m) {
+                boxStock = 0;
+                result = result + (boxScore * m);
+            }
         }
-
-        return 0;
+        return result;
     }
 }
