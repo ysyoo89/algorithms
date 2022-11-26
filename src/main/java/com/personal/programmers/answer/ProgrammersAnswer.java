@@ -79,19 +79,14 @@ public class ProgrammersAnswer {
     }
 
     public static int appleBox(int k, int m, int[] score) {
+        int answer = 0;
+
         Arrays.sort(score);
-        int boxStock = 0;
-        int boxScore = Integer.MAX_VALUE;
-        int result = 0;
-        for (int i = score.length -1; i >= 0; i--) {
-            if (boxStock < m) {
-                boxScore = Math.min(boxScore, score[i]);
-                boxStock++;
-            } else if (boxStock == m) {
-                boxStock = 0;
-                result = result + (boxScore * m);
-            }
+
+        for(int i = score.length; i >= m; i -= m){
+            answer += score[i - m] * m;
         }
-        return result;
+
+        return answer;
     }
 }
