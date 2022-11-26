@@ -1,9 +1,6 @@
 package com.personal.programmers.answer;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class ProgrammersAnswer {
 
@@ -87,6 +84,25 @@ public class ProgrammersAnswer {
             answer += score[i - m] * m;
         }
 
+        return answer;
+    }
+
+    public static int[] gloryScore(int k, int[] score) {
+        int[] answer = new int[score.length];
+        Queue<Integer> queue = new LinkedList<>();
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < score.length; i++) {
+            if (queue.size() < k) {
+                queue.add(score[i]);
+            } else if (max < score[i]) {
+                max = score[i];
+                queue.add(score[i]);
+                if (queue.size() > k) {
+                    queue.poll();
+                }
+            }
+            answer[i] = queue.peek();
+        }
         return answer;
     }
 }
