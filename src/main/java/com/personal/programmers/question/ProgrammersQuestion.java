@@ -38,4 +38,10 @@ public class ProgrammersQuestion {
         int[] score = {1,2,3,1,2,3,1};
         return ProgrammersAnswer.appleBox(k,m,score);
     }
+
+    public int[] gloryScore() {
+        int k = 3;
+        int[] score = {10, 100, 20, 150, 1, 100, 200};
+        return ProgrammersAnswer.gloryScore(k,score);
+    }
 }

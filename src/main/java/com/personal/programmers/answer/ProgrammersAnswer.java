@@ -89,20 +89,18 @@ public class ProgrammersAnswer {
 
     public static int[] gloryScore(int k, int[] score) {
         int[] answer = new int[score.length];
-        Queue<Integer> queue = new LinkedList<>();
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < score.length; i++) {
-            if (queue.size() < k) {
-                queue.add(score[i]);
-            } else if (max < score[i]) {
-                max = score[i];
-                queue.add(score[i]);
-                if (queue.size() > k) {
-                    queue.poll();
-                }
+
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        for(int num=0; num<score.length;num++) {
+            queue.add(score[num]);
+            if(queue.size()<=k) {
+                answer[num]=queue.peek();
+            } else {
+                queue.remove();
+                answer[num]=queue.peek();
             }
-            answer[i] = queue.peek();
         }
+
         return answer;
     }
 }
