@@ -118,4 +118,23 @@ public class ProgrammersAnswer {
 
         return answer;
     }
+
+    public static int hamburger(int[] ingredient) {
+        Stack<Integer> burgerStack = new Stack<>();
+        int answer = 0;
+        for(int i = 0; i < ingredient.length; i++) {
+            burgerStack.push(ingredient[i]);
+            if(burgerStack.peek()==1&&burgerStack.size()>3) {
+                if(burgerStack.get(burgerStack.size()-2)==3&&
+                        burgerStack.get(burgerStack.size()-3)==2&&
+                        burgerStack.get(burgerStack.size()-4)==1) {
+                    answer++;
+                    for(int j = 0; j < 4; j++) {
+                        burgerStack.remove(burgerStack.size()-1);
+                    }
+                }
+            }
+        }
+        return answer;
+    }
 }

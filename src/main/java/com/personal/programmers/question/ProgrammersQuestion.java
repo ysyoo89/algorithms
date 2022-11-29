@@ -58,4 +58,13 @@ public class ProgrammersQuestion {
         int[] food = {1,3,7,2};
         return ProgrammersAnswer.foodFighter(food);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/133502
+     * 햄버거 만들기 문제
+     */
+    public int hamburger() {
+        int[] ingredient = {2, 1, 1, 2, 3, 1, 2, 3, 1};
+        return ProgrammersAnswer.hamburger(ingredient);
+    }
 }
