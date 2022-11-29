@@ -67,4 +67,9 @@ public class ProgrammersQuestion {
         int[] ingredient = {2, 1, 1, 2, 3, 1, 2, 3, 1};
         return ProgrammersAnswer.hamburger(ingredient);
     }
+
+    public int babbling() {
+        String[] babbling = {"aya", "yee", "u", "maa"};
+        return ProgrammersAnswer.babbling(babbling);
+    }
 }

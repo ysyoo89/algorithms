@@ -1,5 +1,7 @@
 package com.personal.programmers.answer;
 
+import org.springframework.util.StringUtils;
+
 import java.util.*;
 
 public class ProgrammersAnswer {
@@ -133,6 +135,27 @@ public class ProgrammersAnswer {
                         burgerStack.remove(burgerStack.size()-1);
                     }
                 }
+            }
+        }
+        return answer;
+    }
+
+    public static int babbling(String[] babbling) {
+        int answer = 0;
+        String[] words = {"aya", "ye", "woo", "ma"};
+        for (int i = 0; i < babbling.length; i++) {
+            String tmp = babbling[i];
+            int beforeIdx = -1;
+            for(int j = 0; j < words.length; j++) {
+                if (tmp.indexOf(words[j]) == 0) {
+                    if (beforeIdx == j) break;
+                    tmp = tmp.substring(tmp.indexOf(words[j]) + words[j].length());
+                    beforeIdx = j;
+                    j = -1;
+                }
+            }
+            if (tmp.length() < 1) {
+                answer++;
             }
         }
         return answer;
