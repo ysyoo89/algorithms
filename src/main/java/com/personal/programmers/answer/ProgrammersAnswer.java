@@ -160,4 +160,26 @@ public class ProgrammersAnswer {
         }
         return answer;
     }
+
+    public static int cola(int a, int b, int n) {
+        int answer = 0;
+        int tempN = n;
+        int tempRemainder = 0;
+        while(tempN+tempRemainder >= a) {
+            int quotient = tempN / a * b;
+            int remainder = tempN % a;
+            tempN = quotient;
+            if (remainder > 0) {
+                tempRemainder += remainder;
+            }
+            if (quotient < 1) {
+                tempN += tempRemainder;
+                tempRemainder = 0;
+            } else {
+                answer += quotient;
+            }
+
+        }
+        return answer;
+    }
 }

@@ -68,8 +68,23 @@ public class ProgrammersQuestion {
         return ProgrammersAnswer.hamburger(ingredient);
     }
 
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/133499
+     * 옹알이 문제
+     */
     public int babbling() {
         String[] babbling = {"aya", "yee", "u", "maa"};
         return ProgrammersAnswer.babbling(babbling);
+    }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/132267
+     * 콜라병 바꾸기 문제
+     */
+    public int cola() {
+        int a = 2;
+        int b = 1;
+        int n = 20;
+        return ProgrammersAnswer.cola(a, b, n);
     }
 }
