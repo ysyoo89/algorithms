@@ -79,7 +79,7 @@ public class ProgrammersQuestion {
 
     /**
      * https://school.programmers.co.kr/learn/courses/30/lessons/132267
-     * 콜라병 바꾸기 문제
+     * 최대로 콜라병 바꿔 마시기 문제
      */
     public int cola() {
         int a = 2;
