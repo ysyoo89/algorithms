@@ -70,7 +70,7 @@ public class ProgrammersQuestion {
 
     /**
      * https://school.programmers.co.kr/learn/courses/30/lessons/133499
-     * 옹알이 문제
+     * 옹알이 문제 (한번에 발음이 가능한 단어 찾기)
      */
     public int babbling() {
         String[] babbling = {"aya", "yee", "u", "maa"};
