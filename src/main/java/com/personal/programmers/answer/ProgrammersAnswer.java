@@ -198,13 +198,13 @@ public class ProgrammersAnswer {
         return answer;
     }
 
-    public static int solution(int[] number) {
+    public static int threeMan(int[] number) {
         int answer = 0;
         for(int i = 0; i<number.length; i++) {
             int sum = number[i];
-            int snumCount = 1;
+            int sumCount = 1;
             for (int j = i +1; j < number.length; j++) {
-                if (sum > 0 && number[j] )
+                //if (sum > 0 && number[j] )
             }
         }
         return answer;
