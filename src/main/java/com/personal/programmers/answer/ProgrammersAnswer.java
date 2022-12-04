@@ -182,4 +182,31 @@ public class ProgrammersAnswer {
         }
         return answer;
     }
+
+    public static int solution(int[] number) {
+        int answer = 0;
+        for (int i = 0; i < number.length; i++) {
+            int sum = number[i];
+            for (int j = i+1; j < number.length; j++) {
+                if (sum < 0 && number[j] >= 0) {
+                    sum += number[j];
+                } else if (sum > 0 && number[i] <= 0) {
+                    sum += number[j];
+                }
+            }
+        }
+        return answer;
+    }
+
+    public static int solution(int[] number) {
+        int answer = 0;
+        for(int i = 0; i<number.length; i++) {
+            int sum = number[i];
+            int snumCount = 1;
+            for (int j = i +1; j < number.length; j++) {
+                if (sum > 0 && number[j] )
+            }
+        }
+        return answer;
+    }
 }
