@@ -87,4 +87,9 @@ public class ProgrammersQuestion {
         int n = 20;
         return ProgrammersAnswer.cola(a, b, n);
     }
+
+    public int threeMan() {
+        int[] number = {-2, -1, 0, 1, 2};
+        return ProgrammersAnswer.threeMan(number);
+    }
 }
