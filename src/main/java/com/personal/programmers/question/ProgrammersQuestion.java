@@ -88,6 +88,10 @@ public class ProgrammersQuestion {
         return ProgrammersAnswer.cola(a, b, n);
     }
 
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/131705
+     * 3명의 학생의 총 합이 0이 될 수 있
+     */
     public int threeMan() {
         int[] number = {-2, -1, 0, 1, 2};
         return ProgrammersAnswer.threeMan(number);
