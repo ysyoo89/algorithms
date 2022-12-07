@@ -198,15 +198,22 @@ public class ProgrammersAnswer {
         return answer;
     }
 
+    static int answer, N;
     public static int threeMan(int[] number) {
-        int answer = 0;
-        for(int i = 0; i<number.length; i++) {
-            int sum = number[i];
-            int sumCount = 1;
-            for (int j = i +1; j < number.length; j++) {
-                //if (sum > 0 && number[j] )
-            }
-        }
+        N = 3;
+        comb(0, 0, 0, number);
         return answer;
+    }
+
+    public static void comb(int cur, int cnt, int sum, int[] number) {
+        if (cnt == N) {
+            if (sum == 0)
+                answer++;
+            return;
+        }
+
+        for (int i = cur; i < number.length; i++) {
+            comb(i + 1, cnt + 1, sum + number[i], number);
+        }
     }
 }
