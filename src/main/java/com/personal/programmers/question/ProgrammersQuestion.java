@@ -90,10 +90,20 @@ public class ProgrammersQuestion {
 
     /**
      * https://school.programmers.co.kr/learn/courses/30/lessons/131705
-     * 3명의 학생의 총 합이 0이 될 수 있
+     * 3명의 학생의 총 합이 0이 될 수 있는 값 구하기
      */
     public int threeMan() {
         int[] number = {-2, -1, 0, 1, 2};
         return ProgrammersAnswer.threeMan(number);
+    }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/1845
+     * 최대 종류 포켓몬 개수
+     */
+
+    public int poketmon() {
+        int[] nums = {3,2,1,3};
+        return ProgrammersAnswer.pokemon(nums);
     }
 }

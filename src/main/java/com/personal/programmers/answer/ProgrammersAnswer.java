@@ -1,8 +1,9 @@
 package com.personal.programmers.answer;
 
-import org.springframework.util.StringUtils;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Stack;
 
 public class ProgrammersAnswer {
 
@@ -215,5 +216,16 @@ public class ProgrammersAnswer {
         for (int i = cur; i < number.length; i++) {
             comb(i + 1, cnt + 1, sum + number[i], number);
         }
+    }
+
+    public static int pokemon(int[] nums) {
+        int limit = nums.length / 2;
+        HashSet<Integer> set = new HashSet<>();
+        for(int num : nums) {
+            if (set.size() < limit) {
+                set.add(num);
+            }
+        }
+        return set.size();
     }
 }
