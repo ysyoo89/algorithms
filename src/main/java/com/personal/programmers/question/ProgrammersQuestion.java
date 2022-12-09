@@ -2,6 +2,8 @@ package com.personal.programmers.question;
 
 import com.personal.programmers.answer.ProgrammersAnswer;
 
+import java.text.ParseException;
+
 public class ProgrammersQuestion {
 
 
@@ -111,7 +113,7 @@ public class ProgrammersQuestion {
      * 원하는 달의 요일을 구하기
      * https://school.programmers.co.kr/learn/courses/30/lessons/12901
      */
-    public String calendar() {
+    public String calendar() throws ParseException {
         int a = 5;
         int b = 24;
         return ProgrammersAnswer.calendar(a, b);

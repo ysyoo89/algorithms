@@ -1,9 +1,7 @@
 package com.personal.programmers.answer;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Stack;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class ProgrammersAnswer {
 
@@ -230,7 +228,33 @@ public class ProgrammersAnswer {
     }
 
     public static String calendar(int a, int b) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd") ;
+        String year = "2016";
+        String month = a < 10 ? "0" + a : String.valueOf(a);
+        String day = b < 10 ? "0" + b : String.valueOf(b);
+        String date = year + "-" + month + "-" + day;
+        try {
+            Date nDate = dateFormat.parse(date);
+            Calendar cal = Calendar.getInstance() ;
+            cal.setTime(nDate);
+            return dayOfWeek(1);
+        } catch (Exception e) {
+            return "";
+        }
+
+    }
+
+    private static String dayOfWeek(int day) {
         String result = "";
+        switch (day) {
+            case 1 : result = "SUN"; break;
+            case 2 : result = "MON"; break;
+            case 3 : result = "TUE"; break;
+            case 4 : result = "WED"; break;
+            case 5 : result = "THU"; break;
+            case 6 : result = "FRI"; break;
+            case 7 : result = "SAT"; break;
+        }
         return result;
     }
 }
