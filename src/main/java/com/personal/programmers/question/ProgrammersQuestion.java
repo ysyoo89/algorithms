@@ -106,4 +106,14 @@ public class ProgrammersQuestion {
         int[] nums = {3,2,1,3};
         return ProgrammersAnswer.pokemon(nums);
     }
+
+    /**
+     * 원하는 달의 요일을 구하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12901
+     */
+    public String calendar() {
+        int a = 5;
+        int b = 24;
+        return ProgrammersAnswer.calendar(a, b);
+    }
 }
