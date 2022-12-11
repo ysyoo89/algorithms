@@ -257,4 +257,9 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static String middleWord(String s) {
+        String result = "";
+        return null;
+    }
 }

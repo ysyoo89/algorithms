@@ -118,4 +118,13 @@ public class ProgrammersQuestion {
         int b = 24;
         return ProgrammersAnswer.calendar(a, b);
     }
+
+    /**
+     * 가운데 글자 가져오기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12903
+     */
+    public String middleWord() {
+        String s = "qwe";
+        return ProgrammersAnswer.middleWord(s);
+    }
 }
