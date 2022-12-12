@@ -259,7 +259,16 @@ public class ProgrammersAnswer {
     }
 
     public static String middleWord(String s) {
-        String result = "";
-        return null;
+        int stringLength = s.length();
+        StringBuilder result = new StringBuilder();
+        if (stringLength % 2 == 0) {
+            result.append(s.charAt(stringLength / 2 - 1));
+            result.append(s.charAt(stringLength / 2));
+        } else {
+            result.append(s.charAt(stringLength / 2));
+        }
+        return result.toString();
+
+        // return word.substring((word.length()-1) / 2, word.length()/2 + 1);
     }
 }
