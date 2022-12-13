@@ -271,4 +271,21 @@ public class ProgrammersAnswer {
 
         // return word.substring((word.length()-1) / 2, word.length()/2 + 1);
     }
+
+    public static int[] notDuplicationNumber(int[] arr) {
+        Stack<Integer> number = new Stack<>();
+        for (int i = 0; i < arr.length; i++) {
+            number.push(arr[i]);
+            if (number.size() > 1) {
+                if (number.get(i -1) == number.get(i)) {
+                    number.pop();
+                }
+            }
+        }
+        int[] result = new int[number.size()];
+        for (int i = 0; i < number.size(); i++) {
+            result[i] = number.get(i);
+        }
+        return result;
+    }
 }

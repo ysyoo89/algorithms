@@ -127,4 +127,13 @@ public class ProgrammersQuestion {
         String s = "qwe";
         return ProgrammersAnswer.middleWord(s);
     }
+
+    /**
+     * 연속된 같은 숫자는 빼기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12906
+     */
+    public int[] notDuplicationNumber() {
+        int[] arr = {1,1,3,3,0,1,1};
+        return ProgrammersAnswer.notDuplicationNumber(arr);
+    }
 }
