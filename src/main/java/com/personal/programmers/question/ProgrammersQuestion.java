@@ -136,4 +136,14 @@ public class ProgrammersQuestion {
         int[] arr = {1,1,3,3,0,1,1};
         return ProgrammersAnswer.notDuplicationNumber(arr);
     }
+
+    /**
+     * 나누어 떨어지는 숫자 배열
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12910
+     */
+    public int[] divisionArray() {
+        int[] arr = {};
+        int divisor = 5;
+        return ProgrammersAnswer.divisionArray(arr, divisor);
+    }
 }

@@ -288,4 +288,8 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static int[] divisionArray(int[] arr, int divisor) {
+        return new int[0];
+    }
 }
