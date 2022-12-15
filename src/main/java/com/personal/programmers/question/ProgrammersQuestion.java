@@ -146,4 +146,14 @@ public class ProgrammersQuestion {
         int divisor = 5;
         return ProgrammersAnswer.divisionArray(arr, divisor);
     }
+
+    /**
+     * 두 정수 사이의 모든 값을 더하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12912
+     */
+    public long sumInteger(){
+        int a = 3;
+        int b = 5;
+        return ProgrammersAnswer.sumInteger(a, b);
+    }
 }

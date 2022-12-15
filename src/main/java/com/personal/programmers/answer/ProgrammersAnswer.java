@@ -307,4 +307,8 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static long sumInteger(int a, int b) {
+        return 0;
+    }
 }
