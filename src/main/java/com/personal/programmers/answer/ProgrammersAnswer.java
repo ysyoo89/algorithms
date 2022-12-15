@@ -290,6 +290,21 @@ public class ProgrammersAnswer {
     }
 
     public static int[] divisionArray(int[] arr, int divisor) {
-        return new int[0];
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        for (int num : arr) {
+            if (num % divisor == 0) {
+                queue.add(num);
+            }
+        }
+        int[] result;
+        if (queue.size() != 0) {
+            result = new int[queue.size()];
+            for (int i = 0; i < result.length; i++) {
+                result[i] = queue.poll();
+            }
+        } else {
+            result = new int[] {-1};
+        }
+        return result;
     }
 }
