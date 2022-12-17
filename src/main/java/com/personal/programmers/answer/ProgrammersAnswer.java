@@ -309,6 +309,15 @@ public class ProgrammersAnswer {
     }
 
     public static long sumInteger(int a, int b) {
-        return 0;
+        if (a > b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        long result = 0L;
+        for (int i = a; i <= b; i++) {
+            result += i;
+        }
+        return result;
     }
 }
