@@ -320,4 +320,8 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static String[] stringSort(String[] strings, int n) {
+        return new String[0];
+    }
 }

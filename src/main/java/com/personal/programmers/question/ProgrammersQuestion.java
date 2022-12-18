@@ -156,4 +156,14 @@ public class ProgrammersQuestion {
         int b = 5;
         return ProgrammersAnswer.sumInteger(a, b);
     }
+
+    /**
+     *  문자열 마음대로 정렬하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12915
+     */
+    public String[] stringSort() {
+        String[] strings = {"", ""};
+        int n = 1;
+        return ProgrammersAnswer.stringSort(strings, n);
+    }
 }
