@@ -322,6 +322,7 @@ public class ProgrammersAnswer {
     }
 
     public static String[] stringSort(String[] strings, int n) {
+        String[] result = {};
         return new String[0];
     }
 }
