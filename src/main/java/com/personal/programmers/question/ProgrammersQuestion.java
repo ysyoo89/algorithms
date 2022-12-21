@@ -166,4 +166,13 @@ public class ProgrammersQuestion {
         int n = 1;
         return ProgrammersAnswer.stringSort(strings, n);
     }
+
+    /**
+     * 두개의 문자열 개수 비교하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12916
+     */
+    public boolean stringCount() {
+        String s = "pPyY";
+        return ProgrammersAnswer.stringCount(s);
+    }
 }

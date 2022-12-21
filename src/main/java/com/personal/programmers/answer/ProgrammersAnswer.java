@@ -341,4 +341,18 @@ public class ProgrammersAnswer {
         }
         return strings;
     }
+
+    public static boolean stringCount(String s) {
+        StringBuffer buffer = new StringBuffer(s);
+        int count = 0;
+        for (int i = 0; i < buffer.length(); i++) {
+            char temp = buffer.charAt(i);
+            if ('P' == temp || 'p' == temp) {
+                count++;
+            } else if ('Y' == temp || 'y' == temp) {
+                count--;
+            }
+        }
+        return count == 0;
+    }
 }
