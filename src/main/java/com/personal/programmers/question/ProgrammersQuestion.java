@@ -176,9 +176,4 @@ public class ProgrammersQuestion {
         String s = "pPyY";
         return ProgrammersAnswer.stringCount(s);
     }
-
-    public String changeNumberLevel2() {
-        int n = 10;
-        return ProgrammersAnswerLevel2.numberChange(n);
-    }
 }
