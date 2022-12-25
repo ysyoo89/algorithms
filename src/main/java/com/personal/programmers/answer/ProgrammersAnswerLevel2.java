@@ -49,4 +49,8 @@ public class ProgrammersAnswerLevel2 {
         }
         return result;
     }
+
+    public static String solve() {
+        return "";
+    }
 }
