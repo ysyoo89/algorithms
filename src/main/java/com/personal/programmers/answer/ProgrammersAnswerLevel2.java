@@ -50,6 +50,12 @@ public class ProgrammersAnswerLevel2 {
         return result;
     }
 
+    /**
+     * 사람찾기
+     * @param office
+     * @param k
+     * @return
+     */
     public static int solve(int[][] office, int k) {
         int result = -1;
         int count = 0;
