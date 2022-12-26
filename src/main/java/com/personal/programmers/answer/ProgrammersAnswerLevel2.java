@@ -50,7 +50,41 @@ public class ProgrammersAnswerLevel2 {
         return result;
     }
 
-    public static String solve() {
-        return "";
+    public static int solve(int[][] office, int k) {
+        int result = -1;
+        int count = 0;
+
+        for (int y = 0; y < office.length; y++) {
+            if (y + k > office.length) {
+                break;
+            }
+            for (int x = 0; x < office.length; x++) {
+                count = 0;
+                if (x + k > office.length) {
+                    break;
+                }
+                for (int i = y; i < y + k; i++) {
+                    for (int j = x; j < x + k; j++) {
+                        count += office[i][j];
+                        result = Math.max(result, count);
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * 피보나치수열
+     */
+    public static int solution(int n) {
+        int x = 1, y = 1;
+        for (int i = 2; i <= n; i++) {
+            int temp = x;
+            x = x + y;
+            y = temp;
+        }
+        return x;
     }
 }
