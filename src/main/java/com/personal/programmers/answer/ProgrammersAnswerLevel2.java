@@ -93,4 +93,13 @@ public class ProgrammersAnswerLevel2 {
         }
         return x;
     }
+
+    /**
+     * 3의 배수 구하기
+     * @param n
+     * @return
+     */
+    public static long power(long n) {
+        return 0;
+    }
 }
