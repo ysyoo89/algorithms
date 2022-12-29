@@ -102,4 +102,21 @@ public class ProgrammersAnswerLevel2 {
     public static long power(long n) {
         return 0;
     }
+
+
+    public static String minAndMax(String s) {
+        String[] temp = s.split(" ");
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < temp.length; i++) {
+            int num = Integer.valueOf(temp[i]);
+            max = Math.max(max, num);
+            min = Math.min(min, num);
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.valueOf(min));
+        builder.append(" ");
+        builder.append(String.valueOf(max));
+        return builder.toString();
+    }
 }
