@@ -119,4 +119,8 @@ public class ProgrammersAnswerLevel2 {
         builder.append(String.valueOf(max));
         return builder.toString();
     }
+
+    public static int aloneGame(int[] cards) {
+        return 0;
+    }
 }

@@ -24,4 +24,9 @@ public class ProgrammersQuestionLevel2 {
         String s = "1 2 3 4";
         return ProgrammersAnswerLevel2.minAndMax(s);
     }
+
+    public int aloneGame() {
+        int[] cards = {3,4,1,7,6,5,8,9};
+        return ProgrammersAnswerLevel2.aloneGame(cards);
+    }
 }
