@@ -25,6 +25,11 @@ public class ProgrammersQuestionLevel2 {
         return ProgrammersAnswerLevel2.minAndMax(s);
     }
 
+    /**
+     * 혼자놀기 게임
+     * https://school.programmers.co.kr/learn/courses/30/lessons/131130
+     * @return
+     */
     public int aloneGame() {
         int[] cards = {3,4,1,7,6,5,8,9};
         return ProgrammersAnswerLevel2.aloneGame(cards);
