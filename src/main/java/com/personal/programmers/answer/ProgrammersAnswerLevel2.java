@@ -121,6 +121,11 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int aloneGame(int[] cards) {
+        int card = 0;
+        boolean roof = true;
+        while(roof) {
+            roof = false;
+        }
         return 0;
     }
 }
