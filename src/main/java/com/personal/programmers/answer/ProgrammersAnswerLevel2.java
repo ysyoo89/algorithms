@@ -1,6 +1,9 @@
 package com.personal.programmers.answer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ProgrammersAnswerLevel2 {
 
@@ -121,11 +124,31 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int aloneGame(int[] cards) {
-        int card = 0;
-        boolean roof = true;
-        while(roof) {
-            roof = false;
+        int card = 1;
+        List<Integer> numbers = new ArrayList<>();
+        int result = 0;
+
+        for (int i = 0; i < cards.length; ) {
+            if (cards[card - 1] != 0) {
+                int count = 0;
+                while(card != 0) {
+                    int index = card - 1;
+                    card = cards[index];
+                    cards[index] = 0;
+                    count++;
+                }
+                numbers.add(count);
+                card = 1;
+            } else {
+                i++;
+            }
         }
-        return 0;
+
+        if (numbers.size() > 1) {
+            Collections.sort(numbers);
+            result = numbers.get(0) * numbers.get(1);
+        }
+
+        return result;
     }
 }
