@@ -129,23 +129,26 @@ public class ProgrammersAnswerLevel2 {
         int result = 0;
 
         for (int i = 0; i < cards.length; ) {
-            if (cards[card - 1] != 0) {
+            if (cards[i] != 0) {
                 int count = 0;
+                card = i + 1;
                 while(card != 0) {
                     int index = card - 1;
-                    card = cards[index];
-                    cards[index] = 0;
-                    count++;
+                    if (cards[index] != 0) {
+                        card = cards[index];
+                        cards[index] = 0;
+                        count++;
+                    } else {
+                        card = cards[index];
+                    }
                 }
                 numbers.add(count);
-                card = 1;
             } else {
                 i++;
             }
         }
-
         if (numbers.size() > 1) {
-            Collections.sort(numbers);
+            Collections.sort(numbers, Collections.reverseOrder());
             result = numbers.get(0) * numbers.get(1);
         }
 
