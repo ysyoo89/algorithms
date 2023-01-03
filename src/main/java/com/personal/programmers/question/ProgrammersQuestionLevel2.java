@@ -34,4 +34,14 @@ public class ProgrammersQuestionLevel2 {
         int[] cards = {3,4,1,7,6,5,8,9};
         return ProgrammersAnswerLevel2.aloneGame(cards);
     }
+
+    /**
+     * 롤케이크 토핑 종류 동일하게 맞추기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/132265
+     * @return
+     */
+    public int rollCake() {
+        int[] topping = {1,2,1,3,1,4,1,2};
+        return ProgrammersAnswerLevel2.rollCake(topping);
+    }
 }
