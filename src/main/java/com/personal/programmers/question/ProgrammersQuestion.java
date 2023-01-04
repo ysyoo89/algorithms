@@ -176,4 +176,13 @@ public class ProgrammersQuestion {
         String s = "pPyY";
         return ProgrammersAnswer.stringCount(s);
     }
+
+    /**
+     * 최소직사각형 - 완전탐색
+     * https://school.programmers.co.kr/learn/courses/30/lessons/86491
+     */
+    public int minimumRectangle() {
+        int[][] sizes = new int[10][10];
+        return ProgrammersAnswer.minimumRectangle(sizes);
+    }
 }

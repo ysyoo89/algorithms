@@ -355,4 +355,8 @@ public class ProgrammersAnswer {
         }
         return count == 0;
     }
+
+    public static int minimumRectangle(int[][] sizes) {
+        return 0;
+    }
 }
