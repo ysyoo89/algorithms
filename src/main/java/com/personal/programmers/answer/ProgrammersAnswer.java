@@ -357,6 +357,19 @@ public class ProgrammersAnswer {
     }
 
     public static int minimumRectangle(int[][] sizes) {
-        return 0;
+        int result = 0;
+        int maxX = Integer.MIN_VALUE;
+        int maxY = Integer.MIN_VALUE;
+        for (int i = 0; i < sizes.length; i++) {
+            if (sizes[i][0] < sizes[i][1] ) {
+                int temp = sizes[i][0];
+                sizes[i][0] = sizes[i][1];
+                sizes[i][1] = temp;
+            }
+            maxX = Math.max(maxX, sizes[i][0]);
+            maxY = Math.max(maxY, sizes[i][1]);
+        }
+        result = maxX * maxY;
+        return result;
     }
 }
