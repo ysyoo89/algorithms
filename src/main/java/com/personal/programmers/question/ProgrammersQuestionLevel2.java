@@ -44,4 +44,14 @@ public class ProgrammersQuestionLevel2 {
         int[] topping = {1,2,1,3,1,4,1,2};
         return ProgrammersAnswerLevel2.rollCake(topping);
     }
+
+    /**
+     * 피로도
+     * https://school.programmers.co.kr/learn/courses/30/lessons/87946
+     */
+    public int fatigue() {
+        int k = 3;
+        int[][] dungeons = new int[3][3];
+        return ProgrammersAnswerLevel2.fatigue(k, dungeons);
+    }
 }

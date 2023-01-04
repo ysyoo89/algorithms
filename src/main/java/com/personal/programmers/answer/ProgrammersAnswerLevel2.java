@@ -167,4 +167,8 @@ public class ProgrammersAnswerLevel2 {
         }
         return answer;
     }
+
+    public static int fatigue(int k, int[][] dungeons) {
+        return 0;
+    }
 }
