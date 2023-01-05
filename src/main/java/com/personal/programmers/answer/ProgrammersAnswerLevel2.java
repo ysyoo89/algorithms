@@ -169,6 +169,9 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int fatigue(int k, int[][] dungeons) {
+        for(int[] dun : dungeons) {
+
+        }
         return 0;
     }
 }
