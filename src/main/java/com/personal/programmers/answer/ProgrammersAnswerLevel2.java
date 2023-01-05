@@ -100,6 +100,14 @@ public class ProgrammersAnswerLevel2 {
      * @return
      */
     public static long power(long n) {
+        return powerDfs(n);
+    }
+
+    private static long powerDfs(long n) {
+        long result = 0;
+        for(long i = 0; i <= n; i++) {
+
+        }
         return 0;
     }
 
@@ -169,9 +177,20 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int fatigue(int k, int[][] dungeons) {
-        for(int[] dun : dungeons) {
+        return dfs(k, dungeons);
+    }
 
+    private static int dfs(int k, int[][] dungeons) {
+        int cnt = 0;
+        for(int[] d: dungeons) {
+            int a = d[0];
+            int b = d[1];
+            if (a <= k) {
+                d[0] = 9999;
+                cnt = Math.max(1 + dfs(k - b, dungeons), cnt);
+                d[0] = a;
+            }
         }
-        return 0;
+        return cnt;
     }
 }
