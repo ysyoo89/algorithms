@@ -108,7 +108,7 @@ public class ProgrammersAnswerLevel2 {
         for(long i = 0; i <= n; i++) {
 
         }
-        return 0;
+        return result;
     }
 
 
