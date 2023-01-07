@@ -104,7 +104,7 @@ public class ProgrammersAnswerLevel2 {
     }
 
     private static long powerDfs(long n) {
-        long result = 1;
+        long result = 0;
         for(long i = 0; i <= n; i++) {
 
         }
