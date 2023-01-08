@@ -54,4 +54,14 @@ public class ProgrammersQuestionLevel2 {
         int[][] dungeons = new int[3][3];
         return ProgrammersAnswerLevel2.fatigue(k, dungeons);
     }
+    
+    /**
+     * 전력망을 둘로 나누기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/86971
+     */
+    public int electronic() {
+    	 int n = 3;
+         int[][] wires = new int[3][3];
+         return ProgrammersAnswerLevel2.electronic(n, wires);
+    }
 }
