@@ -372,4 +372,52 @@ public class ProgrammersAnswer {
         result = maxX * maxY;
         return result;
     }
+
+    public static int[] mockTest(int[] answers) {
+        int[] first = {1,2,3,4,5};
+        int[] second = {2,1,2,3,2,4,2,5};
+        int[] third = {3,3,1,1,2,2,4,4,5,5};
+        int answerFirst = 0;
+        int answerSecond = 0;
+        int answerThird = 0;
+        for (int i = 0; i < answers.length; i++) {
+            int firstIndex = i % first.length;
+            int secondIndex = i % second.length;
+            int thirdIndex = i % third.length;
+
+            if (mockTestCheck(answers[i], first[firstIndex])) {
+                answerFirst++;
+            }
+            if (mockTestCheck(answers[i], second[secondIndex])) {
+                answerSecond++;
+            }
+            if (mockTestCheck(answers[i], third[thirdIndex])) {
+                answerThird++;
+            }
+        }
+        return mockTestResult(answerFirst, answerSecond, answerThird);
+    }
+
+    private static int[] mockTestResult(int answerFirst, int answerSecond, int answerThird) {
+        List<Integer> list = new ArrayList<>();
+        int maxAnswer = Math.max(answerFirst, Math.max(answerSecond, answerThird));
+        if (maxAnswer == answerFirst) {
+            list.add(1);
+        }
+        if (maxAnswer == answerSecond) {
+            list.add(2);
+        }
+        if (maxAnswer == answerThird) {
+            list.add(3);
+        }
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
+    }
+
+    private static boolean mockTestCheck(int answer, int testAnswer) {
+        return answer == testAnswer;
+    }
 }

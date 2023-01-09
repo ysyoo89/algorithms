@@ -185,4 +185,13 @@ public class ProgrammersQuestion {
         int[][] sizes = new int[10][10];
         return ProgrammersAnswer.minimumRectangle(sizes);
     }
+
+    /**
+     * 모의고사
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42840
+     */
+    public int[] mockTest() {
+        int[] answers = {1,2,3,4,5};
+        return ProgrammersAnswer.mockTest(answers);
+    }
 }
