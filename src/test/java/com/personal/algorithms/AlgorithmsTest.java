@@ -1,5 +1,6 @@
 package com.personal.algorithms;
 
+import com.personal.programmers.answer.ProgrammersAnswer;
 import com.personal.programmers.answer.ProgrammersAnswerLevel2;
 import com.personal.programmers.question.ProgrammersQuestionLevel2;
 import org.junit.jupiter.api.Test;
@@ -40,5 +41,12 @@ public class AlgorithmsTest {
         int[][] office = {{1,0,0,0}, {0,0,0,1}, {0,0,1,0}, {0,1,1,0}};
         int k = 2;
         assertEquals(answerLevel2.solve(office, k), 3);
+    }
+
+    @Test
+    void fibonacci() {
+        ProgrammersAnswer answer = new ProgrammersAnswer();
+        int n = 12;
+        assertEquals(answer.fibonacci(n), 144);
     }
 }

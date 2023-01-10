@@ -420,4 +420,15 @@ public class ProgrammersAnswer {
     private static boolean mockTestCheck(int answer, int testAnswer) {
         return answer == testAnswer;
     }
+
+    public static int fibonacci(int n) {
+        int result = fibonacciDFS(n);
+        return result;
+    }
+
+    private static int fibonacciDFS(int n) {
+        if (n == 1) return 1;
+        if (n == 2) return 1;
+        return fibonacciDFS(n - 2) +  fibonacciDFS(n - 1);
+    }
 }

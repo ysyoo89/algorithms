@@ -194,4 +194,13 @@ public class ProgrammersQuestion {
         int[] answers = {1,2,3,4,5};
         return ProgrammersAnswer.mockTest(answers);
     }
+
+    /**
+     * 피보나치수열을 재귀함수로 구현하기
+     * @return
+     */
+    public int fibonacci() {
+        int n = 5;
+        return ProgrammersAnswer.fibonacci(n);
+    }
 }
