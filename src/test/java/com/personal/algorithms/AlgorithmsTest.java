@@ -49,4 +49,11 @@ public class AlgorithmsTest {
         int n = 12;
         assertEquals(answer.fibonacci(n), 144);
     }
+
+    @Test
+    void factorial() {
+        ProgrammersAnswer answer = new ProgrammersAnswer();
+        int n = 10;
+        assertEquals(answer.factorial(n), 3628800);
+    }
 }

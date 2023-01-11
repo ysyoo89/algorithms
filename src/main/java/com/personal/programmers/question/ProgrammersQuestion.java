@@ -203,4 +203,12 @@ public class ProgrammersQuestion {
         int n = 5;
         return ProgrammersAnswer.fibonacci(n);
     }
+    /**
+     * 팩토리얼 재귀함수로 구하기
+     * https://www.acmicpc.net/problem/10872
+     */
+    public int factorial() {
+        int n = 5;
+        return ProgrammersAnswer.factorial(n);
+    }
 }

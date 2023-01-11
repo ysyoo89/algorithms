@@ -431,4 +431,15 @@ public class ProgrammersAnswer {
         if (n == 2) return 1;
         return fibonacciDFS(n - 2) +  fibonacciDFS(n - 1);
     }
+
+    public static int factorial(int n) {
+        int result = 1;
+        return factorialDFS(n, result);
+    }
+
+    private static int factorialDFS(int n, int result) {
+        if (n == 1) return 1 * result;
+        result = n * result;
+        return factorialDFS(n - 1, result);
+    }
 }
