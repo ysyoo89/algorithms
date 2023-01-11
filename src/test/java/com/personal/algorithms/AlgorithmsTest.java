@@ -53,7 +53,7 @@ public class AlgorithmsTest {
     @Test
     void factorial() {
         ProgrammersAnswer answer = new ProgrammersAnswer();
-        int n = 10;
-        assertEquals(answer.factorial(n), 3628800);
+        int n = 0;
+        assertEquals(answer.factorial(n), 1);
     }
 }

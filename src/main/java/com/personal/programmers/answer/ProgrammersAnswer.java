@@ -438,7 +438,7 @@ public class ProgrammersAnswer {
     }
 
     private static int factorialDFS(int n, int result) {
-        if (n == 1) return 1 * result;
+        if (n <= 1) return 1 * result;
         result = n * result;
         return factorialDFS(n - 1, result);
     }
