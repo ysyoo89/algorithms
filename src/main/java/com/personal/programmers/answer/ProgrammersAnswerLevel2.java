@@ -195,7 +195,7 @@ public class ProgrammersAnswerLevel2 {
     }
 
 	public static int electronic(int n, int[][] wires) {
-		
+		int result = 0;
 		return 0;
 	}
 }
