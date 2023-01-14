@@ -427,6 +427,7 @@ public class ProgrammersAnswer {
     }
 
     private static int fibonacciDFS(int n) {
+    	if (n == 0) return 0;
         if (n == 1) return 1;
         if (n == 2) return 1;
         return fibonacciDFS(n - 2) +  fibonacciDFS(n - 1);
