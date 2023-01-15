@@ -10,6 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Scanner;
+
 @SpringBootTest
 public class AlgorithmsTest {
 
@@ -55,5 +57,18 @@ public class AlgorithmsTest {
         ProgrammersAnswer answer = new ProgrammersAnswer();
         int n = 0;
         assertEquals(answer.factorial(n), 1);
+    }
+    
+    @Test
+    void isPalindrome(){
+    	ProgrammersAnswer answer = new ProgrammersAnswer();
+    	Scanner scanner = new Scanner(System.in);
+    	//String s = "PALINDROME";
+		String s= scanner.nextLine();
+		int count = 0;
+	
+		System.out.println(answer.isPalindrome(s, count));
+		
+    	assertEquals(answer.isPalindrome(s, count), 1);
     }
 }

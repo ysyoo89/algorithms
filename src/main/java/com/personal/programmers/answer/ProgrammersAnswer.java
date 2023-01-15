@@ -421,6 +421,7 @@ public class ProgrammersAnswer {
         return answer == testAnswer;
     }
 
+    
     public static int fibonacci(int n) {
         int result = fibonacciDFS(n);
         return result;
@@ -443,4 +444,23 @@ public class ProgrammersAnswer {
         result = n * result;
         return factorialDFS(n - 1, result);
     }
+    
+    
+    public static int recursion(String s, int l, int r, int count){
+    	count++;
+        if(l >= r) {
+        	System.out.print("1 ");
+        	return count;
+        }
+        else if(s.charAt(l) != s.charAt(r)) {
+        	System.out.print("0 ");
+        	return count;
+        }
+        else return recursion(s, l+1, r-1, count);
+    }
+    
+    public static int isPalindrome(String s, int count){
+        return recursion(s, 0, s.length()-1, count);
+    }
+    
 }

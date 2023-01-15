@@ -4,6 +4,7 @@ import com.personal.programmers.answer.ProgrammersAnswer;
 import com.personal.programmers.answer.ProgrammersAnswerLevel2;
 
 import java.text.ParseException;
+import java.util.Scanner;
 
 public class ProgrammersQuestion {
 
@@ -210,5 +211,11 @@ public class ProgrammersQuestion {
     public int factorial() {
         int n = 5;
         return ProgrammersAnswer.factorial(n);
+    }
+    
+    public int isPalindrome() {
+    	String s = "ABBA";
+    	int count = 0;
+    	return ProgrammersAnswer.isPalindrome(s, count);
     }
 }
