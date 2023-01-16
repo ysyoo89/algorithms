@@ -466,9 +466,11 @@ public class ProgrammersAnswer {
     
 	public static String star(int n) {
 		String result = "";
+		
 		for (int i = 0; i < n; i++) {
 			
 		}
+		
 		return result;
 	}
     
