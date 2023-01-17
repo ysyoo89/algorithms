@@ -463,4 +463,10 @@ public class ProgrammersAnswer {
         return recursion(s, 0, s.length()-1, count);
     }
     
+    
+	public static String star(int n) {
+
+		return null;
+	}
+    
 }

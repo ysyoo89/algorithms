@@ -218,4 +218,13 @@ public class ProgrammersQuestion {
     	int count = 0;
     	return ProgrammersAnswer.isPalindrome(s, count);
     }
+    
+    /**
+     * 별 찍기
+     * https://www.acmicpc.net/problem/2447
+     */
+    public String star() {
+    	int n = 9;
+    	return ProgrammersAnswer.star(n);
+    }
 }
