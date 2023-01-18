@@ -462,8 +462,12 @@ public class ProgrammersAnswer {
     public static int isPalindrome(String s, int count){
         return recursion(s, 0, s.length()-1, count);
     }
-    
-    
+
+
+    /**
+     * 참고 블로그 (완벽히 이해하자)
+     * https://st-lab.tistory.com/95
+     */
 	public static String star(int n) {
 		String result = "";
 		
