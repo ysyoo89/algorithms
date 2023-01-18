@@ -1,5 +1,7 @@
 package com.personal.programmers.answer;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -468,14 +470,53 @@ public class ProgrammersAnswer {
      * 참고 블로그 (완벽히 이해하자)
      * https://st-lab.tistory.com/95
      */
-	public static String star(int n) {
-		String result = "";
-		
-		for (int i = 0; i < n; i++) {
-			
-		}
-		
-		return result;
+    static StringBuilder[] sb;
+	public static void star(int n) {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            int N = Integer.parseInt(br.readLine());
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
+
+        String s = String.format("%" + N + "s", ' ').replace(' ', '*');
+        sb = new StringBuilder[N];
+        for (int i = 0; i < N; i++) {
+            sb[i] = new StringBuilder(s);
+        }
+        star(0, 0, N, false);
+
+        for (int i = 0; i < N; i++) {
+            System.out.println(sb[i]);
+        }
 	}
+
+    public static void star(int x, int y, int N, boolean blank) {
+        if (blank) {
+            for (int i = x; i < x + N; i++) {
+                for (int j = y; j < y + N; j++) {
+                    sb[i].setCharAt(j, ' ');
+                }
+            }
+        }
+
+        if (N == 1) {
+            return;
+        }
+
+        int size = N / 3;
+        int count = 0;
+        for (int i = x; i < x+N; i += size) {
+            for (int j = y; j < y+N; j += size) {
+                count++;
+                if (count == 5) {
+                    star(i, j, size, true);
+                } else {
+                    star(i, j, size, false);
+                }
+            }
+        }
+    }
     
 }

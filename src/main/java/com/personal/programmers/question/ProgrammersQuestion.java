@@ -223,8 +223,8 @@ public class ProgrammersQuestion {
      * 별 찍기
      * https://www.acmicpc.net/problem/2447
      */
-    public String star() {
+    public void star() {
     	int n = 9;
-    	return ProgrammersAnswer.star(n);
+    	ProgrammersAnswer.star(n);
     }
 }
