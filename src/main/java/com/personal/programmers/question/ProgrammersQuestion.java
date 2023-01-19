@@ -227,4 +227,13 @@ public class ProgrammersQuestion {
     	int n = 9;
     	ProgrammersAnswer.star(n);
     }
+    
+    /**
+     * 하노이탑 재귀
+     * https://www.acmicpc.net/problem/11729
+     */
+    public void hanoiTower() {
+    	int n = 3;
+    	ProgrammersAnswer.hanoiTower(n);
+    }
 }

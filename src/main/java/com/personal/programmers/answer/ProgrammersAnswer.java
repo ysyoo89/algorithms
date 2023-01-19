@@ -482,6 +482,7 @@ public class ProgrammersAnswer {
 
         String s = String.format("%" + N + "s", ' ').replace(' ', '*');
         sb = new StringBuilder[N];
+        
         for (int i = 0; i < N; i++) {
             sb[i] = new StringBuilder(s);
         }
@@ -518,5 +519,11 @@ public class ProgrammersAnswer {
             }
         }
     }
+    
+    
+	public static void hanoiTower(int n2) {
+		// TODO Auto-generated method stub
+		
+	}
     
 }
