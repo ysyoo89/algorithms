@@ -522,7 +522,6 @@ public class ProgrammersAnswer {
     
     
 	public static void hanoiTower(int n2) {
-		// TODO Auto-generated method stub
 		
 	}
     
