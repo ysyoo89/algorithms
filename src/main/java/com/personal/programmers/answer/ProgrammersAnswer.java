@@ -521,8 +521,25 @@ public class ProgrammersAnswer {
     }
     
     
-	public static void hanoiTower(int n2) {
-		
+	public static void hanoiTower(int n) {
+		hanoi(1, 2, 3, n);
+	}
+	
+	/**
+	 * 하노이 탑 참고
+	 * https://st-lab.tistory.com/96
+	 */
+	public static void hanoi(int start, int middle, int to, int n) {
+		if (n == 1) {
+			System.out.println(start + " " + to);
+			return;
+		} else {
+			hanoi(start, to, middle, n -1);
+			
+			System.out.println(start + " " + to);
+			
+			hanoi(middle, start, to, n -1);
+		}
 	}
     
 }
