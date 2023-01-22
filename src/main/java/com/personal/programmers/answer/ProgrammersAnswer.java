@@ -526,7 +526,7 @@ public class ProgrammersAnswer {
 	}
 	
 	/**
-	 * 하노이 탑 참고
+	 * 하노이 탑 참고 블로그
 	 * https://st-lab.tistory.com/96
 	 */
 	public static void hanoi(int start, int middle, int to, int n) {
