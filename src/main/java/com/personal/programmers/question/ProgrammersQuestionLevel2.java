@@ -64,4 +64,9 @@ public class ProgrammersQuestionLevel2 {
          int[][] wires = new int[3][3];
          return ProgrammersAnswerLevel2.electronic(n, wires);
     }
+    
+    public long seesaw() {
+    	int[] weights = {100, 120, 240, 100};
+    	return ProgrammersAnswerLevel2.seesaw(weights);
+    }
 }

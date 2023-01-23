@@ -198,4 +198,28 @@ public class ProgrammersAnswerLevel2 {
 		int result = 1;
 		return result;
 	}
+
+	public static long seesaw(int[] weights) {
+		long result = 0L;
+		for (int i = 0; i < weights.length; i++) {
+			for (int j = i + 1; j < weights.length; j++) {
+				if (weights[i] == weights[j] || seesawCheck(weights[i], weights[j])) {
+					result++;
+				}
+			}
+		}
+		return result;
+	}
+
+	private static boolean seesawCheck(int fir, int sec) {
+		int minus = Math.abs(fir - sec);
+		int firVal = fir / minus;
+		int secVal = sec / minus;
+		boolean firDivision = fir % minus == 0;
+		boolean secDivision = sec % minus == 0;
+		if (Math.abs(firVal - secVal) < 3 && firDivision && secDivision) {
+			return true;
+		}
+		return false;
+	}
 }
