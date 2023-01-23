@@ -65,6 +65,11 @@ public class ProgrammersQuestionLevel2 {
          return ProgrammersAnswerLevel2.electronic(n, wires);
     }
     
+    /**
+     * 시소 문제
+     * https://school.programmers.co.kr/learn/courses/30/lessons/152996
+     * @return
+     */
     public long seesaw() {
     	int[] weights = {100, 120, 240, 100};
     	return ProgrammersAnswerLevel2.seesaw(weights);
