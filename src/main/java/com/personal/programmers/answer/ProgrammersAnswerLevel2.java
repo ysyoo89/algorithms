@@ -200,26 +200,36 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static long seesaw(int[] weights) {
-		long result = 0L;
-		for (int i = 0; i < weights.length; i++) {
-			for (int j = i + 1; j < weights.length; j++) {
-				if (weights[i] == weights[j] || seesawCheck(weights[i], weights[j])) {
-					result++;
-				}
-			}
-		}
-		return result;
-	}
+		long answer = 0;
 
-	private static boolean seesawCheck(int fir, int sec) {
-		int minus = Math.abs(fir - sec);
-		int firVal = fir / minus;
-		int secVal = sec / minus;
-		boolean firDivision = fir % minus == 0;
-		boolean secDivision = sec % minus == 0;
-		if (Math.abs(firVal - secVal) < 3 && firDivision && secDivision) {
-			return true;
-		}
-		return false;
+        int[] weightCounter = new int[1001];
+
+        for (int weight : weights)
+            weightCounter[weight]++;
+
+        for (int weight = 100; weight <= 1000; weight++) {
+
+            long cnt = weightCounter[weight];
+
+            if (cnt == 0)
+                continue;
+
+            answer += cnt * (cnt - 1) / 2;
+
+            if (weight * 3 % 2 == 0 && weight * 3 / 2 <= 1000) {
+                answer += cnt * weightCounter[weight * 3 / 2];
+            }
+
+            if (weight * 4 % 2 == 0 && weight * 4 / 2 <= 1000) {
+                answer += cnt * weightCounter[weight * 4 / 2];
+            }
+
+            if (weight * 4 % 3 == 0 && weight * 4 / 3 <= 1000) {
+                answer += cnt * weightCounter[weight * 4 / 3];
+            }
+
+        }
+
+        return answer;
 	}
 }
