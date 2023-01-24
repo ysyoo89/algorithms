@@ -99,16 +99,35 @@ public class ProgrammersAnswerLevel2 {
      * @param n
      * @return
      */
+    static long totalCnt = 0;
+    static long result = 0;
     public static long power(long n) {
-        return powerDfs(n);
+        powerDfs(n, 0L, 0L,false);
+        return result;
     }
 
-    private static long powerDfs(long n) {
-        long result = 0;
-        for(long i = 0; i <= n; i++) {
-
+    private static void powerDfs(long n, long pow, long stepPow, boolean init) {        
+        if (totalCnt == n) {
+        	return;
+        }       
+        
+        if (init) {
+        	stepPow = 0L;
+        	powerDfs(n, pow, stepPow, false);
         }
-        return result;
+        
+        totalCnt++;
+        
+        long power = (long) Math.pow(3, pow);
+        
+        result = result + power;
+        
+        if (pow == stepPow) {
+        	powerDfs(n, pow +1, stepPow, true);
+        } else if (pow > stepPow) {
+        	powerDfs(n, pow, stepPow +1, false);
+        }
+        	
     }
 
 
