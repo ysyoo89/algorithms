@@ -251,4 +251,33 @@ public class ProgrammersAnswerLevel2 {
 
         return answer;
 	}
+
+	public static int discount(String[] want, int[] number, String[] discount) {
+		int init = 10;
+		int discountCnt = discount.length;
+		int result = 0;
+		Map<String, Integer> map = new HashMap<>();
+		for (int i = 0; i < want.length; i++) {
+			map.put(want[i], number[i]);
+		}
+		
+		for (int i = 0; i <= discountCnt - init; i++) {
+			Map<String, Integer> tempMap = new HashMap<>();
+			tempMap.putAll(map);
+			for (int j = i; j < i + init; j++) {
+				if (tempMap.containsKey(discount[j])) {
+					tempMap.put(discount[j], tempMap.get(discount[j]) - 1);
+				} else {
+					break;
+				}
+			}
+			
+			int valueCount = tempMap.values().stream().filter(m -> m > 0).findAny().orElse(0); 
+			if (valueCount == 0) {
+				result++;
+			}
+		}
+		
+		return result;
+	}
 }

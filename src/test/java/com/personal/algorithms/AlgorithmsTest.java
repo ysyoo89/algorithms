@@ -71,4 +71,10 @@ public class AlgorithmsTest {
 		
     	assertEquals(answer.isPalindrome(s, count), 1);
     }
+    
+    @Test
+    void discount() {
+    	ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+    	assertEquals(question.discount(), 3);
+    }
 }

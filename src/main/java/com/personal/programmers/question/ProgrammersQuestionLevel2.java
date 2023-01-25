@@ -74,4 +74,11 @@ public class ProgrammersQuestionLevel2 {
     	int[] weights = {100, 120, 240, 100};
     	return ProgrammersAnswerLevel2.seesaw(weights);
     }
+    
+    public int discount() {
+    	String[] want = {"banana", "apple", "rice", "pork", "pot"};
+    	int[] number = {3, 2, 2, 2, 1};
+    	String[] discount = {"chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"};
+    	return ProgrammersAnswerLevel2.discount(want, number, discount);
+    }
 }
