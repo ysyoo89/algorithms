@@ -280,4 +280,10 @@ public class ProgrammersAnswerLevel2 {
 		
 		return result;
 	}
+
+	public static int dynamic(int n, int number) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
+

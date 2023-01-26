@@ -81,4 +81,14 @@ public class ProgrammersQuestionLevel2 {
     	String[] discount = {"chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"};
     	return ProgrammersAnswerLevel2.discount(want, number, discount);
     }
+    
+    /**
+     * 동적 알고리즘
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42895
+     */
+    public int dynamic() {
+    	int n = 5;
+    	int number = 12;
+    	return ProgrammersAnswerLevel2.dynamic(n, number);
+    }
 }
