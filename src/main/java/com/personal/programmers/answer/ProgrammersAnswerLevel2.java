@@ -282,7 +282,7 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int dynamic(int n, int number) {
-		
+		int[] temp = new int[n];
 		return 0;
 	}
 }
