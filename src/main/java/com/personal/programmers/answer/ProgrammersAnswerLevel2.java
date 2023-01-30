@@ -285,6 +285,7 @@ public class ProgrammersAnswerLevel2 {
 		int answer = -1;
         Set<Integer>[] setArr = new Set[9];
         int t = N;
+        // 초기값 설정
         for(int i = 1; i < 9; i++) {
             setArr[i] = new HashSet<>();
             setArr[i].add(t);
@@ -292,6 +293,7 @@ public class ProgrammersAnswerLevel2 {
         }
         for(int i = 1; i < 9; i++) {
             for(int j = 1; j < i; j++) {
+            	// 각 자리수 마다 가능한 조합 저장
                 for(Integer a : setArr[j]) {
                     for(Integer b : setArr[i - j]) {
                         setArr[i].add(a + b);
@@ -309,6 +311,7 @@ public class ProgrammersAnswerLevel2 {
             }
         }
         for(int i = 1; i < 9; i++) {
+        	// 최소 사용 개수 찾기
             if(setArr[i].contains(number)) {
                 answer = i;
                 break;
