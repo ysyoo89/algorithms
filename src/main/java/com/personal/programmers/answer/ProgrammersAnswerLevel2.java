@@ -283,6 +283,7 @@ public class ProgrammersAnswerLevel2 {
 
 	public static int dynamic(int N, int number) {
 		int answer = -1;
+		// 최대 8개까지만 구함
         Set<Integer>[] setArr = new Set[9];
         int t = N;
         // 초기값 설정
