@@ -320,5 +320,24 @@ public class ProgrammersAnswerLevel2 {
         }
         return answer;
 	}
+
+	public static int triangle(int[][] triangle) {
+		int result = 0;
+        int fullSize = triangle.length;
+        int[][] temp = new int[fullSize][fullSize];
+        temp[0][0] = triangle[0][0];
+        for (int i = 0; i < triangle.length; i++) {
+            for (int j = 0; j < triangle[i].length -1; j++) {
+                temp[i][j] = Math.max(temp[i][j] ,temp[i -1][j] + triangle[i][j]);
+                temp[i][j+1] = temp[i-1][j] + triangle[i][j +1];
+            }
+        }
+
+        for (int i = 0; i < fullSize; i++) {
+            result = Math.max(result, temp[fullSize - 1][i]);
+        }
+
+        return result;
+	}
 }
 

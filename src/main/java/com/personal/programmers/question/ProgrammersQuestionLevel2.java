@@ -91,4 +91,13 @@ public class ProgrammersQuestionLevel2 {
     	int number = 12;
     	return ProgrammersAnswerLevel2.dynamic(n, number);
     }
+    
+    /**
+     * 정수 삼각형
+     * https://school.programmers.co.kr/learn/courses/30/lessons/43105
+     */
+    public int triangle() {
+    	int[][] triangle = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};
+    	return ProgrammersAnswerLevel2.triangle(triangle);
+    }
 }
