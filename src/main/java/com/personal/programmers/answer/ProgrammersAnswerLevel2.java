@@ -350,5 +350,10 @@ public class ProgrammersAnswerLevel2 {
 
         return Arrays.stream(triangle[triangle.length-1]).max().getAsInt();
 	}
+
+	public static int goSchool(int m, int n, int[][] puddles) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 

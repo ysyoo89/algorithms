@@ -108,4 +108,15 @@ public class ProgrammersQuestionLevel2 {
     	int[][] triangle = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};
     	return ProgrammersAnswerLevel2.triangle2(triangle);
     }
+    
+    /**
+     * 등굣길
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42898
+     */
+    public int goSchool() {
+    	int m =3;
+    	int n = 4;
+		int[][] puddles = {{2,2}};
+    	return ProgrammersAnswerLevel2.goSchool(m, n, puddles);
+    }
 }
