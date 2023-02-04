@@ -352,7 +352,6 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int goSchool(int m, int n, int[][] puddles) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }
