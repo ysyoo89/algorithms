@@ -352,7 +352,8 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int goSchool(int m, int n, int[][] puddles) {
-		return 0;
+		int result = 0;
+		return result;
 	}
 }
 
