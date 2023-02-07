@@ -353,7 +353,7 @@ public class ProgrammersAnswerLevel2 {
 
 	public static int goSchool(int m, int n, int[][] puddles) {
 		int result = 0;
-		//TODO 풀이 적용
+		//TODO 풀이
 		return result;
 	}
 }
