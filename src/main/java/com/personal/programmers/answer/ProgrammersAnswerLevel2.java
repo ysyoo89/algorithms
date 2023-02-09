@@ -351,6 +351,9 @@ public class ProgrammersAnswerLevel2 {
         return Arrays.stream(triangle[triangle.length-1]).max().getAsInt();
 	}
 
+	/**
+	 * https://0713k.tistory.com/35
+	 */
 	public static int goSchool(int m, int n, int[][] puddles) {
 		int def = 1000000007;
 		int result = 0;
