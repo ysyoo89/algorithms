@@ -352,9 +352,16 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int goSchool(int m, int n, int[][] puddles) {
+		int def = 1000000007;
 		int result = 0;
-		//TODO 풀이하기
-		return result;
+		int[][] road = new int[m][n];
+		for (int i = 1; i <= m; i++) {
+			for (int j = 1; j <= n; j++) {
+				
+			}
+		}
+		
+		return def % result;
 	}
 }
 
