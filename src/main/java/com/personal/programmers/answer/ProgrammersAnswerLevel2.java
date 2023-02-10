@@ -358,6 +358,9 @@ public class ProgrammersAnswerLevel2 {
 		int def = 1000000007;
 		int result = 0;
 		int[][] road = new int[m][n];
+		for (int i = 0; i < m; i++) {
+			
+		}
 		for (int i = 1; i <= m; i++) {
 			for (int j = 1; j <= n; j++) {
 				
