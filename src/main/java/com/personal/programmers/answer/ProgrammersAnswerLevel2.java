@@ -385,5 +385,10 @@ public class ProgrammersAnswerLevel2 {
 		
 		return result;
 	}
+
+	public static int operations(String[] arr) {
+
+		return 0;
+	}
 }
 

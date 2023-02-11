@@ -119,4 +119,13 @@ public class ProgrammersQuestionLevel2 {
 		int[][] puddles = {{2,2}};
     	return ProgrammersAnswerLevel2.goSchool(m, n, puddles);
     }
+    
+    /**
+     * 사칙연산
+     * https://school.programmers.co.kr/learn/courses/30/lessons/1843
+     */
+    public int operations() {
+    	String arr[] = {"1", "-", "2"};
+    	return ProgrammersAnswerLevel2.operations(arr);
+    }
 }
