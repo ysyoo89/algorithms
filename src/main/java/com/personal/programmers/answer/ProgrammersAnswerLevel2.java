@@ -357,17 +357,33 @@ public class ProgrammersAnswerLevel2 {
 	public static int goSchool(int m, int n, int[][] puddles) {
 		int def = 1000000007;
 		int result = 0;
-		int[][] road = new int[m][n];
-		for (int i = 0; i < m; i++) {
-			
+		int[][] road = new int[n+1][m+1];
+		
+		for (int[] x : puddles) {
+			road[x[1]][x[0]] = -1;
 		}
-		for (int i = 1; i <= m; i++) {
-			for (int j = 1; j <= n; j++) {
-				
+		
+		for (int i = 2; i <= n; i++) {
+			road[i][1] = ( road[i][1] == -1 || road[i -1][1] == -1 ) ? -1 : 1;
+		}
+		
+		for (int i = 2; i <= m; i++) {
+			road[1][i] = (road[1][i] == -1 || road[1][i -1] == -1) ? -1 : 1;
+		}
+		
+		for (int i = 2; i <= n; i++) {
+			for (int j = 2; j <= m; j++) {
+				if (road[i][j] != -1) {
+					int top = road[i -1][j] == -1 ? 0 : road[i -1][j];
+					int left = road[i][j -1] == -1 ? 0 : road[i][j -1];
+					road[i][j] = (top + left) == 0 ? -1 : (top + left) % def;
+				}
 			}
 		}
 		
-		return def % result;
+		result = road[n][m] == -1 ? 0 : road[n][m];
+		
+		return result;
 	}
 }
 
