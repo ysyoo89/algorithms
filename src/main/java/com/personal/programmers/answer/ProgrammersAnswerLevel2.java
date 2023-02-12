@@ -387,8 +387,8 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int operations(String[] arr) {
-
-		return 0;
+		int answer = 0;
+		return answer;
 	}
 }
 
