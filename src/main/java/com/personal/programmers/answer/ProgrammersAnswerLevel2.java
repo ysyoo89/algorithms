@@ -390,7 +390,7 @@ public class ProgrammersAnswerLevel2 {
 		int answer = 0;
 		int count = arr.length / 2; // 총 나올 수 있는 괄호 수
 		Set<Integer>[] setArr = new Set[count];
-		// 초기화 값 지정
+		// 초기화 값 지정 1~시작
 		for (int i = 0; i < count; i++) {
 			setArr[i] = new HashSet<>();
 			setArr[i].add(Integer.valueOf(arr[i]));
