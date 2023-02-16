@@ -387,15 +387,35 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int operations(String[] arr) {
-		int answer = 0;
-		int count = arr.length / 2; // 총 나올 수 있는 괄호 수
-		Set<Integer>[] setArr = new Set[count];
-		// 초기화 값 지정 1~시작
-		for (int i = 0; i < count; i++) {
-			setArr[i] = new HashSet<>();
-			setArr[i].add(Integer.valueOf(arr[i]));
-		}
-		return answer;
+		int n = (arr.length / 2) + 1;
+	    int[][][] DP = new int[n][n][2];
+
+	    for(int i = 0; i < n; i++) {
+	        DP[i][i][0] = Integer.parseInt(arr[2 * i]);
+	        DP[i][i][1] = Integer.parseInt(arr[2 * i]);
+	    }
+
+	    for(int gap = 1; gap < n; gap++) {
+	        for(int start = 0; start < n - gap; start++) {
+	            int end = start + gap;
+	            int maxValue = Integer.MIN_VALUE;
+	            int minValue = Integer.MAX_VALUE;
+	            for(int mid = start; mid < end; mid++) {
+	                String op = arr[2 * mid + 1];
+	                if(op.equals("+")) {
+	                    maxValue = Math.max(maxValue, DP[start][mid][0] + DP[mid + 1][end][0]);
+	                    minValue = Math.min(minValue, DP[start][mid][1] + DP[mid + 1][end][1]);                     
+	                } else {
+	                    maxValue = Math.max(maxValue, DP[start][mid][0] - DP[mid + 1][end][1]);
+	                    minValue = Math.min(minValue, DP[start][mid][1] - DP[mid + 1][end][0]);
+	                }
+	            }
+	            DP[start][end][0] = maxValue;
+	            DP[start][end][1] = minValue;
+	        }
+	    }
+
+	    return DP[0][n - 1][0];
 	}
 }
 
