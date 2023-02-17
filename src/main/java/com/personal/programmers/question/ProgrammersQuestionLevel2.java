@@ -136,6 +136,7 @@ public class ProgrammersQuestionLevel2 {
     public int selec() {
     	int k = 6; 
     	int[] tangerine = {1, 3, 2, 5, 4, 5, 2, 3};
+    	
     	return ProgrammersAnswerLevel2.selec(k, tangerine);
     }
 }
