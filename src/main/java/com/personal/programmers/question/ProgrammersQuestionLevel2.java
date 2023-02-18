@@ -128,4 +128,14 @@ public class ProgrammersQuestionLevel2 {
     	String arr[] = {"1", "-", "2"};
     	return ProgrammersAnswerLevel2.operations(arr);
     }
+    
+    /**
+     * 귤 고르기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/138476
+     */
+    public int selec() {
+    	int k = 6; 
+    	int[] tangerine = {1, 3, 2, 5, 4, 5, 2, 3};
+    	return ProgrammersAnswerLevel2.selec(k, tangerine);
+    }
 }
