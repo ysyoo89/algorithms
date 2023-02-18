@@ -417,5 +417,10 @@ public class ProgrammersAnswerLevel2 {
 
 	    return DP[0][n - 1][0];
 	}
+
+	public static int selec(int k, int[] tangerine) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 
