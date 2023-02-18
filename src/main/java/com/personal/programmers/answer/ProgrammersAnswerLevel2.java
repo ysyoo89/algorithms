@@ -1,6 +1,7 @@
 package com.personal.programmers.answer;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class ProgrammersAnswerLevel2 {
 
@@ -419,9 +420,24 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int selec(int k, int[] tangerine) {
-		// TODO Auto-generated method stub
+		int result = 0;
+		int selecCount = 0;
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int tan : tangerine) {
+			map.put(tan, map.getOrDefault(tan, 0) + 1);
+		}
+		List<Integer> keySetList = new ArrayList<>(map.keySet());
+		Collections.sort(keySetList, (o1, o2) -> (map.get(o2).compareTo(map.get(o1))));
+		for(Integer key : keySetList) {
+			if (selecCount < k) {
+				selecCount += map.get(key);
+				result++;
+			} else {
+				break;
+			}
+		}
 		
-		return 0;
+		return result;
 	}
 }
 
