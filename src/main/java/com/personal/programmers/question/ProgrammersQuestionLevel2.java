@@ -141,7 +141,11 @@ public class ProgrammersQuestionLevel2 {
     }
     
     /**
-     * 색칠하기
-     * https://school.programmers.co.kr/learn/courses/30/lessons/1829
+     * 게임 맵 최단거리
+     * https://school.programmers.co.kr/learn/courses/30/lessons/1844
      */
+    public int sortRoad() {
+    	int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}};
+    	return ProgrammersAnswerLevel2.sortRoad(maps);
+    }
 }
