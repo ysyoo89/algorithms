@@ -441,7 +441,7 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int sortRoad(int[][] maps) {
-		
+		int[][] check = new int[maps.length][maps[0].length];
 		return 0;
 	}
 }
