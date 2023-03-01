@@ -442,6 +442,7 @@ public class ProgrammersAnswerLevel2 {
 
 	public static int sortRoad(int[][] maps) {
 		int[][] check = new int[maps.length][maps[0].length];
+		// TODO 하나씩 체크할 것
 		return 0;
 	}
 }
