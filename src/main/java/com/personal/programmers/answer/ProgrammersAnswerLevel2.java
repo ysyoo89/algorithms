@@ -445,5 +445,10 @@ public class ProgrammersAnswerLevel2 {
 		//하나씩 체크할 것 구현예정
 		return check.length;
 	}
+
+	public static int minimumWord(String t, String p) {
+
+		return 0;
+	}
 }
 

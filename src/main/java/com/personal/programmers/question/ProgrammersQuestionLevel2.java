@@ -148,4 +148,14 @@ public class ProgrammersQuestionLevel2 {
     	int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}};
     	return ProgrammersAnswerLevel2.sortRoad(maps);
     }
+    
+    /**
+     * 크기가 작은 부분 문자열
+     * https://school.programmers.co.kr/learn/courses/30/lessons/147355
+     */
+    public int minimumWord() {
+    	String t = "abc";
+    	String p = "def";
+    	return ProgrammersAnswerLevel2.minimumWord(t, p);
+    }
 }
