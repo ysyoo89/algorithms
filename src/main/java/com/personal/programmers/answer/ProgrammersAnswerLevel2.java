@@ -447,8 +447,17 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int minimumWord(String t, String p) {
-
-		return 0;
+		long def = Long.parseLong(p);
+		int defLength = p.length();
+		int result = 0;
+		
+		for (int i = 0; i <= t.length() - defLength; i++) {
+			if (Long.parseLong(t.substring(i, i + defLength)) <= def) {
+				result++;
+			}
+		}
+		
+		return result;
 	}
 }
 

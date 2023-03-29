@@ -154,8 +154,8 @@ public class ProgrammersQuestionLevel2 {
      * https://school.programmers.co.kr/learn/courses/30/lessons/147355
      */
     public int minimumWord() {
-    	String t = "abc";
-    	String p = "def";
+    	String t = "3141592";
+    	String p = "271";
     	return ProgrammersAnswerLevel2.minimumWord(t, p);
     }
 }
