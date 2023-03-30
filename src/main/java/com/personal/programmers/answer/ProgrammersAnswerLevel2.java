@@ -461,8 +461,27 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int nextNumber(int n) {
-		
-		return 0;
+		int result = n;
+		int binaryCount = changeBinary(n);
+		int maxCount = 0;
+		while(binaryCount != maxCount) {
+			result++;
+			maxCount = changeBinary(result);
+		}
+		return result;
+	}
+
+	private static int changeBinary(int n) {
+		int temp = n;
+		int result = 0;
+		while(temp > 1) {
+			int division = temp % 2;
+			temp = temp / 2;
+			if (division == 1) {
+				result++;
+			}
+		}
+		return result;
 	}
 }
 

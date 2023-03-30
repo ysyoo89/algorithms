@@ -164,7 +164,7 @@ public class ProgrammersQuestionLevel2 {
      * https://school.programmers.co.kr/learn/courses/30/lessons/12911
      */
     public int nextNumber() {
-    	int n = 0;
+    	int n = 78;
     	return ProgrammersAnswerLevel2.nextNumber(n);
     }
 }

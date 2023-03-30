@@ -77,4 +77,10 @@ public class AlgorithmsTest {
     	ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
     	assertEquals(question.discount(), 3);
     }
+    
+    @Test
+    void binary() {
+    	ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+    	assertEquals(question.nextNumber(), 83);
+    }
 }
