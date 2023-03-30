@@ -158,4 +158,13 @@ public class ProgrammersQuestionLevel2 {
     	String p = "271";
     	return ProgrammersAnswerLevel2.minimumWord(t, p);
     }
+    
+    /**
+     * 2진수의 다음 큰수
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12911
+     */
+    public int nextNumber() {
+    	int n = 0;
+    	return ProgrammersAnswerLevel2.nextNumber(n);
+    }
 }

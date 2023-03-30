@@ -459,5 +459,10 @@ public class ProgrammersAnswerLevel2 {
 		
 		return result;
 	}
+
+	public static int nextNumber(int n) {
+		
+		return 0;
+	}
 }
 
