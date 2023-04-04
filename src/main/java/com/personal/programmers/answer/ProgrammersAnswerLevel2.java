@@ -483,5 +483,10 @@ public class ProgrammersAnswerLevel2 {
 		}
 		return result;
 	}
+
+	public static String[] homework(String[][] plans) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 

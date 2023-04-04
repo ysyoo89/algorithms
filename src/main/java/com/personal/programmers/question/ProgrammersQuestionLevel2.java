@@ -167,4 +167,13 @@ public class ProgrammersQuestionLevel2 {
     	int n = 78;
     	return ProgrammersAnswerLevel2.nextNumber(n);
     }
+    
+    /**
+     * 순차적으로 끝나는 과제
+     * https://school.programmers.co.kr/learn/courses/30/lessons/176962
+     */
+    public String[] homework() {
+    	String[][] plans = {{"aaa"}};
+    	return ProgrammersAnswerLevel2.homework(plans);
+    }
 }
