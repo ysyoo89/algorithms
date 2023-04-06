@@ -485,8 +485,8 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static String[] homework(String[][] plans) {
-		// TODO Auto-generated method stub
-		return null;
+		String[] result = {};
+		return result;
 	}
 }
 
