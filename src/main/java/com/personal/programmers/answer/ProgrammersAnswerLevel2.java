@@ -486,6 +486,7 @@ public class ProgrammersAnswerLevel2 {
 
 	public static String[] homework(String[][] plans) {
 		String[] result = {};
+		// 시간 계산을 어떻게 할지 고민이 필요...
 		return result;
 	}
 }
