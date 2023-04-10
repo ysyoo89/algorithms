@@ -173,7 +173,7 @@ public class ProgrammersQuestionLevel2 {
      * https://school.programmers.co.kr/learn/courses/30/lessons/176962
      */
     public String[] homework() {
-    	String[][] plans = {{"aaa"}};
+    	String[][] plans = {{"korean", "11:40", "30"}, {"english", "12:10", "20"}};
     	return ProgrammersAnswerLevel2.homework(plans);
     }
 }

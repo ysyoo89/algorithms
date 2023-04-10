@@ -1,7 +1,8 @@
 package com.personal.programmers.answer;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.Map.Entry;
 
 public class ProgrammersAnswerLevel2 {
 
@@ -485,8 +486,21 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static String[] homework(String[][] plans) {
-		String[] result = {};
-		// 시간 계산을 어떻게 할지 고민이 필요...
+		String[] result = new String[plans.length];
+		Map<String, LocalDateTime> map = new HashMap<>();
+		for (int i = 0; i < plans.length; i++) {
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
+			LocalDateTime time = LocalDateTime.parse(plans[i][1], format);
+			time.plusMinutes(Long.parseLong(plans[i][2]));
+			map.put(plans[i][0], time);
+		}
+		List<String> listKey = new ArrayList<>(map.keySet());
+		Collections.sort(listKey, (val1, val2) -> map.get(val1).compareTo(map.get(val2)));
+		int cnt = 0;
+		for (String key : listKey) {
+			result[cnt] = key;
+			cnt++;
+		}
 		return result;
 	}
 }
