@@ -485,6 +485,7 @@ public class ProgrammersAnswerLevel2 {
 		return result;
 	}
 
+	// 참고 https://www.buggybread.com/2015/03/error-javatimeformatdatetimeparseexcept.html
 	public static String[] homework(String[][] plans) {
 		String[] result = new String[plans.length];
 		Map<String, LocalDateTime> map = new HashMap<>();
