@@ -506,6 +506,7 @@ public class ProgrammersAnswerLevel2 {
 		return result;
 	}
 	
+	// 풀이
 	class Homework {
         String name;
         int start, playtime;
