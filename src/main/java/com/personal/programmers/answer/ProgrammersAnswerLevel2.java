@@ -506,7 +506,7 @@ public class ProgrammersAnswerLevel2 {
 		return result;
 	}
 	
-	// 풀이 해설 필요
+	// 해설
 	class Homework {
         String name;
         int start, playtime;
@@ -515,6 +515,7 @@ public class ProgrammersAnswerLevel2 {
             this.start = parseTime(start);
             this.playtime = Integer.parseInt(playtime);
         }
+        // 시간을 분으로 변경
         private int parseTime(String time){
             String[] t = time.split(":");
             return Integer.parseInt(t[0]) * 60 + Integer.parseInt(t[1]);
