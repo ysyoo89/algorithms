@@ -176,4 +176,13 @@ public class ProgrammersQuestionLevel2 {
     	String[][] plans = {{"korean", "11:40", "30"}, {"english", "12:10", "20"}};
     	return ProgrammersAnswerLevel2.homework(plans);
     }
+    
+    /**
+     * 뒷 큰수 구하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/154539
+     */
+    public int[] nextMaxNumber() {
+    	int[] numbers = {1,4,3};
+    	return ProgrammersAnswerLevel2.nextMaxNumber(numbers);
+    }
 }

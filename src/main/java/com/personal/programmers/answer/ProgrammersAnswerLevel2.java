@@ -554,5 +554,10 @@ public class ProgrammersAnswerLevel2 {
         }
         return answer.toArray(String[]::new);
     }
+
+	public static int[] nextMaxNumber(int[] numbers) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 
