@@ -556,7 +556,7 @@ public class ProgrammersAnswerLevel2 {
     }
 
 	public static int[] nextMaxNumber(int[] numbers) {
-		// TODO Auto-generated method stub
+		// TODO 각 자리에 맞는 큰수를 찾는 알고리즘 구현 필요
 		return null;
 	}
 }
