@@ -556,8 +556,27 @@ public class ProgrammersAnswerLevel2 {
     }
 
 	public static int[] nextMaxNumber(int[] numbers) {
-		// TODO 각 자리에 맞는 큰수를 찾는 알고리즘 구현 필요
-		return null;
+		int totalSize = numbers.length;
+		int[] result = new int[totalSize];
+		
+		for(int i = 0; i < totalSize; i++) {
+			int standard = numbers[i];
+			if (i == totalSize -1) {
+				result[i] = -1;
+				break;
+			}
+			
+			for(int j = i + 1; j < totalSize; j++) {
+				int compared = numbers[j];
+				if (standard < compared) {
+					result[i] = compared;
+					break;
+				} else {
+					result[i] = -1;
+				}
+			}
+		}
+		return result;
 	}
 }
 
