@@ -556,27 +556,24 @@ public class ProgrammersAnswerLevel2 {
     }
 
 	public static int[] nextMaxNumber(int[] numbers) {
-		int totalSize = numbers.length;
-		int[] result = new int[totalSize];
-		
-		for(int i = 0; i < totalSize; i++) {
-			int standard = numbers[i];
-			if (i == totalSize -1) {
-				result[i] = -1;
-				break;
-			}
-			
-			for(int j = i + 1; j < totalSize; j++) {
-				int compared = numbers[j];
-				if (standard < compared) {
-					result[i] = compared;
-					break;
-				} else {
-					result[i] = -1;
-				}
-			}
-		}
-		return result;
+		int[] answer = new int[numbers.length];
+        Arrays.fill(answer, -1);
+        Stack<Integer> s = new Stack<>();
+        s.push(0);
+        for(int i = 1; i < numbers.length; i++){
+            while(!s.isEmpty()){
+                int idx = s.pop();
+                if(numbers[i] > numbers[idx]){ // 뒤가 더 클때
+                    answer[idx] = numbers[i];
+                } else { // 앞이 더 크거나 같을 때
+                    s.push(idx);
+                    break;
+                } 
+            }
+            s.push(i);
+        }
+
+        return answer;
 	}
 }
 
