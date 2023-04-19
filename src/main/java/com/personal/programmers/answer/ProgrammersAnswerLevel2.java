@@ -565,7 +565,7 @@ public class ProgrammersAnswerLevel2 {
                 int idx = s.pop();
                 if(numbers[i] > numbers[idx]){ // 뒤가 더 클때
                     answer[idx] = numbers[i];
-                } else { // 앞이 더 크거나 같을 때
+                } else { // 앞이 더 크거나 같을 때 큰 값이 있는 값은 스택에 계속 담아서 이동
                     s.push(idx);
                     break;
                 } 
