@@ -185,4 +185,13 @@ public class ProgrammersQuestionLevel2 {
     	int[] numbers = {1,4,3};
     	return ProgrammersAnswerLevel2.nextMaxNumber(numbers);
     }
+    
+    /**
+     * 예약 방 개수 구하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/155651
+     */
+    public int bookSystem() {
+    	String[][] book_time = {{"aaa"}};
+    	return ProgrammersAnswerLevel2.bookSystem(book_time);
+    }
 }

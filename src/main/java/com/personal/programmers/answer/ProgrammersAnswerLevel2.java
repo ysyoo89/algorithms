@@ -575,5 +575,10 @@ public class ProgrammersAnswerLevel2 {
 
         return answer;
 	}
+
+	public static int bookSystem(String[][] book_time) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 
