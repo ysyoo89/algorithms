@@ -577,7 +577,7 @@ public class ProgrammersAnswerLevel2 {
 	}
 
 	public static int bookSystem(String[][] book_time) {
-		// TODO Auto-generated method stub
+		// TODO 
 		return 0;
 	}
 }
