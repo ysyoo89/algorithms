@@ -236,4 +236,14 @@ public class ProgrammersQuestion {
     	int n = 3;
     	ProgrammersAnswer.hanoiTower(n);
     }
+
+    /**
+     * 자판 문제
+     * https://school.programmers.co.kr/learn/courses/30/lessons/160586
+     */
+    public int[] keymap() {
+        String[] keymap = {};
+        String[] targets = {};
+        return ProgrammersAnswer.keymap(keymap, targets);
+    }
 }
