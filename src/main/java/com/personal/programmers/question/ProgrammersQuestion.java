@@ -246,4 +246,16 @@ public class ProgrammersQuestion {
         String[] targets = {};
         return ProgrammersAnswer.keymap(keymap, targets);
     }
+
+    /**
+     * 덧칠하기 문제
+     * https://school.programmers.co.kr/learn/courses/30/lessons/161989
+     * @return
+     */
+    public int paint() {
+        int n = 8;
+        int m = 4;
+        int[] section = {2, 4, 6};
+        return ProgrammersAnswer.paint(n, m, section);
+    }
 }

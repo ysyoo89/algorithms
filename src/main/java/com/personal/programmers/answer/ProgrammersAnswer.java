@@ -566,4 +566,8 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static int paint(int n, int m, int[] section) {
+        return 0;
+    }
 }
