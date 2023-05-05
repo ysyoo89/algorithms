@@ -568,6 +568,7 @@ public class ProgrammersAnswer {
     }
 
     public static int paint(int n, int m, int[] section) {
+        //TODO 풀어야함
         return 0;
     }
 }
