@@ -568,7 +568,14 @@ public class ProgrammersAnswer {
     }
 
     public static int paint(int n, int m, int[] section) {
-        //TODO 풀어야함
-        return 0;
+        int result = 0;
+        int max = 0;
+        for (int i = 0; i < section.length; i++) {
+            if (section[i] > max) {
+                result++;
+                max = section[i] + m - 1; // 칠한 공간
+            }
+        }
+        return result;
     }
 }
