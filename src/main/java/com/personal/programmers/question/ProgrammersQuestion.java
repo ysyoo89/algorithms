@@ -2,10 +2,16 @@ package com.personal.programmers.question;
 
 import com.personal.programmers.answer.ProgrammersAnswer;
 import com.personal.programmers.answer.ProgrammersAnswerLevel2;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.text.ParseException;
 import java.util.Scanner;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class ProgrammersQuestion {
 
 
@@ -257,5 +263,16 @@ public class ProgrammersQuestion {
         int m = 4;
         int[] section = {2, 4, 6};
         return ProgrammersAnswer.paint(n, m, section);
+    }
+
+    /**
+     * 달리기 경주
+     * https://school.programmers.co.kr/learn/courses/30/lessons/178871
+     * @return
+     */
+    public String[] race() {
+        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
+        String[] callings = {"kai", "kai", "mine", "mine"};
+        return ProgrammersAnswer.race(players, callings);
     }
 }

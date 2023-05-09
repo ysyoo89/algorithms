@@ -1,11 +1,18 @@
 package com.personal.programmers.answer;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class ProgrammersAnswer {
 
     public static int cardDivide(int[] arrayA, int[] arrayB) {
@@ -576,6 +583,36 @@ public class ProgrammersAnswer {
                 max = section[i] + m - 1; // 칠한 공간
             }
         }
+        return result;
+    }
+
+    public static String[] race(String[] players, String[] callings) {
+//        String[] result = players;
+//        List<String> list = Arrays.asList(players);
+//
+//        for(int i = 0; i < callings.length; i++) {
+//            String temp = callings[i];
+//            int size = list.indexOf(temp);
+//            result[size] = result[size - 1];
+//            result[size - 1] = temp;
+//        }
+//        return result;
+        String[] result = players.clone();
+        Map<String, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < players.length; i++) {
+            map.put(players[i], i);
+        }
+
+        for (int i = 0; i < callings.length; i++) {
+            int rank = map.get(callings[i]);
+            map.put(result[rank], rank -1);
+            map.put(result[rank - 1], rank);
+            String name = callings[i];
+            result[rank] = result[rank -1];
+            result[rank -1] = name;
+        }
+
         return result;
     }
 }
