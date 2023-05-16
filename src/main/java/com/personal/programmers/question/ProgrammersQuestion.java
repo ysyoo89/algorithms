@@ -275,4 +275,14 @@ public class ProgrammersQuestion {
         String[] callings = {"kai", "kai", "mine", "mine"};
         return ProgrammersAnswer.race(players, callings);
     }
+
+    /**
+     * K번째 수 찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42748
+     */
+    public int[] findNumber() {
+        int[] array = {1, 5, 2, 6, 3, 7, 4};
+        int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+        return ProgrammersAnswer.findNumber(array, commands);
+    }
 }
