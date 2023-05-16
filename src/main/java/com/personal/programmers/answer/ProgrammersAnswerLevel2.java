@@ -631,5 +631,9 @@ public class ProgrammersAnswerLevel2 {
         }
         return result.toString();
     }
+
+    public static int hIndex(int[] citations) {
+        return 0;
+    }
 }
 

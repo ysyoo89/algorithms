@@ -203,4 +203,13 @@ public class ProgrammersQuestionLevel2 {
         int[] numbers = {6,10,2};
         return ProgrammersAnswerLevel2.maxNumber(numbers);
     }
+
+    /**
+     * H-Index 찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42747
+     */
+    public int hIndex() {
+        int[] citations = {3,0,6,1,5};
+        return ProgrammersAnswerLevel2.hIndex(citations);
+    }
 }
