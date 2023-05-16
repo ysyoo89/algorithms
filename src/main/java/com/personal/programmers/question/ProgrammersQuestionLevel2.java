@@ -194,4 +194,13 @@ public class ProgrammersQuestionLevel2 {
     	String[][] book_time = {{"aaa"}};
     	return ProgrammersAnswerLevel2.bookSystem(book_time);
     }
+
+    /**
+     * 가장 큰 수
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42746
+     */
+    public String maxNumber() {
+        int[] numbers = {6,10,2};
+        return ProgrammersAnswerLevel2.maxNumber(numbers);
+    }
 }

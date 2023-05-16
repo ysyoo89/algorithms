@@ -505,8 +505,8 @@ public class ProgrammersAnswerLevel2 {
 		}
 		return result;
 	}
-	
-	// 해설
+
+    // 해설
 	class Homework {
         String name;
         int start, playtime;
@@ -607,6 +607,29 @@ public class ProgrammersAnswerLevel2 {
         String[] hhmm = time.split(":");
         int hour = Integer.parseInt(hhmm[0]), min = Integer.parseInt(hhmm[1]);
         return hour * 60 + min;
+    }
+
+    public static String maxNumber(int[] numbers) {
+        StringBuffer result = new StringBuffer();
+        String arrayNumber[] = new String[numbers.length];
+        for(int i = 0; i < numbers.length; i++) {
+            arrayNumber[i] = String.valueOf(numbers[i]);
+        }
+        Arrays.sort(arrayNumber, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return (o2+o1).compareTo(o1+o2);
+            }
+        });
+
+        if (arrayNumber[0].equals("0")) {
+            return "0";
+        } else {
+            for(int i = 0; i < arrayNumber.length; i++) {
+                result.append(arrayNumber[i]);
+            }
+        }
+        return result.toString();
     }
 }
 
