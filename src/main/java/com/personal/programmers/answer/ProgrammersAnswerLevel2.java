@@ -633,6 +633,7 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int hIndex(int[] citations) {
+        //풀이 예정
         return 0;
     }
 }
