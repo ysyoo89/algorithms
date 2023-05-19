@@ -633,8 +633,26 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int hIndex(int[] citations) {
-        //풀이 예정
-        return 0;
+        int result = 0;
+        Arrays.sort(citations);
+        for (int i = 0; i < citations.length; i++) {
+            int count = 0;
+            if (citations[i] == 0) {
+                continue;
+            }
+            for (int j = i; j < citations.length; j++) {
+                if (citations[i] <= citations[j]) {
+                    count++;
+                }
+            }
+            if (count > citations[i]) {
+                count = citations[i];
+            }
+            if (result < count) {
+                result = count;
+            }
+        }
+        return result;
     }
 }
 
