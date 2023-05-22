@@ -634,7 +634,7 @@ public class ProgrammersAnswerLevel2 {
 
     public static int hIndex(int[] citations) {
         int result = 0;
-        Arrays.sort(citations);
+        Arrays.sort(citations); // 정렬
         for (int i = 0; i < citations.length; i++) {
             int count = 0;
             if (citations[i] == 0) {
