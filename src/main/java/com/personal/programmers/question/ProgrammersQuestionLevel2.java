@@ -212,4 +212,13 @@ public class ProgrammersQuestionLevel2 {
         int[] citations = {3,0,6,1,5};
         return ProgrammersAnswerLevel2.hIndex(citations);
     }
+
+    /**
+     * 피보나치 수열
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12945
+     */
+    public int fibo() {
+        int n = 0;
+        return ProgrammersAnswerLevel2.fibo(n);
+    }
 }
