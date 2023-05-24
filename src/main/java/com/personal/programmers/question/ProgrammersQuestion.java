@@ -285,4 +285,13 @@ public class ProgrammersQuestion {
         int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
         return ProgrammersAnswer.findNumber(array, commands);
     }
+
+    /**
+     * 문자열 다루기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12918
+     */
+    public boolean checkStr() {
+        String s = "a123";
+        return ProgrammersAnswer.checkStr(s);
+    }
 }

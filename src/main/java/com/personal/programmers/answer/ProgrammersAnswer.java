@@ -629,4 +629,19 @@ public class ProgrammersAnswer {
         }
         return answer;
     }
+
+    public static boolean checkStr(String s) {
+        boolean result = false;
+        char[] temp = s.toCharArray();
+        if (temp.length == 4 || temp.length == 6) {
+            result = true;
+        }
+        for(int i = 0; i < temp.length; i++) {
+            if (temp[i] > 57 || temp[i] < 48) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
 }
