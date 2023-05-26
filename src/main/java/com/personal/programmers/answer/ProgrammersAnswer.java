@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -643,5 +642,26 @@ public class ProgrammersAnswer {
             }
         }
         return result;
+    }
+
+    public static String stringChange(String s) {
+        String[] splitStr = s.split(" ", -1);
+        String[] result = new String[splitStr.length];
+        int count = 0;
+        for (String str : splitStr) {
+            String temp = "";
+            for (int i = 0; i < str.length(); i++) {
+                char ch = str.charAt(i);
+                if (i % 2 == 0) {
+                    ch = Character.toUpperCase(ch);
+                } else {
+                    ch = Character.toLowerCase(ch);
+                }
+                temp += ch;
+            }
+            result[count] = temp;
+            count++;
+        }
+        return String.join(" ", result);
     }
 }

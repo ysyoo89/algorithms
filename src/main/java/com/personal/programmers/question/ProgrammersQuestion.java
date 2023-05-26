@@ -294,4 +294,9 @@ public class ProgrammersQuestion {
         String s = "a123";
         return ProgrammersAnswer.checkStr(s);
     }
+
+    public String stringChange() {
+        String s = "try hello world";
+        return ProgrammersAnswer.stringChange(s);
+    }
 }
