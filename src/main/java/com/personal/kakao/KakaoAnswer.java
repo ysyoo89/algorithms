@@ -6,11 +6,11 @@ import java.util.StringTokenizer;
 
 public class KakaoAnswer {
     public static int kakaoQuestion1(int n, int k) {
-        List<String> nums = init(n, k);
+        StringTokenizer nums = init(n, k);
         int result = 0;
 
-        for (String num : nums) {
-            if (isPrime(Long.parseLong(num))) {
+        while (nums.hasMoreTokens()) {
+            if (isPrime(Long.parseLong(nums.nextToken()))) {
                 result++;
             }
         }
@@ -29,14 +29,14 @@ public class KakaoAnswer {
         return true;
     }
 
-    private static List<String> init(int n, int k) {
+    private static StringTokenizer init(int n, int k) {
         //StringTokenizer tokenizer = new StringTokenizer(binary(n, k), "0");
         StringTokenizer tokenizer = new StringTokenizer(Integer.toString(n, k), "0");
-        List<String> nums = new ArrayList<>();
-        while (tokenizer.hasMoreTokens()) {
-            nums.add(tokenizer.nextToken());
-        }
-        return nums;
+//        List<String> nums = new ArrayList<>();
+//        while (tokenizer.hasMoreTokens()) {
+//            nums.add(tokenizer.nextToken());
+//        }
+        return tokenizer;
     }
 
     private static String binary(int n, int k) {
