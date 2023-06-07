@@ -752,4 +752,21 @@ public class ProgrammersAnswer {
         }
         return true;
     }
+
+    public static int[] wallpaper(String[] wallpaper) {
+        int[] result = new int[4];
+        result[0] = Integer.MAX_VALUE;
+        result[1] = Integer.MAX_VALUE;
+        result[2] = Integer.MIN_VALUE;
+        result[3] = Integer.MIN_VALUE;
+        for (int i = 0; i < wallpaper.length; i++) {
+            if (wallpaper[i].contains("#")) {
+                result[0] = Math.min(result[0], i);
+                result[1] = Math.min(result[1], wallpaper[i].indexOf("#"));
+                result[2] = Math.max(result[2], i + 1);
+                result[3] = Math.max(result[3], wallpaper[i].lastIndexOf("#") + 1);
+            }
+        }
+        return result;
+    }
 }

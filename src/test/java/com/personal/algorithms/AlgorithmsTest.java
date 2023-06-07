@@ -89,7 +89,7 @@ public class AlgorithmsTest {
     @Test
     public void robot() {
         ProgrammersQuestion question = new ProgrammersQuestion();
-        int[] result = {1, 1};
-        assertThat(question.robot()).isEqualTo(result);
+
+        assertThat(question.robot()).isEqualTo(new int[] {1, 1});
     }
 }

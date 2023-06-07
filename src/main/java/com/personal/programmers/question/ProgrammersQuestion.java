@@ -320,4 +320,13 @@ public class ProgrammersQuestion {
         String[] routes = {"E 1", "S 1"};
         return ProgrammersAnswer.robot(park, routes);
     }
+
+    /**
+     * 바탕화면 정리
+     * https://school.programmers.co.kr/learn/courses/30/lessons/161990
+     */
+    public int[] wallpaper() {
+        String[] wallpaper = {};
+        return ProgrammersAnswer.wallpaper(wallpaper);
+    }
 }
