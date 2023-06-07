@@ -299,4 +299,25 @@ public class ProgrammersQuestion {
         String s = "try hello world";
         return ProgrammersAnswer.stringChange(s);
     }
+
+    /**
+     * 추억 점수 구하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/176963
+     */
+    public int[] memory() {
+        String[] name = {};
+        int[] yearning = {};
+        String[][] photo = {{}};
+        return ProgrammersAnswer.memory(name, yearning, photo);
+    }
+
+    /**
+     * 자동 로봇 움직이기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/172928
+     */
+    public int[] robot() {
+        String[] park = {"OXXO", "XSXO", "XXXX"};
+        String[] routes = {"E 1", "S 1"};
+        return ProgrammersAnswer.robot(park, routes);
+    }
 }

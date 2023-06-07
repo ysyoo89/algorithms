@@ -664,4 +664,92 @@ public class ProgrammersAnswer {
         }
         return String.join(" ", result);
     }
+
+    public static int[] memory(String[] name, int[] yearning, String[][] photo) {
+        Map<String, Integer> score = new HashMap<>();
+        int[] result = new int[photo.length];
+        for (int i = 0; i < name.length; i++) {
+            score.put(name[i], yearning[i]);
+        }
+        for (int i = 0; i < photo.length; i++) {
+            int totalScore = 0;
+            for (int j = 0; j < photo[i].length; j++) {
+                if (score.containsKey(photo[i][j])) {
+                    totalScore += score.get(photo[i][j]);
+                }
+            }
+            result[i] = totalScore;
+        }
+        return result;
+    }
+
+    public static int[] robot(String[] park, String[] routes) {
+        int[] result = new int[2];
+        int w = park[0].length() - 1;
+        int h = park.length - 1;
+        Map<String, Integer> locationX = new HashMap<>();
+        Map<String, Integer> locationY = new HashMap<>();
+        locationX.put("E", 1);
+        locationX.put("W", -1);
+        locationY.put("N", -1);
+        locationY.put("S", 1);
+
+        for (int i = 0; i < park.length; i++) {
+            if (park[i].contains("S")) {
+                result[0] = i;
+                result[1] = park[i].indexOf("S");
+                break;
+            }
+        }
+
+        for (int i = 0; i < routes.length; i++) {
+            String[] temp = routes[i].split(" ");
+            if (locationX.containsKey(temp[0])) {
+                int movePoint = Integer.parseInt(temp[1]) * locationX.get(temp[0]);
+                if (isRange(w, result[1] + movePoint) && isPossibleMove(park, result, "W", movePoint)) {
+                    result[1] += movePoint;
+                }
+            } else {
+                int movePoint = Integer.parseInt(temp[1]) * locationY.get(temp[0]);
+                if (isRange(h, result[0] + movePoint) && isPossibleMove(park, result, "H", movePoint)) {
+                    result[0] += movePoint;
+                }
+            }
+        }
+        return result;
+    }
+
+    private static boolean isRange(int w, int movePoint) {
+        if (movePoint < 0 || w < movePoint) {
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isPossibleMove(String[] park, int[] now, String move, int movePoint) {
+        if ("W".equals(move)) {
+            for (int i = now[1]; i <= now[1] + movePoint; i++) {
+                if ('X' == park[now[0]].charAt(i)) {
+                    return false;
+                }
+            }
+            for (int i = now[1]; i >= now[1] + movePoint; i--) {
+                if ('X' == park[now[0]].charAt(i)) {
+                    return false;
+                }
+            }
+        } else {
+            for (int i = now[0]; i <= now[0] + movePoint; i++) {
+                if ('X' == park[i].charAt(now[1])) {
+                    return false;
+                }
+            }
+            for (int i = now[0]; i >= now[0] + movePoint; i--) {
+                if ('X' == park[i].charAt(now[1])) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

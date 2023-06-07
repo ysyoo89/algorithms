@@ -2,6 +2,7 @@ package com.personal.algorithms;
 
 import com.personal.programmers.answer.ProgrammersAnswer;
 import com.personal.programmers.answer.ProgrammersAnswerLevel2;
+import com.personal.programmers.question.ProgrammersQuestion;
 import com.personal.programmers.question.ProgrammersQuestionLevel2;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 @SpringBootTest
@@ -82,5 +84,12 @@ public class AlgorithmsTest {
     void binary() {
     	ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
     	assertEquals(question.nextNumber(), 83);
+    }
+
+    @Test
+    public void robot() {
+        ProgrammersQuestion question = new ProgrammersQuestion();
+        int[] result = {1, 1};
+        assertThat(question.robot()).isEqualTo(result);
     }
 }
