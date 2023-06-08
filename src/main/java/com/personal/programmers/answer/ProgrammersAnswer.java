@@ -781,4 +781,31 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static String decoder(String s, String skip, int index) {
+        StringBuilder result = new StringBuilder();
+        char[] charArray = skip.toCharArray();
+        //97 ~ 122
+        for (char ch : s.toCharArray()) {
+            result.append(changeChar(ch, charArray, index));
+        }
+        return result.toString();
+    }
+
+    private static char changeChar(char ch, char[] charArray, int index) {
+        int temp = ch;
+        for (int i = 1; i <= index; i++) {
+            for (char chr : charArray) {
+                if (temp == (int) chr) {
+                    temp++;
+                }
+            }
+            temp++;
+            if (temp > 122) {
+                temp = (temp - 122) + 96;
+            }
+        }
+
+        return (char) temp;
+    }
 }

@@ -341,4 +341,11 @@ public class ProgrammersQuestion {
         String[] goal = {};
         return ProgrammersAnswer.chooseWords(cards1, cards2, goal);
     }
+
+    public String decoder() {
+        String s = "";
+        String skip = "";
+        int index = 0;
+        return ProgrammersAnswer.decoder(s, skip, index);
+    }
 }
