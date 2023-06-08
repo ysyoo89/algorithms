@@ -687,12 +687,7 @@ public class ProgrammersAnswer {
         int[] result = new int[2];
         int w = park[0].length() - 1;
         int h = park.length - 1;
-        Map<String, Integer> locationX = new HashMap<>();
-        Map<String, Integer> locationY = new HashMap<>();
-        locationX.put("E", 1);
-        locationX.put("W", -1);
-        locationY.put("N", -1);
-        locationY.put("S", 1);
+        int[][] arrays = {{-1,0},{1,0},{0,-1},{0,1}};
 
         for (int i = 0; i < park.length; i++) {
             if (park[i].contains("S")) {
@@ -704,53 +699,54 @@ public class ProgrammersAnswer {
 
         for (int i = 0; i < routes.length; i++) {
             String[] temp = routes[i].split(" ");
-            if (locationX.containsKey(temp[0])) {
-                int movePoint = Integer.parseInt(temp[1]) * locationX.get(temp[0]);
-                if (isRange(w, result[1] + movePoint) && isPossibleMove(park, result, "W", movePoint)) {
-                    result[1] += movePoint;
-                }
-            } else {
-                int movePoint = Integer.parseInt(temp[1]) * locationY.get(temp[0]);
-                if (isRange(h, result[0] + movePoint) && isPossibleMove(park, result, "H", movePoint)) {
-                    result[0] += movePoint;
-                }
+            int distance = Integer.parseInt(temp[1]);
+            int index = getDirectionIndex(temp[0]);
+
+            if (isWalk(park, result, arrays[index], distance)) {
+                result[0] += distance*arrays[index][0];
+                result[1] += distance*arrays[index][1];
             }
         }
         return result;
     }
 
-    private static boolean isRange(int w, int movePoint) {
-        if (movePoint < 0 || w < movePoint) {
+    private static boolean isWalk(String[] park, int[] result, int[] arrays, int move) {
+        int x = result[0];
+        int y = result[1];
+        for(int i = 0; i< move; i++){
+            x+= arrays[0];
+            y+= arrays[1];
+
+            if(isRange(park[0].length()-1, y) || isRange(park.length-1, x) || park[x].charAt(y)=='X'){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isRange(int basic, int movePoint) {
+        if (movePoint < 0 || basic < movePoint) {
             return false;
         }
         return true;
     }
 
-    private static boolean isPossibleMove(String[] park, int[] now, String move, int movePoint) {
-        if ("W".equals(move)) {
-            for (int i = now[1]; i <= now[1] + movePoint; i++) {
-                if ('X' == park[now[0]].charAt(i)) {
-                    return false;
-                }
-            }
-            for (int i = now[1]; i >= now[1] + movePoint; i--) {
-                if ('X' == park[now[0]].charAt(i)) {
-                    return false;
-                }
-            }
-        } else {
-            for (int i = now[0]; i <= now[0] + movePoint; i++) {
-                if ('X' == park[i].charAt(now[1])) {
-                    return false;
-                }
-            }
-            for (int i = now[0]; i >= now[0] + movePoint; i--) {
-                if ('X' == park[i].charAt(now[1])) {
-                    return false;
-                }
-            }
+    private static int getDirectionIndex(String direction) {
+        int index = 0;
+        switch (direction){
+            case "N":
+                break;
+            case "S":
+                index = 1;
+                break;
+            case "W":
+                index = 2;
+                break;
+            case "E":
+                index = 3;
+                break;
         }
-        return true;
+        return index;
     }
 
     public static int[] wallpaper(String[] wallpaper) {
