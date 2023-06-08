@@ -765,4 +765,20 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static String chooseWords(String[] cards1, String[] cards2, String[] goal) {
+        String result = "Yes";
+        List<String> card1 = new ArrayList<>(Arrays.asList(cards1));
+        List<String> card2 = new ArrayList<>(Arrays.asList(cards2));
+        for (String str : goal) {
+            if (card1.size() > 0 && card1.get(0).equals(str)) {
+                card1.remove(0);
+            } else if (card2.size() > 0 && card2.get(0).equals(str)) {
+                card2.remove(0);
+            } else {
+                return "No";
+            }
+        }
+        return result;
+    }
 }

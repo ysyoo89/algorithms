@@ -329,4 +329,16 @@ public class ProgrammersQuestion {
         String[] wallpaper = {};
         return ProgrammersAnswer.wallpaper(wallpaper);
     }
+
+    /**
+     * 카드 단어 선택하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/159994
+     * @return
+     */
+    public String chooseWords() {
+        String[] cards1 = {};
+        String[] cards2 = {};
+        String[] goal = {};
+        return ProgrammersAnswer.chooseWords(cards1, cards2, goal);
+    }
 }
