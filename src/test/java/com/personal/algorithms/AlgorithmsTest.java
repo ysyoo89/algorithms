@@ -92,4 +92,10 @@ public class AlgorithmsTest {
 
         assertThat(question.robot()).isEqualTo(new int[] {1, 1});
     }
+
+    @Test
+    public void decoder() {
+        ProgrammersQuestion question = new ProgrammersQuestion();
+        assertThat(question.decoder()).isEqualTo("bcdef");
+    }
 }

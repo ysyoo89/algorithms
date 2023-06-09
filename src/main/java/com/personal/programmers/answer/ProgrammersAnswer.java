@@ -783,29 +783,20 @@ public class ProgrammersAnswer {
     }
 
     public static String decoder(String s, String skip, int index) {
-        StringBuilder result = new StringBuilder();
-        char[] charArray = skip.toCharArray();
-        //97 ~ 122
-        for (char ch : s.toCharArray()) {
-            result.append(changeChar(ch, charArray, index));
-        }
-        return result.toString();
-    }
+        StringBuilder answer = new StringBuilder();
 
-    private static char changeChar(char ch, char[] charArray, int index) {
-        int temp = ch;
-        for (int i = 1; i <= index; i++) {
-            for (char chr : charArray) {
-                if (temp == (int) chr) {
-                    temp++;
+        for (char letter : s.toCharArray()) {
+            char temp = letter;
+            int idx = 0;
+            while (idx < index) {
+                temp = temp == 'z' ? 'a' : (char) (temp + 1);
+                if (!skip.contains(String.valueOf(temp))) {
+                    idx += 1;
                 }
             }
-            temp++;
-            if (temp > 122) {
-                temp = (temp - 122) + 96;
-            }
+            answer.append(temp);
         }
 
-        return (char) temp;
+        return answer.toString();
     }
 }

@@ -342,10 +342,15 @@ public class ProgrammersQuestion {
         return ProgrammersAnswer.chooseWords(cards1, cards2, goal);
     }
 
+    /**
+     * 둘만의 암호
+     * https://school.programmers.co.kr/learn/courses/30/lessons/155652
+     * @return
+     */
     public String decoder() {
-        String s = "";
-        String skip = "";
-        int index = 0;
+        String s = "ybcde";
+        String skip = "az";
+        int index = 1;
         return ProgrammersAnswer.decoder(s, skip, index);
     }
 }
