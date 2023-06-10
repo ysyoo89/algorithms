@@ -353,4 +353,13 @@ public class ProgrammersQuestion {
         int index = 1;
         return ProgrammersAnswer.decoder(s, skip, index);
     }
+
+    /**
+     * 가까운 문자 찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/142086
+     */
+    public int[] findWord() {
+        String s = "";
+        return ProgrammersAnswer.findWord(s);
+    }
 }
