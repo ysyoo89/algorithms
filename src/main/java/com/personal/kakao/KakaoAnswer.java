@@ -1,8 +1,8 @@
 package com.personal.kakao;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class KakaoAnswer {
     public static int kakaoQuestion1(int n, int k) {
@@ -46,5 +46,33 @@ public class KakaoAnswer {
             n = n / k;
         }
         return builder.reverse().toString();
+    }
+
+    public static int[] kakaoQuestion2(String today, String[] terms, String[] privacies) {
+        List<Integer> list = new ArrayList<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
+        LocalDate time = LocalDate.from(LocalDate.parse(today, formatter).atStartOfDay());
+        Map<String, Integer> termMap = new HashMap<>();
+        for (String term : terms) {
+            String[] temp = term.split(" ");
+            termMap.put(temp[0], Integer.parseInt(temp[1]));
+        }
+
+        int count = 1;
+        for (String privacy: privacies) {
+            String[] temp = privacy.split(" ");
+            LocalDate privacyTime = LocalDate.from(LocalDate.parse(temp[0], formatter).atStartOfDay());
+            LocalDate tempToday = privacyTime.plusMonths(termMap.get(temp[1]));
+            if (time.isAfter(tempToday) || time.isEqual(tempToday)) {
+                list.add(count);
+            }
+            count++;
+        }
+
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
     }
 }

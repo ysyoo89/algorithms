@@ -12,4 +12,16 @@ public class KakaoQuestion {
         int k = 3;
         return KakaoAnswer.kakaoQuestion1(n, k);
     }
+
+    /**
+     * 개인정보 수집 유효기간
+     * https://school.programmers.co.kr/learn/courses/30/lessons/150370
+     * @return
+     */
+    public int[] kakaoQuestion2() {
+        String today = "";
+        String[] terms = {};
+        String[] privacies = {};
+        return KakaoAnswer.kakaoQuestion2(today, terms, privacies);
+    }
 }
