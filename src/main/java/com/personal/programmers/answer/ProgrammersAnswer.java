@@ -801,23 +801,13 @@ public class ProgrammersAnswer {
     }
 
     public static int[] findWord(String s) {
-        int[] result = new int[s.length()];
-        char[] charArray = s.toCharArray();
-        Map<Character, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < s.length(); i++) {
-            if (map.containsKey(charArray[i]) && map.get(charArray[i]) > 0) {
-                int step = i - map.get(charArray[i]);
-                result[i] = step;
-                map.put(charArray[i], step * -1);
-            } else if (map.containsKey(charArray[i]) && map.get(charArray[i]) < 0) {
-                result[i] = map.get(charArray[i]) * -1;
-            } else {
-                map.put(charArray[i], i);
-                result[i] = -1;
-            }
+        int[] answer = new int[s.length()];
+        HashMap<Character,Integer> map = new HashMap<>();
+        for(int i=0; i<s.length();i++){
+            char ch = s.charAt(i);
+            answer[i] = i-map.getOrDefault(ch,i+1);
+            map.put(ch,i);
         }
-
-        return result;
+        return answer;
     }
 }
