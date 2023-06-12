@@ -810,4 +810,41 @@ public class ProgrammersAnswer {
         }
         return answer;
     }
+
+    public static int straightWords(String s) {
+        int result = 0;
+        char tempChar = s.charAt(0);
+        char constChar = 'A';
+        boolean setChar = true;
+        Map<Character, Integer> map = new HashMap<>();
+        map.put(tempChar, 1);
+        map.put(constChar, 0);
+        for (int i = 1; i < s.length(); i++) {
+            if (!setChar) {
+                tempChar = s.charAt(i);
+                map.put(tempChar, 1);
+                map.put(constChar, 0);
+                setChar = true;
+                continue;
+            }
+
+            if (map.containsKey(s.charAt(i)) && setChar) {
+                map.put(tempChar, map.get(tempChar) + 1);
+            } else {
+                map.put(constChar, map.get(constChar) + 1);
+            }
+
+            if (map.get(tempChar) == map.get(constChar)) {
+                result++;
+                setChar = false;
+                map.clear();
+            }
+        }
+
+        if (map.size() > 0 ) {
+            result++;
+        }
+
+        return result;
+    }
 }
