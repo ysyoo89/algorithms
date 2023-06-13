@@ -371,4 +371,14 @@ public class ProgrammersQuestion {
         String s = "";
         return ProgrammersAnswer.straightWords(s);
     }
+
+    /**
+     * 숫자 짝궁
+     * https://school.programmers.co.kr/learn/courses/30/lessons/131128
+     */
+    public String numberPartner() {
+        String X = "";
+        String Y = "";
+        return ProgrammersAnswer.numberPartner(X, Y);
+    }
 }

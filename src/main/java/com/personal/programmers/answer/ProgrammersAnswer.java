@@ -840,4 +840,33 @@ public class ProgrammersAnswer {
 
         return answer;
     }
+
+    public static String numberPartner(String x, String y) {
+        Map<Character, Integer> xMap = new HashMap<>();
+        Map<Character, Integer> yMap = new HashMap<>();
+        String tempStr = "";
+
+        for (char chr : x.toCharArray()) {
+            xMap.put(chr, xMap.getOrDefault(chr, 0) + 1);
+        }
+
+        for (char chr : y.toCharArray()) {
+            yMap.put(chr, yMap.getOrDefault(chr, 0) + 1);
+        }
+
+        for (int i = 0; i < x.length(); i++) {
+            char temp = x.charAt(i);
+            int min = 0;
+            if (yMap.containsKey(temp)) {
+                min = Math.min(xMap.get(temp), yMap.get(temp));
+            }
+            for (int j = 0; j < min; j++) {
+                tempStr += temp;
+            }
+        }
+        char[] sortChar = tempStr.toCharArray();
+        Arrays.sort(sortChar);
+
+        return new StringBuilder(new String(sortChar)).toString();
+    }
 }
