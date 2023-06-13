@@ -812,39 +812,32 @@ public class ProgrammersAnswer {
     }
 
     public static int straightWords(String s) {
-        int result = 0;
-        char tempChar = s.charAt(0);
-        char constChar = 'A';
-        boolean setChar = true;
-        Map<Character, Integer> map = new HashMap<>();
-        map.put(tempChar, 1);
-        map.put(constChar, 0);
+        int answer = 0;
+        char x = s.charAt(0);
+        int mainCount = 1;
+        int subCount = 0;
+
         for (int i = 1; i < s.length(); i++) {
-            if (!setChar) {
-                tempChar = s.charAt(i);
-                map.put(tempChar, 1);
-                map.put(constChar, 0);
-                setChar = true;
+            if (x == ' ') {
+                x = s.charAt(i);
                 continue;
             }
-
-            if (map.containsKey(s.charAt(i)) && setChar) {
-                map.put(tempChar, map.get(tempChar) + 1);
-            } else {
-                map.put(constChar, map.get(constChar) + 1);
+            if (x == s.charAt(i)) {
+                mainCount++;
+            }else{
+                subCount++;
             }
-
-            if (map.get(tempChar) == map.get(constChar)) {
-                result++;
-                setChar = false;
-                map.clear();
+            if (mainCount == subCount) {
+                answer++;
+                x = ' ';
+                mainCount = 1;
+                subCount = 0;
             }
         }
-
-        if (map.size() > 0 ) {
-            result++;
+        if (x != ' ') {
+            answer++;
         }
 
-        return result;
+        return answer;
     }
 }
