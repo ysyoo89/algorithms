@@ -844,7 +844,7 @@ public class ProgrammersAnswer {
     public static String numberPartner(String x, String y) {
         Map<Character, Integer> xMap = new HashMap<>();
         Map<Character, Integer> yMap = new HashMap<>();
-        String tempStr = "";
+        StringBuilder tempStr = new StringBuilder();
 
         for (char chr : x.toCharArray()) {
             xMap.put(chr, xMap.getOrDefault(chr, 0) + 1);
@@ -859,14 +859,23 @@ public class ProgrammersAnswer {
             int min = 0;
             if (yMap.containsKey(temp)) {
                 min = Math.min(xMap.get(temp), yMap.get(temp));
+                xMap.put(temp, 0);
+                yMap.put(temp, 0);
             }
             for (int j = 0; j < min; j++) {
-                tempStr += temp;
+                tempStr.append(temp);
             }
         }
-        char[] sortChar = tempStr.toCharArray();
+        char[] sortChar = tempStr.toString().toCharArray();
         Arrays.sort(sortChar);
+        String result = new StringBuilder(new String(sortChar)).reverse().toString();
+        if (result.equals("")) {
+            result = "-1";
+        }
+        if (result.charAt(0) == '0') {
+            result = "0";
+        }
 
-        return new StringBuilder(new String(sortChar)).toString();
+        return result;
     }
 }
