@@ -75,4 +75,33 @@ public class KakaoAnswer {
         }
         return result;
     }
+
+    public static String kakaoQuestion3(String[] survey, int[] choices) {
+        int[] point = {0, 3, 2, 1, 0, 1, 2, 3};
+        Map<Character, Integer> totalMbti = new HashMap<>();
+        totalMbti.put('R', 0);
+        totalMbti.put('T', 0);
+        totalMbti.put('C', 0);
+        totalMbti.put('F', 0);
+        totalMbti.put('J', 0);
+        totalMbti.put('M', 0);
+        totalMbti.put('A', 0);
+        totalMbti.put('N', 0);
+
+        for (int i = 0; i < survey.length; i++) {
+            if (choices[i] < 4) {
+                totalMbti.put(survey[i].charAt(0), totalMbti.get(survey[i].charAt(0)) + point[choices[i]]);
+            } else if (choices[i] > 4) {
+                totalMbti.put(survey[i].charAt(1), totalMbti.get(survey[i].charAt(1)) + point[choices[i]]);
+            }
+        }
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(totalMbti.get('R') >= totalMbti.get('T') ? 'R' : 'T');
+        builder.append(totalMbti.get('C') >= totalMbti.get('F') ? 'C' : 'F');
+        builder.append(totalMbti.get('J') >= totalMbti.get('M') ? 'J' : 'M');
+        builder.append(totalMbti.get('A') >= totalMbti.get('N') ? 'A' : 'N');
+
+        return builder.toString();
+    }
 }

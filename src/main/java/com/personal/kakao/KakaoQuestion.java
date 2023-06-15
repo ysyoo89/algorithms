@@ -24,4 +24,14 @@ public class KakaoQuestion {
         String[] privacies = {};
         return KakaoAnswer.kakaoQuestion2(today, terms, privacies);
     }
+
+    /**
+     * 성격 검사
+     * https://school.programmers.co.kr/learn/courses/30/lessons/118666
+     */
+    public String kakaoQuestion3() {
+        String[] survey = {};
+        int[] choices = {};
+        return KakaoAnswer.kakaoQuestion3(survey, choices);
+    }
 }
