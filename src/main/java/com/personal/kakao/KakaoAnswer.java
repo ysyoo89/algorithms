@@ -104,4 +104,33 @@ public class KakaoAnswer {
 
         return builder.toString();
     }
+
+    public static int[] kakaoQuestion4(String[] id_list, String[] report, int k) {
+        int[] result = new int[id_list.length];
+        Map<String, Integer> reportCount = new HashMap<>();
+        Map<String, HashSet<String>> reportHistory = new HashMap<>();
+        for (int i = 0; i < id_list.length; i++) {
+            reportCount.put(id_list[i], i);
+        }
+
+        for (String reportId : report) {
+            String[] temp = reportId.split(" ");
+            HashSet<String> set = reportHistory.getOrDefault(temp[1], new HashSet<>());
+            set.add(temp[0]);
+            reportHistory.put(temp[1], set);
+        }
+
+        for (Map.Entry<String, HashSet<String>> entry : reportHistory.entrySet()) {
+            HashSet<String> reportIds = entry.getValue();
+            if (reportIds.size() >= k) {
+                Iterator<String> iterator = reportIds.iterator();
+                while (iterator.hasNext()) {
+                    String id = iterator.next();
+                    result[reportCount.get(id)]++;
+                }
+            }
+        }
+
+        return result;
+    }
 }

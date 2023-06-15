@@ -34,4 +34,15 @@ public class KakaoQuestion {
         int[] choices = {};
         return KakaoAnswer.kakaoQuestion3(survey, choices);
     }
+
+    /**
+     * 신고 결과 받기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/92334
+     */
+    public int[] kakaoQuestion4() {
+        String[] id_list = {};
+        String[] report = {};
+        int k = 2;
+        return KakaoAnswer.kakaoQuestion4(id_list, report, k);
+    }
 }
