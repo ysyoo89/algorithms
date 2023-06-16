@@ -878,4 +878,8 @@ public class ProgrammersAnswer {
 
         return result;
     }
+
+    public static int smallNumber(int n) {
+        return 0;
+    }
 }

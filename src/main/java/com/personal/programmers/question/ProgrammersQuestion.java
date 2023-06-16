@@ -381,4 +381,13 @@ public class ProgrammersQuestion {
         String Y = "";
         return ProgrammersAnswer.numberPartner(X, Y);
     }
+
+    /**
+     * 1이 남은 작은 수 찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/87389
+     */
+    public int smallNumber() {
+        int n = 11;
+        return ProgrammersAnswer.smallNumber(n);
+    }
 }
