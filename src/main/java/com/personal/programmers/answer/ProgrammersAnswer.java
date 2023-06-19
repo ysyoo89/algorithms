@@ -881,6 +881,13 @@ public class ProgrammersAnswer {
 
     public static int smallNumber(int n) {
         int stan = n - 1;
-        return 0;
+        int result = stan;
+        for (int i = 2; i <= (int)Math.sqrt(stan); i++) {
+            if (stan % i == 0) {
+                result = i;
+                break;
+            }
+        }
+        return result;
     }
 }
