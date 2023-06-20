@@ -890,4 +890,8 @@ public class ProgrammersAnswer {
         }
         return result;
     }
+
+    public static int plusNumber(int[] numbers) {
+        return 0;
+    }
 }

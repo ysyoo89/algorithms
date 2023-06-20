@@ -390,4 +390,13 @@ public class ProgrammersQuestion {
         int n = 11;
         return ProgrammersAnswer.smallNumber(n);
     }
+
+    /**
+     * 없는 숫자 더하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/86051
+     */
+    public int plusNumber() {
+        int[] numbers = {};
+        return ProgrammersAnswer.plusNumber(numbers);
+    }
 }
