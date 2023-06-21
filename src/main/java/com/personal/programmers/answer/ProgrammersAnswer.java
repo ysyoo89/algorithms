@@ -892,6 +892,11 @@ public class ProgrammersAnswer {
     }
 
     public static int plusNumber(int[] numbers) {
-        return 0;
+        int stan = 45;
+        int result = 0;
+        for (int number : numbers) {
+            result += number;
+        }
+        return stan - result;
     }
 }
