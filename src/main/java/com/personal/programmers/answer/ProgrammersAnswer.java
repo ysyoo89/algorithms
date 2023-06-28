@@ -898,4 +898,14 @@ public class ProgrammersAnswer {
         }
         return stan;
     }
+
+    public static long rides(int price, int money, int count) {
+        long ridesPrice = 0L;
+        for (int i = 1; i <= count; i++) {
+            ridesPrice += price * i;
+        }
+        long result = ridesPrice - money;
+
+        return result < 0 ? 0 : result;
+    }
 }

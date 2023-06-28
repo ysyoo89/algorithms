@@ -399,4 +399,15 @@ public class ProgrammersQuestion {
         int[] numbers = {};
         return ProgrammersAnswer.plusNumber(numbers);
     }
+
+    /**
+     * 놀이기구 금액
+     * https://school.programmers.co.kr/learn/courses/30/lessons/82612
+     */
+    public long rides() {
+        int price = 3;
+        int money = 20;
+        int count = 4;
+        return ProgrammersAnswer.rides(price, money, count);
+    }
 }
