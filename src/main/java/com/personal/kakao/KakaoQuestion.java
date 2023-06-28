@@ -45,4 +45,13 @@ public class KakaoQuestion {
         int k = 2;
         return KakaoAnswer.kakaoQuestion4(id_list, report, k);
     }
+
+    /**
+     * 숫자 문자열과 영어
+     * https://school.programmers.co.kr/learn/courses/30/lessons/81301
+     */
+    public int kakaoQuestion5() {
+        String s = "";
+        return KakaoAnswer.kakaoQuestion5(s);
+    }
 }
