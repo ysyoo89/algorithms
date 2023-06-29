@@ -517,6 +517,25 @@ public class ProgrammersAnswerLevel2 {
         return result[n];
     }
 
+    public static int defense(int[][] targets) {
+        int result = 0;
+
+        Arrays.sort(targets, (o1, o2) -> (o1[1] - o2[1]));
+
+        int end = targets[0][1];
+
+        for(int[] target : targets) {
+            int t_start = target[0];
+            int t_end = target[1];
+
+            if (end <= t_start) {
+                end = t_end;
+                result++;
+            }
+        }
+        return result + 1;
+    }
+
     // 해설
 	class Homework {
         String name;

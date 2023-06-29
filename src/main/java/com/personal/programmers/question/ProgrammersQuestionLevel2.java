@@ -221,4 +221,13 @@ public class ProgrammersQuestionLevel2 {
         int n = 0;
         return ProgrammersAnswerLevel2.fibo(n);
     }
+
+    /**
+     * 요격하기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/181188
+     */
+    public int defense() {
+        int[][] targets = {{4,5},{4,8},{10,14},{11,13},{5,12},{3,7},{1,4}};
+        return ProgrammersAnswerLevel2.defense(targets);
+    }
 }
