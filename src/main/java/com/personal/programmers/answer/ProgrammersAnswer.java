@@ -909,8 +909,11 @@ public class ProgrammersAnswer {
         return result < 0 ? 0 : result;
     }
 
+    /**
+     * 중복된 문자열이 없도록 할 때 배열의 문자열 중 가장 긴 문자열을 찾아라
+     */
     public static int solution(String[] A) {
-        int result = Integer.MIN_VALUE;
+        int result = 0;
         boolean isDuplicate = false;
         for (int i = 0; i < A.length; i++) {
             StringBuilder builder = new StringBuilder();
@@ -936,6 +939,10 @@ public class ProgrammersAnswer {
         return result;
     }
 
+    /**
+     * 음수가 되지 않도록 유지하는 방법을 찾아라
+     * 배열의 수들을 합할 때 음수를 유지하지 않도록 배열속의 숫자를 움직일 때 몇번 움직이면 음수로 되지 않는가
+     */
     public static int solution2(int[] A) {
         int answer = 0;
         int sum = 0;
@@ -950,7 +957,11 @@ public class ProgrammersAnswer {
         return answer;
     }
 
-    public static int so(int[] A) {
+    /**
+     * 가장 적게 움직여서 모두 같은 수를 만드는 것
+     * 다른 수로 움직이는건 하나로 처리
+     */
+    public static int solution3(int[] A) {
         int answer = 0;
         long sum = 0;
         for (int a : A) {
