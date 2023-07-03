@@ -49,6 +49,6 @@ class ProgrammersAnswerTest {
         int[] test2 = {5, -2, -3, 1};
         int[] test3 = {10, -10, -1, -1, 10};
         int[] test4 = {3, -1, -1, -2, 1, 3};
-        assertThat(answer.so(test)).isEqualTo(4);
+        assertThat(answer.solution3(test)).isEqualTo(4);
     }
 }
