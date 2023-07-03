@@ -908,4 +908,64 @@ public class ProgrammersAnswer {
 
         return result < 0 ? 0 : result;
     }
+
+    public static int solution(String[] A) {
+        int result = Integer.MIN_VALUE;
+        boolean isDuplicate = false;
+        for (int i = 0; i < A.length; i++) {
+            StringBuilder builder = new StringBuilder();
+            builder.append(A[i]);
+            for (int j = i + 1; j < A.length; j++) {
+                builder.append(A[j]);
+                for (int k = 0; k < builder.length(); k++) {
+                    if (builder.toString().indexOf(builder.toString().charAt(k)) != k ) {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (isDuplicate) {
+                    builder.delete(builder.length() - A[j].length(), builder.length());
+                } else {
+                    result = Math.max(result, builder.length());
+                }
+                isDuplicate = false;
+            }
+        }
+
+        return result;
+    }
+
+    public static int solution2(int[] A) {
+        int answer = 0;
+        int sum = 0;
+        for (int i = 0; i < A.length - 1; i++) {
+            sum += A[i];
+            if ((sum == 0 && A[i + 1] < 0) || (sum < 0 && A[i] < 0) ) {
+                answer++;
+                sum += A[i] * -1;
+            }
+        }
+
+        return answer;
+    }
+
+    public static int so(int[] A) {
+        int answer = 0;
+        long sum = 0;
+        for (int a : A) {
+            sum += a;
+        }
+        double t = (double)sum / A.length;
+        double average = Math.ceil(t);
+
+        for (int a : A) {
+            if (a < average) {
+                answer += average - a;
+            } else if (a > average) {
+                answer -= a - average;
+            }
+        }
+        return answer;
+    }
 }
