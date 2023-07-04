@@ -241,4 +241,14 @@ public class ProgrammersQuestionLevel2 {
         return ProgrammersAnswerLevel2.circle(r1, r2);
     }
 
+    /**
+     * 연속된 부분 수열의 합
+     * https://school.programmers.co.kr/learn/courses/30/lessons/178870
+     */
+    public int[] numberSum() {
+        int[] sequence = {2, 2, 2, 2, 2};
+        int k = 6;
+        return ProgrammersAnswerLevel2.numberSum(sequence, k);
+    }
+
 }

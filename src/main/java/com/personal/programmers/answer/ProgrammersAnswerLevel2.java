@@ -569,6 +569,35 @@ public class ProgrammersAnswerLevel2 {
         return answer;
     }
 
+    public static int[] numberSum(int[] sequence, int k) {
+        int[] answer = new int[2];
+        Map<Integer, Integer> map = new HashMap<>();
+        int sum = 0;
+        for (int i = 0; i < sequence.length; i++) {
+            map.put(i, 0);
+            for (int j = i; j < sequence.length; j++) {
+                sum += sequence[j];
+                if (sum == k) {
+                    map.put(i, j);
+                    break;
+                } else if (sum > k) {
+                    break;
+                }
+            }
+            sum = 0;
+        }
+        int min = Integer.MAX_VALUE;
+
+        for (int key : map.keySet()) {
+            if (map.get(key) > 0 && map.get(key) - key < min) {
+                answer[0] = key;
+                answer[1] = map.get(key);
+                min = map.get(key) - key;
+            }
+        }
+        return answer;
+    }
+
     // 해설
 	class Homework {
         String name;

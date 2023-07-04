@@ -51,4 +51,10 @@ class ProgrammersAnswerTest {
         int[] test4 = {3, -1, -1, -2, 1, 3};
         assertThat(answer.solution3(test)).isEqualTo(4);
     }
+
+    @Test
+    void sumNumber() {
+        ProgrammersQuestionLevel2 questionLevel2 = new ProgrammersQuestionLevel2();
+        assertThat(questionLevel2.numberSum()).isEqualTo(new int[] {0, 2});
+    }
 }
