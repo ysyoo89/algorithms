@@ -230,4 +230,15 @@ public class ProgrammersQuestionLevel2 {
         int[][] targets = {{4,5},{4,8},{10,14},{11,13},{5,12},{3,7},{1,4}};
         return ProgrammersAnswerLevel2.defense(targets);
     }
+
+    /**
+     * 원 정수 찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/181187
+     */
+    public long circle() {
+        int r1 = 2;
+        int r2 = 3;
+        return ProgrammersAnswerLevel2.circle(r1, r2);
+    }
+
 }
