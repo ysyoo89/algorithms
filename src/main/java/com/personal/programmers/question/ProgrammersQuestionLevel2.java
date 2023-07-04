@@ -245,10 +245,21 @@ public class ProgrammersQuestionLevel2 {
      * 연속된 부분 수열의 합
      * https://school.programmers.co.kr/learn/courses/30/lessons/178870
      */
+    //TODO 다시 풀기
     public int[] numberSum() {
         int[] sequence = {2, 2, 2, 2, 2};
         int k = 6;
         return ProgrammersAnswerLevel2.numberSum(sequence, k);
+    }
+
+    /**
+     * 마인크래프트
+     * https://school.programmers.co.kr/learn/courses/30/lessons/172927
+     */
+    public int minecraft() {
+        int[] picks = {1, 3, 2};
+        String[] minerals = {"diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"};
+        return ProgrammersAnswerLevel2.minecraft(picks, minerals);
     }
 
 }

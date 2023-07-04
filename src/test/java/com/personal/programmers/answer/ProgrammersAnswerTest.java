@@ -57,4 +57,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 questionLevel2 = new ProgrammersQuestionLevel2();
         assertThat(questionLevel2.numberSum()).isEqualTo(new int[] {0, 2});
     }
+
+    @Test
+    void minecraft() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.minecraft()).isEqualTo(12);
+    }
 }

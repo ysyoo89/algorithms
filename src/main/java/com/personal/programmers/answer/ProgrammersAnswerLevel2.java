@@ -598,6 +598,86 @@ public class ProgrammersAnswerLevel2 {
         return answer;
     }
 
+    public static int minecraft(int[] picks, String[] minerals) {
+        int answer = 0;
+        int[][] pick = {{1, 1, 1}, {5, 1, 1}, {25, 5, 1}};
+        Map<String, Integer> work = new HashMap<>();
+        work.put("diamond", 0);
+        work.put("iron", 1);
+        work.put("stone", 2);
+        List<Mineral> list = new ArrayList<>();
+
+        int pickSum = Arrays.stream(picks).sum();
+        int count = 0;
+        for(int i = 0; i < minerals.length / 5 + 1; i++) {
+            // 곡괭이가 0개 이면
+            if(pickSum == 0) {
+                // 탈출
+                break;
+            }
+            int diamondCount = 0;
+            int ironCount = 0;
+            int stoneCount = 0;
+            for(int j = count; j < minerals.length; j++) {
+                count++;
+                String mineral = minerals[j];
+                diamondCount += pick[0][work.get(mineral)];
+                ironCount += pick[1][work.get(mineral)];
+                stoneCount += pick[2][work.get(mineral)];
+
+                // 5개씩 저장
+                if(count % 5 == 0) {
+                    // 곡괭이 1개 감소
+                    pickSum--;
+                    // 5개면 탈출~
+                    break;
+                }
+            }
+            list.add(new Mineral(diamondCount, ironCount, stoneCount));
+        }
+
+        Collections.sort(list, (o1, o2) -> Integer.compare(o2.getStone(), o1.getStone()));
+        for (int i = 0; i < list.size(); i++) {
+            if (picks[0] > 0) {
+                answer += list.get(i).getDiamond();
+                picks[0]--;
+            } else if (picks[1] > 0) {
+                answer += list.get(i).getIron();
+                picks[1]--;
+            } else if (picks[2] > 0) {
+                answer += list.get(i).getStone();
+                picks[2]--;
+            }
+        }
+
+
+        return answer;
+    }
+    static class Mineral {
+        int diamond;
+        int iron;
+        int stone;
+
+        public Mineral(int diamond, int iron, int stone) {
+            this.diamond = diamond;
+            this.iron = iron;
+            this.stone = stone;
+        }
+
+        public int getDiamond() {
+            return this.diamond;
+        }
+
+        public int getIron() {
+            return this.iron;
+        }
+
+        public int getStone() {
+            return this.stone;
+        }
+
+    }
+
     // 해설
 	class Homework {
         String name;
