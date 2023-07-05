@@ -245,7 +245,7 @@ public class ProgrammersQuestionLevel2 {
      * 연속된 부분 수열의 합
      * https://school.programmers.co.kr/learn/courses/30/lessons/178870
      */
-    //TODO 다시 풀기
+    //TODO 다시 풀기 7/6
     public int[] numberSum() {
         int[] sequence = {2, 2, 2, 2, 2};
         int k = 6;
@@ -266,7 +266,7 @@ public class ProgrammersQuestionLevel2 {
      * 리코쳇 로봇
      * https://school.programmers.co.kr/learn/courses/30/lessons/169199
      */
-    //TODO
+    //TODO 다시 풀기 7/7
     public int robot() {
         String[] board = {"",""};
         return ProgrammersAnswerLevel2.robot(board);
