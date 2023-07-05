@@ -822,6 +822,22 @@ public class ProgrammersAnswerLevel2 {
         return false;
     }
 
+    public static int changeNumber(int x, int y, int n) {
+        int max = Integer.MAX_VALUE;
+        int[] dp = new int[y + 1];
+
+        for (int i = x +1; i <= y; i++) {
+            int a = i / 2 > 0 && i % 2 == 0 && x <= i / 2 ? dp[i / 2] : max;
+            int b = i / 3 > 0 && i % 3 == 0 && x <= i / 3 ? dp[i / 3] : max;
+            int c = i - n >= x ? dp[i-n] : max;
+            int d = Math.min(c, Math.min(a, b));
+
+            dp[i] = d < max ? d + 1: max;
+        }
+
+        return dp[y] < max ? dp[y] : -1;
+    }
+
     static class Moving {
         int x;
         int y;

@@ -69,4 +69,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
         assertThat(question.tictactoe()).isEqualTo(0);
     }
+
+    @Test
+    void changeNumber() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.changeNumber()).isEqualTo(-1);
+    }
 }

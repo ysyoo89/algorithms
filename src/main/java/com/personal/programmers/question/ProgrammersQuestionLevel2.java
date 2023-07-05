@@ -282,4 +282,16 @@ public class ProgrammersQuestionLevel2 {
         return ProgrammersAnswerLevel2.tictactoe(board);
     }
 
+    /**
+     * 숫자 변환
+     * https://school.programmers.co.kr/learn/courses/30/lessons/154538
+     */
+    //TODO 다시 풀기 7/10
+    public int changeNumber() {
+        int x = 1;
+        int y = 6;
+        int n = 4;
+        return ProgrammersAnswerLevel2.changeNumber(x, y, n);
+    }
+
 }
