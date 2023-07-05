@@ -1,10 +1,17 @@
 package com.personal.programmers.answer;
 
+import java.awt.*;
+import java.rmi.MarshalledObject;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.List;
 
 public class ProgrammersAnswerLevel2 {
+    private static int[] dx = {-1, 1, 0, 0};
+    private static int[] dy = {0, 0, -1, 1};
+
+    private static char ROBOT = 'R', DISABLE = 'D', GOAL = 'G';
 
     public static String numberChange(int n) {
         char[] numberChar = {'4', '1', '2'};
@@ -653,6 +660,81 @@ public class ProgrammersAnswerLevel2 {
 
         return answer;
     }
+    public static int robot(String[] board) {
+        int n = board.length;
+        int m = board[0].length();
+
+        Moving robot = null;
+        Moving goal = null;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                char ch = board[i].charAt(j);
+                if (ch == ROBOT) {
+                    robot = new Moving(i, j, 0);
+                } else if (ch == GOAL) {
+                    goal = new Moving(i, j, 0);
+                }
+            }
+        }
+        return robotBfs(board, robot, goal, n, m);
+    }
+
+    private static int robotBfs(String[] board, Moving robot, Moving goal, int n, int m) {
+        Queue<Moving> queue = new LinkedList<>();
+        queue.add(robot);
+        boolean[][] visited = new boolean[n][m];
+        visited[robot.x][robot.y] = true;
+        while(!queue.isEmpty()) {
+            Moving cn = queue.poll();
+
+            if (cn.x == goal.x && cn.y == goal.y) {
+                return cn.depth;
+            }
+
+            // 4방향으로 전부 이동 시킴
+            for (int i = 0; i < 4; i++) {
+                int nx = cn.x;
+                int ny = cn.y;
+
+                // 범위를 벗어나거나 장애물을 만나기 전까지 이동
+                while(isRange(nx, ny, n, m) && board[nx].charAt(ny) != DISABLE) {
+                    nx += dx[i];
+                    ny += dy[i];
+                }
+
+                // 범위를 벗어나거나 장애물을 만나면 그 전으로 이동
+                nx -= dx[i];
+                ny -= dy[i];
+
+                // 이미 방문한 곳이거나 현재와 같은 장소이면 스킵
+                if (visited[nx][ny] || (cn.x == nx && cn.y == ny)) {
+                    continue;
+                }
+
+                visited[nx][ny] = true;
+                queue.add(new Moving(nx, ny, cn.depth +1));
+            }
+        }
+        return -1;
+    }
+
+    private static boolean isRange(int x, int y, int n, int m) {
+        return x >= 0 && y >= 0 && x < n && y < m;
+    }
+
+    static class Moving {
+        int x;
+        int y;
+        int depth;
+
+        public Moving(int x, int y, int depth) {
+            this.x = x;
+            this.y = y;
+            this.depth = depth;
+        }
+    }
+
     static class Mineral {
         int diamond;
         int iron;
