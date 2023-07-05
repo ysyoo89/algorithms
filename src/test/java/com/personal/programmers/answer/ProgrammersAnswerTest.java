@@ -63,4 +63,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
         assertThat(question.minecraft()).isEqualTo(12);
     }
+
+    @Test
+    void tictactoe() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.tictactoe()).isEqualTo(0);
+    }
 }

@@ -723,6 +723,105 @@ public class ProgrammersAnswerLevel2 {
         return x >= 0 && y >= 0 && x < n && y < m;
     }
 
+    public static int tictactoe(String[] board) {
+        int answer = 1;
+        int count = 0;
+        boolean[][] markO = new boolean[board.length][board[0].length()];
+        boolean[][] markX = new boolean[board.length][board[0].length()];
+        char o = 'O';
+        char x = 'X';
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0 ; j < board[0].length(); j++) {
+                char mark = board[i].charAt(j);
+                if (o == mark) {
+                    markO[i][j] = true;
+                    count++;
+                } else if (x == mark) {
+                    markX[i][j] = true;
+                    count--;
+                }
+            }
+        }
+
+        if (count < 0 || count > 1) {
+            answer = 0;
+        } else if (count == 0 || count == 1) {
+            answer = serialCheck(markO, markX);
+        }
+
+        return answer;
+    }
+
+    private static int serialCheck(boolean[][] markO, boolean[][] markX) {
+        int countO = 0;
+        int countX = 0;
+        int totalCountO = 0;
+        int totalCountX = 0;
+        int[] markingO = new int[2];
+        int[] markingX = new int[2];
+        boolean finishO = false;
+        boolean finishX = false;
+        for (int i = 0; i < markO.length; i++) {
+            for (int j = 0; j < markO[0].length; j++) {
+                if (markO[i][j]) {
+                    if (serial(markingO, i, j) || countO == 0) {
+                        countO++;
+                    } else {
+                        countO--;
+                    }
+                    if (countO == 3) {
+                        finishO = true;
+                    }
+                    markingO[0] = i;
+                    markingO[1] = j;
+                    totalCountO++;
+                }
+
+                if (markX[i][j]) {
+                    if (serial(markingX, i, j) || countX == 0) {
+                        countX++;
+                    } else {
+                        countX--;
+                    }
+                    if (countX == 3) {
+                        finishX = true;
+                    }
+                    markingX[0] = i;
+                    markingX[1] = j;
+                    totalCountX++;
+                }
+            }
+        }
+
+        if (finishO && finishX) {
+            return 0;
+        } else if (finishO) {
+            if (totalCountO - totalCountX != 1) {
+                return 0;
+            }
+        } else if (finishX) {
+            if (totalCountO - totalCountX != 0) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    private static boolean serial(int[] marking, int i, int j) {
+        if (marking[0] == i && marking[1] + 1 == j) {
+            return true;
+        } else if (marking[0] + 1 == i && marking[1] + 1 == j) {
+            return true;
+        } else if (marking[0] + 1 == i && marking[1] == j) {
+            return true;
+        } else if ((marking[0] + 1 == i && marking[1] - 1 == j)
+                && ((marking[0] == 0 && marking[1] == 2)
+                    || (marking[0] == 1 && marking[1] == 1)) ) {
+            return true;
+        }
+        return false;
+    }
+
     static class Moving {
         int x;
         int y;
