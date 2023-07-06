@@ -81,4 +81,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
         assertThat(question.maze()).isEqualTo(16);
     }
+
+    @Test
+    void island() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.island()).isEqualTo(new int[] {1, 1, 27});
+    }
 }

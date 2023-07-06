@@ -909,6 +909,58 @@ public class ProgrammersAnswerLevel2 {
         return -1;
     }
 
+    public static int[] island(String[] maps) {
+        int n = maps.length;
+        int m = maps[0].length();
+        List<Integer> list = new ArrayList<>();
+        int[] x = {-1, 1, 0, 0};
+        int[] y = {0, 0, 1, -1};
+        boolean[][] visited = new boolean[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (maps[i].charAt(j) != 'X' && !visited[i][j]) {
+                    visited[i][j] = true;
+                    int result = maps[i].charAt(j) - '0';
+                    Queue<Move> que = new LinkedList<>();
+                    que.add(new Move(i, j));
+                    while(!que.isEmpty()) {
+                        Move cn = que.poll();
+                        for (int k = 0; k < 4; k++) {
+                            int nx = cn.x + x[k];
+                            int ny = cn.y + y[k];
+                            if (!isRange(nx, ny, n, m) || 'X' == maps[nx].charAt(ny) || visited[nx][ny]) {
+                                continue;
+                            }
+                            visited[nx][ny] = true;
+                            que.add(new Move(nx, ny));
+                            result += maps[nx].charAt(ny) - '0';
+                        }
+                    }
+                    list.add(result);
+                }
+            }
+        }
+        if (list.isEmpty()) {
+            return new int[] {-1};
+        }
+
+        Collections.sort(list);
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
+
+    static class Move {
+        int x;
+        int y;
+
+        public Move(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
     static class Moving {
         int x;
         int y;

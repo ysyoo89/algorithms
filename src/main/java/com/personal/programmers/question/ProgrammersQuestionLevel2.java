@@ -301,4 +301,14 @@ public class ProgrammersQuestionLevel2 {
         String[] map = {"SOOOL", "XXXXO", "OOOOO", "OXXXX", "OOOOE"};
         return ProgrammersAnswerLevel2.maze(map);
     }
+
+    /**
+     * 무인도 식량
+     * https://school.programmers.co.kr/learn/courses/30/lessons/154540
+     */
+    //TODO 7/10 다시풀기
+    public int[] island() {
+        String[] maps = {"X591X","X1X5X","X231X", "1XXX1"};
+        return ProgrammersAnswerLevel2.island(maps);
+    }
 }
