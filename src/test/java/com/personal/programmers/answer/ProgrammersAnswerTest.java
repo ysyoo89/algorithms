@@ -75,4 +75,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
         assertThat(question.changeNumber()).isEqualTo(-1);
     }
+
+    @Test
+    void maze() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.maze()).isEqualTo(16);
+    }
 }

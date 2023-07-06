@@ -245,7 +245,6 @@ public class ProgrammersQuestionLevel2 {
      * 연속된 부분 수열의 합
      * https://school.programmers.co.kr/learn/courses/30/lessons/178870
      */
-    //TODO 다시 풀기 7/6
     public int[] numberSum() {
         int[] sequence = {2, 2, 2, 2, 2};
         int k = 6;
@@ -294,4 +293,12 @@ public class ProgrammersQuestionLevel2 {
         return ProgrammersAnswerLevel2.changeNumber(x, y, n);
     }
 
+    /**
+     * 미로 찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/159993
+     */
+    public int maze() {
+        String[] map = {"SOOOL", "XXXXO", "OOOOO", "OXXXX", "OOOOE"};
+        return ProgrammersAnswerLevel2.maze(map);
+    }
 }

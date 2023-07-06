@@ -838,6 +838,77 @@ public class ProgrammersAnswerLevel2 {
         return dp[y] < max ? dp[y] : -1;
     }
 
+    public static int maze(String[] map) {
+        int n = map.length;
+        int m = map[0].length();
+        Moving start = null;
+        Moving goal = null;
+        Moving lever = null;
+        for (int i =0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if ('S' == map[i].charAt(j)) {
+                    start = new Moving(i, j, 0);
+                }
+                if ('L' == map[i].charAt(j)) {
+                    lever = new Moving(i, j, 0);
+                }
+                if ('E' == map[i].charAt(j)) {
+                    goal = new Moving(i, j, 0);
+                }
+            }
+        }
+        return mazeBfs(map, start, lever, goal, n, m);
+    }
+
+    private static int mazeBfs(String[] map, Moving start, Moving lever, Moving goal, int n, int m) {
+        int[] x = {-1, 1, 0, 0};
+        int[] y = {0, 0, 1, -1};
+        Queue<Moving> que = new LinkedList<>();
+        que.add(start);
+        boolean[][] visited = new boolean[n][m];
+        while (!que.isEmpty()) {
+            Moving cn = que.poll();
+
+            if (lever.x == cn.x && lever.y == cn.y) {
+                que.clear();
+                que.add(new Moving(cn.x, cn.y, cn.depth));
+                break;
+            }
+
+            for (int i = 0; i < 4; i++) {
+                int nx = cn.x + x[i];
+                int ny = cn.y + y[i];
+                if (isRange(nx, ny, n, m) && 'X' != map[nx].charAt(ny)) {
+                    if (!visited[nx][ny]) {
+                        visited[nx][ny] = true;
+                        que.add(new Moving(nx, ny, cn.depth+1));
+                    }
+                }
+            }
+        }
+        visited = new boolean[n][m];
+        while (!que.isEmpty()) {
+            Moving cn = que.poll();
+
+            if (goal.x == cn.x && goal.y == cn.y) {
+                return cn.depth;
+            }
+
+            for (int i = 0; i < 4; i++) {
+                int nx = cn.x + x[i];
+                int ny = cn.y + y[i];
+                if (isRange(nx, ny, n, m) && 'X' != map[nx].charAt(ny)) {
+                    if (!visited[nx][ny]) {
+                        visited[nx][ny] = true;
+                        que.add(new Moving(nx, ny, cn.depth+1));
+                    }
+                }
+            }
+        }
+
+        return -1;
+    }
+
     static class Moving {
         int x;
         int y;
