@@ -274,7 +274,6 @@ public class ProgrammersQuestionLevel2 {
      * 틱택토
      * https://school.programmers.co.kr/learn/courses/30/lessons/160585
      */
-    //TODO 다시 풀기 7/7
     public int tictactoe() {
         String[] board = {"OOO", "XX.", "X.."};
         return ProgrammersAnswerLevel2.tictactoe(board);
