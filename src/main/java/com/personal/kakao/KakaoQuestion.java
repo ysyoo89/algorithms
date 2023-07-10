@@ -54,4 +54,16 @@ public class KakaoQuestion {
         String s = "";
         return KakaoAnswer.kakaoQuestion5(s);
     }
+
+    /**
+     * 택배
+     * https://school.programmers.co.kr/learn/courses/30/lessons/150369
+     */
+    public long delivery() {
+        int cap = 4;
+        int n = 5;
+        int[] deliveries = {};
+        int[] pickups = {};
+        return KakaoAnswer.delivery(cap, n, deliveries, pickups);
+    }
 }

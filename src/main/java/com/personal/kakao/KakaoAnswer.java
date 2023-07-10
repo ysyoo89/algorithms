@@ -141,4 +141,55 @@ public class KakaoAnswer {
         }
         return Integer.parseInt(s);
     }
+
+    public static long delivery(int cap, int n, int[] deliveries, int[] pickups) {
+        long answer = 0;
+        boolean loop = true;
+        while(loop) {
+            int delivery = 0;
+            int pick = 0;
+            int count = 0;
+
+            for (int i = n - 1; i >= 0; i--) {
+                int min = cap - delivery;
+                if (min == 0) {
+                    break;
+                }
+                if (deliveries[i] > 0) {
+                    if (deliveries[i] <= min) {
+                        delivery += deliveries[i];
+                        deliveries[i] = 0;
+                    } else {
+                        deliveries[i] -= min;
+                        delivery += deliveries[i];
+                    }
+                    count = Math.max(i + 1, count);
+                }
+            }
+            answer += count;
+
+            for (int i = n - 1; i >= 0; i--) {
+                int max = cap - pick;
+                if (max == 0) {
+                    break;
+                }
+                if (pickups[i] > 0) {
+                    if (pickups[i] < max) {
+                        pick += pickups[i];
+                        pickups[i] = 0;
+                    } else {
+                        pickups[i] -= max;
+                        pick = 0;
+                    }
+                    count = Math.max(i + 1, count);
+                }
+            }
+            answer += count;
+            if (count == 0) {
+                loop = false;
+            }
+        }
+
+        return answer;
+    }
 }
