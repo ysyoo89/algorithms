@@ -283,7 +283,6 @@ public class ProgrammersQuestionLevel2 {
      * 숫자 변환
      * https://school.programmers.co.kr/learn/courses/30/lessons/154538
      */
-    //TODO 다시 풀기 7/10
     public int changeNumber() {
         int x = 1;
         int y = 6;
@@ -304,7 +303,6 @@ public class ProgrammersQuestionLevel2 {
      * 무인도 식량
      * https://school.programmers.co.kr/learn/courses/30/lessons/154540
      */
-    //TODO 7/10 다시풀기
     public int[] island() {
         String[] maps = {"X591X","X1X5X","X231X", "1XXX1"};
         return ProgrammersAnswerLevel2.island(maps);

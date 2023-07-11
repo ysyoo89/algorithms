@@ -1,9 +1,6 @@
 package com.personal.review;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class ReviewAnswer {
     public int[] repeatNumber(int[] sequence, int k) {
@@ -197,5 +194,77 @@ public class ReviewAnswer {
         }
 
         return false;
+    }
+
+    public int number(int x, int y, int n) {
+        int max = Integer.MAX_VALUE;
+        int[] dp = new int[y + 1];
+
+        for (int i = x + 1; i <= y; i++) {
+            int first = i / 2 > 0 && i % 2 == 0 && x <= i / 2 ? dp[i / 2] : max;
+            int second = i / 3 > 0 && i % 3 == 0 && x <= i / 3 ? dp[i / 3] : max;
+            int third = i - n >= x ? dp[i - n] : max;
+            int minValue = Math.min(third, Math.min(first, second));
+
+            dp[i] = minValue < max ? minValue + 1 : max;
+        }
+
+        return dp[y] < max ? dp[y] : -1;
+    }
+
+    public int[] island(String[] maps) {
+        int n = maps.length;
+        int m = maps[0].length();
+        char disable = 'X';
+        boolean[][] visited = new boolean[n][m];
+        int[] x = {-1, 1, 0, 0};
+        int[] y = {0, 0, 1, -1};
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (!visited[i][j] && disable != maps[i].charAt(j)) {
+                    visited[i][j] = true;
+                    int sum = maps[i].charAt(j) - '0';
+                    Queue<IslandMove> que = new LinkedList<>();
+                    que.add(new IslandMove(i, j));
+                    while(!que.isEmpty()) {
+                        IslandMove mv = que.poll();
+                        for (int k = 0; k < 4; k++) {
+                            int xn = mv.x + x[k];
+                            int ym = mv.y + y[k];
+                            if (xn < n && ym < m && xn >= 0 && ym >= 0 && maps[xn].charAt(ym) != disable && !visited[xn][ym]) {
+                                sum += maps[xn].charAt(ym) - '0';
+                                visited[xn][ym] = true;
+                                que.add(new IslandMove(xn, ym));
+                            }
+                        }
+                    }
+
+                    list.add(sum);
+                }
+            }
+        }
+        if (list.isEmpty()) {
+            list.add(-1);
+        }
+
+        Collections.sort(list);
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+
+        return answer;
+    }
+
+    class IslandMove {
+        int x;
+        int y;
+
+        public IslandMove(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
     }
 }
