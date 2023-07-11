@@ -192,4 +192,43 @@ public class KakaoAnswer {
 
         return answer;
     }
+
+    public static int[] emotion(int[][] users, int[] emoticons) {
+        int[] discount = {10, 20, 30, 40};
+        int emoticonLength = emoticons.length;
+        ArrayList<int[]> answer = new ArrayList<>();
+        answer.add(new int[]{0,0});
+
+        emotionDfs(users, emoticons, new int[emoticonLength], 0, discount, answer);
+
+        Collections.sort(answer, (a, b) -> b[0] - a[0] == 0 ? b[1]-a[1] : b[0]-a[0]);
+        return answer.get(0);
+    }
+
+    private static void emotionDfs(int[][] users, int[] emoticons, int[] discountInfo, int level, int[] discount, ArrayList<int[]> answer) {
+        if (level == emoticons.length) {
+            int buyCount = 0;
+            int buySum = 0;
+
+            for (int i = 0; i < users.length; i++) {
+                int sum = 0;
+                for (int j = 0; j < emoticons.length; j++) {
+                    if (discountInfo[j] >= users[i][0]) {
+                        sum += emoticons[j] / 100 * (100 - discountInfo[j]);
+                    }
+                }
+                if (sum >= users[i][1]) {
+                    buyCount++;
+                } else {
+                    buySum += sum;
+                }
+            }
+            answer.add(new int[] {buyCount, buySum});
+        } else {
+            for (int i = 0; i< 4; i++) {
+                discountInfo[level] = discount[i];
+                emotionDfs(users, emoticons, discountInfo, level+1, discount, answer);
+            }
+        }
+    }
 }

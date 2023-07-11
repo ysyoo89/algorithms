@@ -66,4 +66,14 @@ public class KakaoQuestion {
         int[] pickups = {};
         return KakaoAnswer.delivery(cap, n, deliveries, pickups);
     }
+
+    /**
+     * 이모티콘 할인행사
+     * https://school.programmers.co.kr/learn/courses/30/lessons/150368
+     */
+    public int[] emotion() {
+        int[][] users = {{40, 10000}, {25, 2000}};
+        int[] emoticons = {10000, 20000};
+        return KakaoAnswer.emotion(users, emoticons);
+    }
 }
