@@ -29,4 +29,9 @@ public class StudyTest {
         assertThat(study.particleSum(5, new int[] {5,4,3,2,1}, new int[][] {{1, 3},{2, 4}, {5,5}})).isEqualTo(new long[] {12,9,1});
     }
 
+    @Test
+    public void twoPointer() {
+        assertThat(study.twoPointer(15)).isEqualTo(4);
+    }
+
 }
