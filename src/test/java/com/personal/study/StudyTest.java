@@ -34,4 +34,19 @@ public class StudyTest {
         assertThat(study.twoPointer(15)).isEqualTo(4);
     }
 
+    @Test
+    public void armor() {
+        assertThat(study.armor(6, 9, new int[] {2,3,4,1,7,5})).isEqualTo(2);
+    }
+
+    @Test
+    public void dnaPassword() {
+        assertThat(study.dnaPassword(2, new char[]{'G','A','T','A'}, new int[] {1,0, 0, 1})).isEqualTo(2);
+    }
+
+    @Test
+    public void card() {
+        assertThat(study.card(6)).isEqualTo(4);
+    }
+
 }
