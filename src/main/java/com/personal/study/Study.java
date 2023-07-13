@@ -1,9 +1,6 @@
 package com.personal.study;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Study {
 
@@ -184,5 +181,83 @@ public class Study {
             que.add(que.poll());
         }
         return que.poll();
+    }
+
+    public int[] abs(int[] numbers) {
+
+        List<Integer> list = new ArrayList<>();
+
+        PriorityQueue<Integer> que = new PriorityQueue<>((o1, o2) -> {
+            int first_abs = Math.abs(o1);
+            int second_abs = Math.abs(o2);
+
+            // 절대값이 같은 경우 음수 우선
+            if (first_abs == second_abs) {
+                // 리턴 값이 양수이면 비교 대상의 앞의 값이 리턴되고, 음수이면 비교 대상의 뒤의 값이 리턴된다.
+                return o1 > o2 ? 1 : -1;
+            }
+
+            // 절대값 작은 데이터 우선
+            return first_abs - second_abs;
+        });
+
+        for (int i = 0; i < numbers.length; i++) {
+            int request = numbers[i];
+            if (request == 0) {
+                if (que.isEmpty()) {
+                    list.add(0);
+                } else {
+                    list.add(que.poll());
+                }
+            } else {
+                que.add(request);
+            }
+        }
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
+
+    public int[] sortNumber(int[] numbers) {
+        int[] answer = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            answer[i] = numbers[i];
+        }
+
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = 0; j < numbers.length - 1 - i; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                }
+            }
+        }
+
+        return answer;
+    }
+
+    public String selectSort(String number) {
+        char[] numbers = number.toCharArray();
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < numbers.length; i++) {
+            int max = i;
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] > numbers[max]) {
+                    max = j;
+                }
+            }
+            if (numbers[max] > numbers[i]) {
+                char temp = numbers[i];
+                numbers[i] = numbers[max];
+                numbers[max] = temp;
+            }
+            builder.append(numbers[max]);
+        }
+
+        return builder.toString();
     }
 }
