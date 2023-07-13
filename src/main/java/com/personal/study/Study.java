@@ -179,7 +179,7 @@ public class Study {
             que.add(i);
         }
 
-        while(que.size() != 1) {
+        while(que.size() > 1) {
             que.poll();
             que.add(que.poll());
         }
