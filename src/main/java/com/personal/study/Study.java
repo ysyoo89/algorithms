@@ -260,4 +260,81 @@ public class Study {
 
         return builder.toString();
     }
+
+    public int dfs(int n, int e, int[][] numbers) {
+        int answer = 0;
+        boolean[] visited = new boolean[n + 1];
+        ArrayList<Integer>[] A = new ArrayList[n + 1];
+        for (int i = 1; i <= n; i++) {
+            A[i] = new ArrayList<>();
+        }
+
+        for (int i = 0; i < e; i++) {
+            int start = numbers[i][0];
+            int end = numbers[i][1];
+            A[start].add(end);
+            A[end].add(start);
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (!visited[i]) {
+                answer++;
+                actionDfs(i, A, visited);
+            }
+        }
+        return answer;
+    }
+
+    private void actionDfs(int i, ArrayList<Integer>[] a, boolean[] visited) {
+        if (visited[i]) return;
+
+        visited[i] = true;
+        for (int node : a[i]) {
+            if (!visited[node]) {
+                actionDfs(node, a, visited);
+            }
+        }
+    }
+
+    public int bfs(int[] end, int[][] maze) {
+        Queue<Move> que = new LinkedList<>();
+        int n = maze.length;
+        int m = maze[0].length;
+        boolean[][] visited = new boolean[n][m];
+        que.add(new Move(0, 0, 1));
+        return actionBfs(maze, end, que, visited, n, m);
+    }
+
+    private int actionBfs(int[][] maze, int[] end, Queue<Move> que, boolean[][] visited, int n, int m) {
+        int[] x = {-1, 1, 0, 0};
+        int[] y = {0, 0, 1, -1};
+        while(!que.isEmpty()) {
+            Move mv = que.poll();
+            if (mv.x == end[0] - 1 && mv.y == end[1] -1 ) {
+                return mv.depth;
+            }
+
+            for (int i = 0; i < 4; i++) {
+                int mx = mv.x + x[i];
+                int my = mv.y + y[i];
+                if (mx < n && my < m && mx >= 0 && my >= 0 && maze[mx][my] == 1 && !visited[mx][my]) {
+                    visited[mx][my] = true;
+                    que.add(new Move(mx, my, mv.depth + 1));
+                }
+            }
+        }
+        return 0;
+    }
+
+    class Move {
+        int x;
+        int y;
+        int depth;
+        public Move(int x, int y, int depth) {
+            this.x = x;
+            this.y = y;
+            this.depth = depth;
+        }
+    }
+
 }

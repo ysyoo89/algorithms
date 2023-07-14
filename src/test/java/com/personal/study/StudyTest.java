@@ -49,4 +49,15 @@ public class StudyTest {
         assertThat(study.card(6)).isEqualTo(4);
     }
 
+    @Test
+    public void dfs() {
+        assertThat(study.dfs(6, 5, new int[][] {{1,2}, {2,5}, {5,1}, {3,4}, {4,6}})).isEqualTo(2);
+        assertThat(study.dfs(6, 8, new int[][] {{1,2}, {2,5}, {5,1}, {3,4}, {4,6}, {5,4}, {2,4}, {2,3}})).isEqualTo(1);
+    }
+
+    @Test
+    public void bfs() {
+        assertThat(study.bfs(new int[]{4, 6},new int[][] {{1,1,0,1,1,0}, {1,1,0,1,1,0}, {1,1,1,1,1,1}, {1,1,1,1,0,1}})).isEqualTo(9);
+    }
+
 }
