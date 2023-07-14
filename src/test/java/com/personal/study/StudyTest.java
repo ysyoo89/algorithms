@@ -60,4 +60,9 @@ public class StudyTest {
         assertThat(study.bfs(new int[]{4, 6},new int[][] {{1,1,0,1,1,0}, {1,1,0,1,1,0}, {1,1,1,1,1,1}, {1,1,1,1,0,1}})).isEqualTo(9);
     }
 
+    @Test
+    public void binary() {
+        assertThat(study.binary(new int[]{4,1,2,7,5}, new int[] {1,3,5,7,6})).isEqualTo(new int[]{1,0,1,1,0});
+    }
+
 }

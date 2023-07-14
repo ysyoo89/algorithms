@@ -296,6 +296,17 @@ public class Study {
         }
     }
 
+    class Move {
+        int x;
+        int y;
+        int depth;
+        public Move(int x, int y, int depth) {
+            this.x = x;
+            this.y = y;
+            this.depth = depth;
+        }
+    }
+
     public int bfs(int[] end, int[][] maze) {
         Queue<Move> que = new LinkedList<>();
         int n = maze.length;
@@ -326,15 +337,26 @@ public class Study {
         return 0;
     }
 
-    class Move {
-        int x;
-        int y;
-        int depth;
-        public Move(int x, int y, int depth) {
-            this.x = x;
-            this.y = y;
-            this.depth = depth;
-        }
-    }
+    public int[] binary(int[] numbers, int[] finders) {
+        int[] answer = new int[finders.length];
+        Arrays.sort(numbers);
 
+        for (int i= 0; i < finders.length; i++) {
+            int start = 0;
+            int end = numbers.length - 1;
+            while(start <= end) {
+                int mid_index = (start + end) / 2;
+                if (finders[i] == numbers[mid_index]) {
+                    answer[i] = 1;
+                    break;
+                } else if (finders[i] < numbers[mid_index]) {
+                    end = mid_index - 1;
+                } else {
+                    start = mid_index + 1;
+                }
+            }
+        }
+
+        return answer;
+    }
 }
