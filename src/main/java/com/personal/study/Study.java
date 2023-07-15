@@ -394,4 +394,44 @@ public class Study {
         }
         return result;
     }
+
+    public int[] decimal(int m, int n) {
+        List<Integer> list = new ArrayList<>();
+        int[] decimals = new int[n + 1];
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (decimals[i] == 1) continue;
+
+            for (int j = i+i; j <= n; j = j + i) {
+                decimals[j] = 1;
+            }
+        }
+
+        for (int i = m; i <= n; i++) {
+            if (decimals[i] == 0) {
+                list.add(i);
+            }
+        }
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
+
+    // 유클리드 호제법
+    public int gcd(int n, int m) {
+        return recGcd(n, m);
+    }
+
+    private int recGcd(int n, int m) {
+        if (n % m > 0) {
+            return recGcd(m, n % m);
+        } else if (n % m == 0) {
+            return m;
+        }
+        return 0;
+    }
+
+
 }

@@ -70,4 +70,14 @@ public class StudyTest {
         assertThat(study.greed2("100-40+50+74-30+29-45+43+11")).isEqualTo(-222);
     }
 
+    @Test
+    public void decimal() {
+        assertThat(study.decimal(3, 16)).isEqualTo(new int[] {3, 5, 7, 11, 13});
+    }
+
+    @Test
+    public void gcd() {
+        assertThat(study.gcd(270, 192)).isEqualTo(6);
+    }
+
 }
