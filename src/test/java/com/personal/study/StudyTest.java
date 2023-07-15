@@ -65,4 +65,9 @@ public class StudyTest {
         assertThat(study.binary(new int[]{4,1,2,7,5}, new int[] {1,3,5,7,6})).isEqualTo(new int[]{1,0,1,1,0});
     }
 
+    @Test
+    public void greed2() {
+        assertThat(study.greed2("100-40+50+74-30+29-45+43+11")).isEqualTo(-222);
+    }
+
 }

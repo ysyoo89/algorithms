@@ -359,4 +359,39 @@ public class Study {
 
         return answer;
     }
+
+    public int greed(int k, int[] coins) {
+        int answer = 0;
+        for (int i = coins.length - 1; i >= 0; i--) {
+            if (k == 0) break;
+            if (k <= coins[i]) {
+                answer += k / coins[i];
+                k = k % coins[i];
+            }
+        }
+        return answer;
+    }
+
+    public int greed2(String quiz) {
+        int answer = 0;
+        String[] data = quiz.split("-");
+        for (int i= 0; i < data.length; i++) {
+            String d = data[i];
+            if (i == 0) {
+                answer += mySum(d);
+            } else {
+                answer -= mySum(d);
+            }
+        }
+        return answer;
+    }
+
+    private int mySum(String d) {
+        int result = 0;
+        String[] temp = d.split("\\+");
+        for (String t : temp) {
+            result += Integer.parseInt(t);
+        }
+        return result;
+    }
 }
