@@ -433,5 +433,45 @@ public class Study {
         return 0;
     }
 
+    public String graph(int[][] node) {
+        int n = node.length;
+        int m = node[0].length;
+        boolean isEven = true;
+        int[] check = new int[n + 1];
+        boolean[] visited = new boolean[n + 1];
+        List<Integer>[] list = new ArrayList[n + 1];
+
+        for (int i = 0; i < m; i++) {
+            int start = node[i][0];
+            int end = node[i][1];
+            list[start].add(end);
+            list[end].add(start);
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (isEven) {
+                isEven = graphDfs(i, visited, check, list);
+            } else {
+                break;
+            }
+        }
+        return isEven ? "YES" : "NO";
+    }
+
+    private boolean graphDfs(int i, boolean[] visited, int[] check, List<Integer>[] list) {
+        visited[i] = true;
+        for (int node : list[i]) {
+            if (!visited[node]) {
+                // 바로 직전에 있는 노드와 다른 집합으로 분류를 해준다.
+                check[node] = (check[i] + 1) % 2;
+                graphDfs(node, visited, check, list);
+            } else if (check[node] == check[i]) {
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
 
 }
