@@ -80,4 +80,14 @@ public class StudyTest {
         assertThat(study.gcd(270, 192)).isEqualTo(6);
     }
 
+    @Test
+    public void union() {
+        assertThat(study.union(7, new int[][] {{0,1,3}, {1,1,7}, {0,7,6}, {1,7,1}, {0,3,7},{0,4,2}, {0,1,1},{1,1,1}}))
+                .isEqualTo(new String[] {"NO", "NO", "YES"});
+    }
+
+    @Test
+    public void sort() {
+        assertThat(study.sort(4, 2, new int[][] {{4,2}, {3,1}})).isEqualTo(new int[] {3, 4, 1, 2});
+    }
 }

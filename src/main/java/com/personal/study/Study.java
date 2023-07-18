@@ -473,5 +473,85 @@ public class Study {
         return true;
     }
 
+    public String[] union(int n, int[][] nodes) {
+        List<String> list = new ArrayList<>();
+        int[] node = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            node[i] = i;
+        }
+
+        for (int i = 0; i < nodes.length; i++) {
+            if (nodes[i][0] == 1) {
+                list.add(unionCheck(node, nodes[i][1], nodes[i][2]));
+            } else {
+                unionFind(node, nodes[i][1], nodes[i][2]);
+            }
+        }
+        String[] answer = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
+
+    private void unionFind(int[] node, int n, int m) {
+        n = findDfs(node, n);
+        m = findDfs(node, m);
+        if (n != m) {
+            node[m] = n;
+        }
+    }
+
+    private int findDfs(int[] node, int n) {
+        if (n == node[n]) {
+            return n;
+        } else {
+            return node[n] = findDfs(node, node[n]);
+        }
+    }
+
+    private String unionCheck(int[] node, int n, int m) {
+        n = findDfs(node, n);
+        m = findDfs(node, m);
+        if (n != m) {
+            return "NO";
+        } else {
+            return "YES";
+        }
+    }
+
+    public int[] sort(int n, int m, int[][] nodes) {
+        int[] answer = new int[n];
+        List<List<Integer>> list = new ArrayList<>();
+        for (int i = 0; i <=n; i++) {
+            list.add(new ArrayList<>());
+        }
+        int[] sort = new int[n + 1];
+
+        for (int i = 0; i < m; i++) {
+            list.get(nodes[i][0]).add(nodes[i][1]);
+            sort[nodes[i][1]]++;
+        }
+        Queue<Integer> que = new LinkedList<>();
+        for (int i = 1; i <= n; i++) {
+            if (sort[i] == 0) {
+                que.add(i);
+            }
+        }
+        int cnt = 0;
+        while(!que.isEmpty()) {
+            int now = que.poll();
+            answer[cnt] = now;
+            for (int next : list.get(now)) {
+                sort[next]--;
+                if (sort[next] == 0) {
+                    que.add(next);
+                }
+            }
+            cnt++;
+        }
+
+        return answer;
+    }
 
 }
