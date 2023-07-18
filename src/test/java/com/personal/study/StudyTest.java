@@ -90,4 +90,10 @@ public class StudyTest {
     public void sort() {
         assertThat(study.sort(4, 2, new int[][] {{4,2}, {3,1}})).isEqualTo(new int[] {3, 4, 1, 2});
     }
+
+    @Test
+    public void dp() {
+       // assertThat(study.dp(9)).isEqualTo(55L);
+        assertThat(study.dp2(9)).isEqualTo(55L);
+    }
 }
