@@ -101,4 +101,9 @@ public class StudyTest {
     public void tree() {
         assertThat(study.tree(7, new int[][] {{1,6},{6,3}, {3,5}, {4,1},{2,4}, {4,7}})).isEqualTo(new int[] {4,6,1,3,1,4});
     }
+
+    @Test
+    public void combination() {
+        assertThat(study.combination(6, 3)).isEqualTo(20);
+    }
 }
