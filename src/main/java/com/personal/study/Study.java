@@ -441,6 +441,10 @@ public class Study {
         boolean[] visited = new boolean[n + 1];
         List<Integer>[] list = new ArrayList[n + 1];
 
+        for (int i = 0; i < list.length; i++) {
+            list[i] = new ArrayList<>();
+        }
+
         for (int i = 0; i < m; i++) {
             int start = node[i][0];
             int end = node[i][1];
@@ -581,7 +585,42 @@ public class Study {
         } else {
             return dp[n] = (dpDfs(n-1, dp) + dpDfs(n-2, dp)) % 10007;
         }
+    }
 
+    public int[] tree(int n, int[][] nodes) {
+        int[] tree = new int[n + 1];
+        List<Integer>[] list = new ArrayList[n + 1];
+        boolean[] visited = new boolean[n + 1];
+
+        for (int i = 0; i < list.length; i++) {
+            list[i] = new ArrayList<>();
+        }
+
+        for (int i = 0; i < nodes.length; i++) {
+            int start = nodes[i][0];
+            int end = nodes[i][1];
+            list[start].add(end);
+            list[end].add(start);
+        }
+
+        for (int i = 0; i < nodes.length; i++) {
+            treeDfs(list, visited, nodes[i][0], tree);
+        }
+        int[] answer = new int[n - 1];
+        for (int i = 2; i < tree.length; i++) {
+            answer[i - 2] = tree[i];
+        }
+        return answer;
+    }
+
+    private void treeDfs(List<Integer>[] list, boolean[] visited, int i, int[] tree) {
+        visited[i] = true;
+        for (int node : list[i]) {
+            if (!visited[node]) {
+                tree[node] = i;
+                treeDfs(list, visited, node, tree);
+            }
+        }
     }
 
 }

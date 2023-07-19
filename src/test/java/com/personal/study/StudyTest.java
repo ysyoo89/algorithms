@@ -96,4 +96,9 @@ public class StudyTest {
        // assertThat(study.dp(9)).isEqualTo(55L);
         assertThat(study.dp2(9)).isEqualTo(55L);
     }
+
+    @Test
+    public void tree() {
+        assertThat(study.tree(7, new int[][] {{1,6},{6,3}, {3,5}, {4,1},{2,4}, {4,7}})).isEqualTo(new int[] {4,6,1,3,1,4});
+    }
 }
