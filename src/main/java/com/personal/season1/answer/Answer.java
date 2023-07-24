@@ -56,4 +56,31 @@ public class Answer {
         }
         return answer;
     }
+
+    public int canto(int n, long l, long r) {
+        int answer = 0;
+        StringBuilder[] bit = new StringBuilder[n + 1];
+        for (int i = 0; i <= n; i++) {
+            bit[i] = new StringBuilder();
+        }
+        bit[0].append("1");
+        bit[1].append("11011");
+        for (int i = 2; i <= n; i++) {
+            bit[i].append(bit[i-1]);
+            bit[i].append(bit[i-1]);
+            for (double j = 0; j < Math.pow(5, i-1); j++) {
+                bit[i].append("0");
+            }
+            bit[i].append(bit[i-1]);
+            bit[i].append(bit[i-1]);
+        }
+
+        for (long i = l-1; i < r; i++) {
+            if (bit[n].charAt(Math.toIntExact(i)) == '1') {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
 }

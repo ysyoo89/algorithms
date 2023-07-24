@@ -19,4 +19,9 @@ public class AnswerTest {
         assertThat(answer.magicStoneEtc(646)).isEqualTo(13);
     }
 
+    @Test
+    public void canto() {
+        assertThat(answer.canto(4, 30, 118)).isEqualTo(39);
+    }
+
 }
