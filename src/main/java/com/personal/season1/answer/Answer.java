@@ -57,6 +57,8 @@ public class Answer {
         return answer;
     }
 
+    // dp 방식의 풀이
+    // 실제 풀이는 저 안에서 같은 1의 개수를 패턴대로 찾아서 수학적 공식으로 만드는 것.
     public int canto(int n, long l, long r) {
         int answer = 0;
         StringBuilder[] bit = new StringBuilder[n + 1];
