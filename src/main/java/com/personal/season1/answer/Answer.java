@@ -35,7 +35,7 @@ public class Answer {
         return answer;
     }
 
-    // 그리디 문제 방법 풀이
+    // 그리디 문제 방법 풀이1
     public int magicStoneEtc(int storey) {
         int answer = 0;
         while(storey > 0) {
