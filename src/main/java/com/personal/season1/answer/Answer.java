@@ -86,4 +86,34 @@ public class Answer {
         return answer;
     }
 
+    public int xor(int[][] data, int col, int row_begin, int row_end) {
+        int answer = 0;
+        int[][] temp = data;
+
+        for (int i = 0; i < data.length - 1; i++) {
+            for (int j= 0; j < data.length - 1 - i; j++) {
+                if (temp[j][col - 1] > temp[j+1][col - 1]) {
+                    int[] arr = temp[j];
+                    temp[j] = temp[j + 1];
+                    temp[j +1] = arr;
+                } else if (temp[j][col - 1] == temp[j+1][col - 1]) {
+                    if (temp[j][0] < temp[j+1][0]) {
+                        int[] arr = temp[j];
+                        temp[j] = temp[j + 1];
+                        temp[j +1] = arr;
+                    }
+                }
+            }
+        }
+
+        for (int i = row_begin - 1; i < row_end; i++) {
+            int mod = 0;
+            for (int j= 0; j < temp[i].length; j++) {
+                mod += temp[i][j] % (i + 1);
+            }
+            answer = answer ^ mod;
+        }
+        return answer;
+    }
+
 }
