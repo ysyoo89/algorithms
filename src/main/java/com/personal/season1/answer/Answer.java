@@ -159,4 +159,19 @@ public class Answer {
         return enemy.length;
     }
 
+    public long point(int k , int d) {
+        // 피타고라스를 이용하여 문제를 풀어야함.
+        // x² + y² <= d²
+        // 해당 공식을 통해 y의 최대값을 구한 뒤 그 사이에 있는 모든 정수를 찾아주면 된다.
+        // 마지막에 y+1을 해주는 것은 0의 값을 추가해주기 위한 처리이다.
+        // k로 나눠주는 것은 간격이 k를 기준으로 하기 때문에 최대값에서 k값을 나눠주면
+        // 해당 값을 그렇게 만들어 줄 수 있다.
+        long answer = 0;
+        for (int i = 0; i <= d; i += k) {
+            long y = (long) (Math.sqrt(Math.pow(d, 2) - Math.pow(i, 2))) / k;
+            answer += y + 1;
+        }
+        return answer;
+    }
+
 }
