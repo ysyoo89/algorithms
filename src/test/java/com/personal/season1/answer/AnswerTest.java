@@ -24,4 +24,11 @@ public class AnswerTest {
         assertThat(answer.canto(4, 30, 118)).isEqualTo(39);
     }
 
+    @Test
+    public void defence() {
+        //assertThat(answer.defence(7, 3, new int[] {4, 2, 4, 5, 3, 3, 1})).isEqualTo(5);
+        assertThat(answer.defence2(7, 3, new int[] {4, 2, 4, 5, 3, 3, 1})).isEqualTo(5);
+
+    }
+
 }
