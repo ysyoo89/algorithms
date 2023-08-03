@@ -2,7 +2,7 @@ package com.personal.season1.answer;
 
 import org.springframework.stereotype.Service;
 
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Answer {
     // 동전 찾기와 같은 문제는 그리디로 풀며, 아래에서부터 적은 조건 찾으면서 조건을 해결하는 것이다.
@@ -170,6 +170,32 @@ public class Answer {
         for (int i = 0; i <= d; i += k) {
             long y = (long) (Math.sqrt(Math.pow(d, 2) - Math.pow(i, 2))) / k;
             answer += y + 1;
+        }
+        return answer;
+    }
+
+    public int delivery(int[] order) {
+        int answer = 0;
+        List<Integer> list = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 1; i <= order.length; i++) {
+            list.add(i);
+        }
+
+        int cnt = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (order[cnt] == list.get(i)) {
+                answer++;
+                cnt++;
+
+                while(!stack.isEmpty() && stack.peek() == order[cnt]) {
+                    stack.pop();
+                    cnt++;
+                    answer++;
+                }
+            } else {
+                stack.push(list.get(i));
+            }
         }
         return answer;
     }

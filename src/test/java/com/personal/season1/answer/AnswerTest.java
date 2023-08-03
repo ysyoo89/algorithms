@@ -31,4 +31,9 @@ public class AnswerTest {
 
     }
 
+    @Test
+    public void delivery() {
+        assertThat(answer.delivery(new int[] {4, 3, 1, 2, 5})).isEqualTo(2);
+    }
+
 }
