@@ -200,4 +200,27 @@ public class Answer {
         return answer;
     }
 
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/131701
+     */
+    public int partNumber(int[] elements) {
+        HashSet<Integer> result = new HashSet<>();
+        int size = elements.length;
+        for (int i = 1; i <= elements.length; i++) {
+            HashSet<Integer> temp = new HashSet<>();
+            int val = 0;
+            for (int j = 0; j < i; j++) {
+                val += elements[j % size];
+            }
+            temp.add(val);
+            for (int j = 0; j < elements.length; j++) {
+                val -= elements[j % size];
+                val += elements[(j + i) % size];
+                temp.add(val);
+            }
+            result.addAll(temp);
+        }
+        return result.size();
+    }
+
 }
