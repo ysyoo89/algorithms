@@ -201,6 +201,7 @@ public class Answer {
     }
 
     /**
+     * 정리
      * https://school.programmers.co.kr/learn/courses/30/lessons/131701
      */
     public int partNumber(int[] elements) {
