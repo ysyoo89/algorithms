@@ -12,4 +12,8 @@ public class Book {
 
         return builder.equals(builder.reverse()) ? true : false;
     }
+
+    public void partition() {
+
+    }
 }
