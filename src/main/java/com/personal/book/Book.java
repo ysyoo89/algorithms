@@ -52,4 +52,8 @@ public class Book {
         }
         return max;
     }
+
+    public void applyPermutaion(List<Integer> perm, List<Integer> A) {
+
+    }
 }
