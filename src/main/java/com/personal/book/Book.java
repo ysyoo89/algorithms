@@ -42,4 +42,14 @@ public class Book {
         answer.set(0, answer.get(0) * sign);
         return answer;
     }
+
+    public double computeMaxProfit(List<Double> prices) {
+        double base = Double.MAX_VALUE;
+        double max = Double.MIN_VALUE;
+        for (int i = 0; i < prices.size(); i++) {
+            max = Math.max(max, prices.get(i) - base);
+            base = Math.min(base, prices.get(i));
+        }
+        return max;
+    }
 }
