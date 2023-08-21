@@ -54,6 +54,6 @@ public class Book {
     }
 
     public void applyPermutaion(List<Integer> perm, List<Integer> A) {
-
+        //perm.sort(Collections.);
     }
 }
