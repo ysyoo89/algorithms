@@ -54,6 +54,8 @@ public class Book {
     }
 
     public void applyPermutaion(List<Integer> perm, List<Integer> A) {
+        for (int i = 0; i < perm.size(); i++) {
 
+        }
     }
 }
