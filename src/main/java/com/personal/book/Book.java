@@ -84,4 +84,21 @@ public class Book {
         } while (i != start);
     }
 
+    public List<Integer> plusOne(List<Integer> A) {
+        List<Integer> answer = A;
+        int n = answer.size() -1;
+        answer.set(n, answer.get(n) + 1);
+        for (int i = n; i > 0 && answer.get(i) == 10; --i) {
+            answer.set(i, 0);
+            answer.set(i - 1, answer.get(i - 1) + 1);
+        }
+        if (answer.get(0) == 10) {
+            // 최상위 숫자에 올림수가 존재하므로, 결과 저장을 위해 한 자리가 더 필요하다.
+            // 깔끔한 방법은 첫 번째 항목을 1로 업데이트하고 배열 끝에는 0을 추가해 주는 것이다.
+            answer.set(0, 1);
+            answer.add(0);
+        }
+        return answer;
+    }
+
 }
