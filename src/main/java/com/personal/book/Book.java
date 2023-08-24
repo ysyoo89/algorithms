@@ -54,8 +54,34 @@ public class Book {
     }
 
     public void applyPermutaion(List<Integer> perm, List<Integer> A) {
-        for (int i = 0; i < perm.size(); i++) {
+        for (int i = 0; i < A.size(); i++) {
+            // 사이클을 순회하면서 i가 최소 원소인지 확인한다.
+            boolean isMin = true;
+            int j = perm.get(i);
+            while(j != i) {
+                if (j < i) {
+                    isMin = false;
+                    break;
+                }
+                j = perm.get(j);
+            }
 
+            if (isMin) {
+                cyclicPermutation(i, perm, A);
+            }
         }
     }
+
+    private void cyclicPermutation(int start, List<Integer> perm, List<Integer> A) {
+        int i = start;
+        int temp = A.get(start);
+        do {
+            int nextI = perm.get(i);
+            int nextTemp = A.get(nextI);
+            A.set(nextI, temp);
+            i = nextI;
+            temp = nextTemp;
+        } while (i != start);
+    }
+
 }
