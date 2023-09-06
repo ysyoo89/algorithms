@@ -101,5 +101,8 @@ public class Book {
         return answer;
     }
 
+    public void example() {
+
+    }
 
 }
