@@ -126,7 +126,21 @@ public class Book {
     }
 
     private boolean romaNumberValidation(String s, Map<Character, Integer> map) {
-
+        for (int i = 0; i < s.length() - 2; i++) {
+            if (s.charAt(i) == 'I') {
+                if (s.charAt(i + 1) != 'V' && s.charAt(i) != 'X') {
+                    return false;
+                }
+            } else if (s.charAt(i) == 'X') {
+                if (s.charAt(i + 1) != 'L' && s.charAt(i + 1) != 'C') {
+                    return false;
+                }
+            } else if (s.charAt(i) == 'C') {
+                if (s.charAt(i + 1) != 'D' && s.charAt(i + 1) != 'M') {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
