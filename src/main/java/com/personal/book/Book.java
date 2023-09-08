@@ -110,6 +110,9 @@ public class Book {
                 put('M', 1000);
             }
         };
+        if (!romaNumberValidation(s, map)) {
+            return 0;
+        }
         int sum = map.get(s.charAt(s.length() - 1));
         for (int i = s.length() - 2; i >= 0; --i) {
             if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
@@ -120,6 +123,11 @@ public class Book {
         }
 
         return sum;
+    }
+
+    private boolean romaNumberValidation(String s, Map<Character, Integer> map) {
+
+        return true;
     }
 
 }
