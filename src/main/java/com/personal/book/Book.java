@@ -144,6 +144,9 @@ public class Book {
         return true;
     }
 
+    // 문자열을 뱀 모양의 형태로 바꿨을 때 문자열이 어떻게 변화할 수 있는지를 보는 코드이다.
+    // 문자열이 뱀 모양으로 변하게 했을 때 어떻게 변화가 진행될 때 어떤 패턴으로 변경할 수 있는지
+    // 패턴을 찾은 뒤에 문제를 풀면 된다.
     public String snakeString(String s) {
         StringBuilder builder = new StringBuilder();
 
