@@ -1,6 +1,8 @@
 package com.personal.book;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Book {
 
@@ -176,6 +178,83 @@ public class Book {
             dp[i] = (dp[i - 1] + dp[i - 2]) % 1234567;
         }
         return dp[n];
+    }
+
+    public String a(String[] params) {
+        String answer = Arrays.stream(params).map(s -> s.toUpperCase()).filter(s -> s.length() >= 5 && s.length() <= 10).findFirst().orElse("없음");
+        return answer;
+    }
+
+    public String b(String[] leftArray, String[] rightArray) {
+        String answer = "";
+        HashSet<String> left = new HashSet<>();
+        HashSet<String> temp = new HashSet<>();
+        for (int i = 0; i < leftArray.length; i++) {
+            left.add(leftArray[i]);
+        }
+
+        for (int i = 0; i < rightArray.length; i++) {
+            if (left.contains(rightArray[i])) {
+                temp.add(rightArray[i]);
+            }
+        }
+
+        ArrayList<String> list = new ArrayList<>(temp);
+        Collections.sort(list);
+        answer = String.join(",", list);
+        return answer;
+    }
+
+    public String[] c (String[] productInfo, String[] dailyProductSales) {
+        String[] answer = new String[dailyProductSales.length];
+        Map<String, String[]> map = new HashMap<>();
+        for (int i = 0; i < productInfo.length; i++) {
+            String[] temp = productInfo[i].split(",");
+            map.put(temp[0], temp);
+        }
+
+        for (int i = 0; i < dailyProductSales.length; i++) {
+            String[] temp = dailyProductSales[i].split(",");
+            StringBuilder builder = new StringBuilder();
+            builder.append(temp[0]);
+            builder.append(",");
+            builder.append(temp[1]);
+            builder.append(",");
+            builder.append(map.get(temp[1])[1]);
+            builder.append(",");
+            long cost = Long.parseLong(map.get(temp[1])[2]) * Long.parseLong(temp[2]);
+            builder.append(String.valueOf(cost));
+            answer[i] = builder.toString();
+        }
+        return answer;
+    }
+
+    public int[] d(int[] card) {
+        int answer[] = new int[2];
+        List<Integer> list = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < card.length; i++) {
+            map.put(card[i], map.getOrDefault(card[i], 0) + 1);
+        }
+
+        for (int val : map.keySet()) {
+            if (map.get(val) == 1) {
+                list.add(val);
+            }
+        }
+
+        Collections.sort(list);
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
+
+    public String e(String pathVariableUrl) {
+        String answer = "";
+        Pattern pattern = Pattern.compile("^/payment/(\\d)/(\\w)");
+        Matcher matcher = pattern.matcher(pathVariableUrl);
+        return answer;
     }
 
 }
