@@ -251,10 +251,18 @@ public class Book {
     }
 
     public String e(String pathVariableUrl) {
-        String answer = "";
-        Pattern pattern = Pattern.compile("^/payment/(\\d)/(\\w)");
+        Pattern pattern = Pattern.compile("^/payment/(\\d*)/(\\w*)$");
         Matcher matcher = pattern.matcher(pathVariableUrl);
-        return answer;
+        StringBuilder builder = new StringBuilder();
+        if (matcher.find()) {
+            builder.append("/payment/");
+            builder.append(matcher.group(2));
+            builder.append("?paymentId=");
+            builder.append(matcher.group(1));
+        } else {
+            return "ERROR";
+        }
+        return builder.toString();
     }
 
 }

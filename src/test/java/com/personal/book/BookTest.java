@@ -43,4 +43,11 @@ public class BookTest {
     public void test4() {
         assertThat(book.d(new int[]{1,3,2,5,3,1})).isEqualTo(new int[]{2,5});
     }
+
+    @Test
+    public void test5() {
+        assertThat(book.e("/payment/1234/cancel")).isEqualTo("/payment/cancel?paymentId=1234");
+        assertThat(book.e("/payment/1234")).isEqualTo("ERROR");
+//        assertThat(book.e("/payment")).isEqualTo("/payment/cancel?paymentId=1234");
+    }
 }
