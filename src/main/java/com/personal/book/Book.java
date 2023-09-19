@@ -250,6 +250,10 @@ public class Book {
         return answer;
     }
 
+    /**
+     * 정규식에 대한 공부하기
+     *
+     */
     public String e(String pathVariableUrl) {
         Pattern pattern = Pattern.compile("^/payment/(\\d*)/(\\w*)$");
         Matcher matcher = pattern.matcher(pathVariableUrl);
