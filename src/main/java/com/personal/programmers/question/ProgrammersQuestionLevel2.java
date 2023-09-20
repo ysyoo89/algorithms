@@ -307,4 +307,13 @@ public class ProgrammersQuestionLevel2 {
         String[] maps = {"X591X","X1X5X","X231X", "1XXX1"};
         return ProgrammersAnswerLevel2.island(maps);
     }
+
+    /**
+     * 사전찾기
+     * https://school.programmers.co.kr/learn/courses/30/lessons/84512
+     */
+    public int word() {
+        String word = "";
+        return ProgrammersAnswerLevel2.word(word);
+    }
 }

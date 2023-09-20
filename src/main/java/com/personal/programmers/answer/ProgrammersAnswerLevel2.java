@@ -951,7 +951,6 @@ public class ProgrammersAnswerLevel2 {
         }
         return answer;
     }
-
     static class Move {
         int x;
         int y;
@@ -1145,6 +1144,35 @@ public class ProgrammersAnswerLevel2 {
             }
         }
         return result;
+    }
+
+    public static int word(String word) {
+        String[] words = {"A", "E", "I", "O", "U"};
+        int answer = 0;
+        List<String> elements = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            wordDfs(elements, words[i], words);
+        }
+
+        for (int i = 0; i < elements.size(); i++) {
+            if (elements.get(i).equals(word)) {
+                answer = i + 1;
+                break;
+            }
+        }
+        return answer;
+    }
+
+    private static void wordDfs(List<String> elements, String word, String[] words) {
+        if (word.length() > 5) {
+            return;
+        }
+        if (!elements.contains(word)) {
+            elements.add(word);
+        }
+        for (int i = 0; i < words.length; i++) {
+            wordDfs(elements, word + words[i], words);
+        }
     }
 }
 
