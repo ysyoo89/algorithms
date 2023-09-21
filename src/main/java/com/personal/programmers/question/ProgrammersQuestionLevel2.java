@@ -309,7 +309,7 @@ public class ProgrammersQuestionLevel2 {
     }
 
     /**
-     * 사전찾기
+     * 사전찾기 dfs
      * https://school.programmers.co.kr/learn/courses/30/lessons/84512
      */
     public int word() {
