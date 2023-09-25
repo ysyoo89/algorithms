@@ -87,4 +87,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
         assertThat(question.island()).isEqualTo(new int[] {1, 1, 27});
     }
+
+    @Test
+    void power() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.power()).isEqualTo(new int[][] {{22,28,14},{22,28,14},{22,28,14}});
+    }
 }
