@@ -1177,17 +1177,18 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int[][] power(int[][] arr1, int[][] arr2) {
-        int max1 = Math.max(arr1.length, arr2.length);
-        int max2 = Math.max(arr1[0].length, arr2[0].length);
-        int[][] answer = new int[max1][max2];
+        int[][] answer = new int[arr1.length][arr2[0].length];
 
-        for (int i = 0; i < arr1.length; i++) {
-            int val = 0;
-            for (int j = 0; j < arr2[0].length; j++) {
-                val += arr1[i][j] * arr2[j][i];
+        for (int k = 0; k < arr1.length; k++) {
+            for (int i = 0; i < arr1[0].length; i++) {
+                int val = 0;
+                for (int j = 0; j < arr2.length; j++) {
+                    val += arr1[i][j] * arr2[j][i];
+                }
+                answer[k][i] = val;
             }
         }
-        return new int[0][];
+        return answer;
     }
 }
 
