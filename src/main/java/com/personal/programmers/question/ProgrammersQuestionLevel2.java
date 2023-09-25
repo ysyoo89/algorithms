@@ -316,4 +316,14 @@ public class ProgrammersQuestionLevel2 {
         String word = "";
         return ProgrammersAnswerLevel2.word(word);
     }
+
+    /**
+     * 행렬의 곱
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12949
+     */
+    public int[][] power() {
+        int[][] arr1 = {{1}, {2}};
+        int[][] arr2 = {{1}, {2}};
+        return ProgrammersAnswerLevel2.power(arr1, arr2);
+    }
 }
