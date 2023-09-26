@@ -91,6 +91,6 @@ class ProgrammersAnswerTest {
     @Test
     void power() {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
-        assertThat(question.power()).isEqualTo(new int[][] {{22,22,11},{36,28,18},{29,20,14}});
+        assertThat(question.power()).isEqualTo(new int[][] {{14, 32}, {32, 77}});
     }
 }

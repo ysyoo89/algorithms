@@ -322,8 +322,8 @@ public class ProgrammersQuestionLevel2 {
      * https://school.programmers.co.kr/learn/courses/30/lessons/12949
      */
     public int[][] power() {
-        int[][] arr1 = {{2, 3, 2}, {4, 2, 4}, {3, 1, 4}};
-        int[][] arr2 = {{5, 4, 3}, {2, 4, 1}, {3, 1, 1}};
+        int[][] arr1 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] arr2 = {{1, 4}, {2, 5}, {3, 6}};
         return ProgrammersAnswerLevel2.power(arr1, arr2);
     }
 }
