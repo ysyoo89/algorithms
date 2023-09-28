@@ -1224,7 +1224,7 @@ public class ProgrammersAnswerLevel2 {
                 answer++;
             }
 
-            if (que1.isEmpty() || que2.isEmpty() || answer > queue1.length + queue2.length) {
+            if (que1.isEmpty() || que2.isEmpty() || answer > 2 * (queue1.length + queue2.length)) {
                 answer = -1;
                 break;
             }
