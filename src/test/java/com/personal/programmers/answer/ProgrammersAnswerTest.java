@@ -93,4 +93,10 @@ class ProgrammersAnswerTest {
         ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
         assertThat(question.power()).isEqualTo(new int[][] {{14, 32}, {32, 77}});
     }
+
+    @Test
+    void queue() {
+        ProgrammersQuestionLevel2 question = new ProgrammersQuestionLevel2();
+        assertThat(question.queue()).isEqualTo(-1);
+    }
 }

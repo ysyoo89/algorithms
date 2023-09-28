@@ -326,4 +326,10 @@ public class ProgrammersQuestionLevel2 {
         int[][] arr2 = {{1, 4}, {2, 5}, {3, 6}};
         return ProgrammersAnswerLevel2.power(arr1, arr2);
     }
+
+    public int queue() {
+        int[] queue1 = {101, 100};
+        int[] queue2 = {102, 103};
+        return ProgrammersAnswerLevel2.queue(queue1, queue2);
+    }
 }

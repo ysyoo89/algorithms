@@ -1188,5 +1188,49 @@ public class ProgrammersAnswerLevel2 {
         }
         return answer;
     }
+
+    public static int queue(int[] queue1, int[] queue2) {
+        int answer = 0;
+        Queue<Integer> que1 = new LinkedList<>();
+        Queue<Integer> que2 = new LinkedList<>();
+        long que1Sum = 0;
+        long que2Sum = 0;
+        for (int i = 0; i < queue1.length; i++) {
+            que1.add(queue1[i]);
+            que2.add(queue2[i]);
+            que1Sum += queue1[i];
+            que2Sum += queue2[i];
+        }
+        double standard = (que1Sum + que2Sum) / 2.0;
+
+        if (standard != Math.floor(standard)) {
+            return -1;
+        }
+
+        while(que1Sum != standard && que2Sum != standard) {
+            if(que1Sum > standard) {
+                int temp = que1.poll();
+                que1Sum -= temp;
+                que2.add(temp);
+                que2Sum += temp;
+                answer++;
+            }
+
+            if(que2Sum > standard) {
+                int temp = que2.poll();
+                que2Sum -= temp;
+                que1.add(temp);
+                que1Sum += temp;
+                answer++;
+            }
+
+            if (que1.isEmpty() || que2.isEmpty() || answer > queue1.length + queue2.length) {
+                answer = -1;
+                break;
+            }
+
+        }
+        return answer;
+    }
 }
 
