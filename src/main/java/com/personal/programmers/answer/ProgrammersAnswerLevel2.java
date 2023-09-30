@@ -952,6 +952,8 @@ public class ProgrammersAnswerLevel2 {
         return answer;
     }
 
+
+
     static class Move {
         int x;
         int y;
@@ -1229,6 +1231,30 @@ public class ProgrammersAnswerLevel2 {
                 break;
             }
 
+        }
+        return answer;
+    }
+
+    public static int[] codingTest(String[] info, String[] query) {
+        int[] answer = new int[query.length];
+        Map<String, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < info.length; i++) {
+            String[] split = info[i].split(" ");
+            StringBuilder builder = new StringBuilder();
+            builder.append(split[0].charAt(0));
+            builder.append(split[1].charAt(0));
+            builder.append(split[2].charAt(0));
+            builder.append(split[3].charAt(0));
+            List<Integer> score = new ArrayList<>();
+            score.add(Integer.parseInt(split[4]));
+            List<Integer> scoreMap = new ArrayList<>();
+            scoreMap.addAll(map.getOrDefault(builder.toString(), new ArrayList<>()));
+            scoreMap.addAll(score);
+            map.put(builder.toString(), scoreMap);
+        }
+
+        for (int i = 0; i < query.length; i++) {
+            String[] split = query[i].split(" and ");
         }
         return answer;
     }

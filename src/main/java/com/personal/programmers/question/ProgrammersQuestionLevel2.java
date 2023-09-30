@@ -332,4 +332,13 @@ public class ProgrammersQuestionLevel2 {
         int[] queue2 = {102, 103};
         return ProgrammersAnswerLevel2.queue(queue1, queue2);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/72412
+     */
+    public int[] codingTest() {
+        String[] info = {""};
+        String[] query = {""};
+        return ProgrammersAnswerLevel2.codingTest(info, query);
+    }
 }
