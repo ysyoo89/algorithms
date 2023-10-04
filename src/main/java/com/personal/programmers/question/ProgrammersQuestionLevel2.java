@@ -341,4 +341,14 @@ public class ProgrammersQuestionLevel2 {
         String[] query = {""};
         return ProgrammersAnswerLevel2.codingTest(info, query);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/92341
+     * 주차 요금 계산
+     */
+    public int[] parking() {
+        int[] fees = {1};
+        String[] records = {""};
+        return ProgrammersAnswerLevel2.parking(fees, records);
+    }
 }
