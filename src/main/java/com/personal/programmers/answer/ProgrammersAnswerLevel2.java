@@ -1259,7 +1259,6 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int[] parking(int[] fees, String[] records) {
-        ParkPrice price = new ParkPrice(fees[0], fees[1], fees[2], fees[3]);
         HashMap<String, Integer> priceMap = new HashMap<>();
         HashMap<String, Integer> inTimeMap = new HashMap<>();
         HashMap<String, Integer> outTimeMap = new HashMap<>();
@@ -1280,37 +1279,6 @@ public class ProgrammersAnswerLevel2 {
         int answer = Integer.parseInt(temp[0]) * 60;
         answer += Integer.parseInt(temp[1]);
         return answer;
-    }
-
-    static class ParkPrice {
-        private int baseTime;
-        private int basePrice;
-        private int perTime;
-        private int perPrice;
-
-        public ParkPrice(int baseTime, int basePrice, int perTime, int perPrice) {
-            this.baseTime = baseTime;
-            this.basePrice = basePrice;
-            this.perTime = perTime;
-            this.perPrice = perPrice;
-        }
-
-        public int getBaseTime() {
-            return this.baseTime;
-        }
-
-        public int getBasePrice() {
-            return this.basePrice;
-        }
-
-        public int getPerTime() {
-            return this.perTime;
-        }
-
-        public int getPerPrice() {
-            return this.perPrice;
-        }
-
     }
 }
 
