@@ -351,4 +351,13 @@ public class ProgrammersQuestionLevel2 {
         String[] records = {""};
         return ProgrammersAnswerLevel2.parking(fees, records);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/76502
+     * 괄호 회전하기
+     */
+    public int spin() {
+        String s = "";
+        return ProgrammersAnswerLevel2.spin(s);
+    }
 }

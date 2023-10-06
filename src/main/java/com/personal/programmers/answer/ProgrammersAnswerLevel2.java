@@ -952,7 +952,6 @@ public class ProgrammersAnswerLevel2 {
         return answer;
     }
 
-
     static class Move {
         int x;
         int y;
@@ -1308,6 +1307,38 @@ public class ProgrammersAnswerLevel2 {
         st = new StringTokenizer(inTime, ":");
         int o2 = Integer.parseInt(st.nextToken()) * 60 + Integer.parseInt(st.nextToken());
         return o1 - o2;
+    }
+
+    public static int spin(String s) {
+        int answer = 0;
+        StringBuilder builder = new StringBuilder(s);
+        for (int i = 0; i < s.length(); i++) {
+            // 스핀
+            if (i > 0) {
+                builder.append(builder.charAt(0));
+                builder.delete(0, 0);
+            }
+            // 괄호 여부
+            if (checkBracket(builder)) {
+                // 괄호 여부 개수
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    private static boolean checkBracket(StringBuilder builder) {
+        char startBracket = builder.charAt(0);
+        char endBracket = builder.charAt(builder.length() - 1);
+        if (startBracket == ')' || startBracket == '}' || startBracket == ']' ||
+            endBracket == '(' || endBracket == '{' || endBracket == '[') {
+            return false;
+        } else {
+            for (int i = 1; i < builder.length(); i++) {
+
+            }
+        }
+        return false;
     }
 }
 
