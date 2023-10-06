@@ -1259,26 +1259,55 @@ public class ProgrammersAnswerLevel2 {
     }
 
     public static int[] parking(int[] fees, String[] records) {
-        HashMap<String, Integer> priceMap = new HashMap<>();
-        HashMap<String, Integer> inTimeMap = new HashMap<>();
-        HashMap<String, Integer> outTimeMap = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
+        StringTokenizer st;
+        Map<String, Integer> ans = new TreeMap<>(Comparator.comparingInt(Integer::parseInt));
         for (int i = 0; i < records.length; i++) {
-            String[] temp = records[i].split(" ");
-            if ("IN".equals(temp[2])) {
-                inTimeMap.put(temp[1], timeCheck(temp[0]));
-            } else {
-                outTimeMap.put(temp[1], outTimeMap.getOrDefault(temp[1], 0) + timeCheck(temp[0]) - inTimeMap.get(temp[1]));
+            st = new StringTokenizer(records[i]);
+            String time = st.nextToken();
+            String number = st.nextToken();
+            String type = st.nextToken();
+            if ("IN".equals(type)) {
+                map.put(number, time);
+                continue;
             }
+            int min = getMin(time, map.get(number));
 
+            ans.put(number, ans.getOrDefault(number, 0) + min);
+            map.remove(number);
         }
-        return new int[0];
+
+        if (!map.isEmpty()) {
+            for (String number: map.keySet()) {
+                int min = getMin("23:59", map.get(number));
+                ans.put(number, ans.getOrDefault(number, 0) + min);
+            }
+        }
+        return getAnswer(ans, fees);
     }
 
-    private static int timeCheck(String time) {
-        String[] temp = time.split(":");
-        int answer = Integer.parseInt(temp[0]) * 60;
-        answer += Integer.parseInt(temp[1]);
-        return answer;
+    private static int[] getAnswer(Map<String, Integer> ansMap, int[] fees) {
+        List<Integer> ans = new ArrayList<>();
+        for (String number: ansMap.keySet()) {
+            int min = ansMap.get(number);
+            int fee = 0;
+
+            if (min <= fees[0]) {
+                fee += fees[1];
+            } else {
+                fee += (((int) Math.ceil(((double) min - fees[0]) / fees[2])) * fees[3]) + fees[1];
+            }
+            ans.add(fee);
+        }
+        return ans.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    private static int getMin(String outTime, String inTime) {
+        StringTokenizer st = new StringTokenizer(outTime, ":");
+        int o1 = Integer.parseInt(st.nextToken()) * 60 + Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(inTime, ":");
+        int o2 = Integer.parseInt(st.nextToken()) * 60 + Integer.parseInt(st.nextToken());
+        return o1 - o2;
     }
 }
 
