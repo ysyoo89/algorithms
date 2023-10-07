@@ -1311,34 +1311,57 @@ public class ProgrammersAnswerLevel2 {
 
     public static int spin(String s) {
         int answer = 0;
-        StringBuilder builder = new StringBuilder(s);
-        for (int i = 0; i < s.length(); i++) {
-            // 스핀
-            if (i > 0) {
-                builder.append(builder.charAt(0));
-                builder.delete(0, 0);
-            }
-            // 괄호 여부
-            if (checkBracket(builder)) {
-                // 괄호 여부 개수
+        if (isProper(s)) {
+            answer++;
+        }
+
+        for (int x = 1; x < s.length(); x++) {
+            s = rotationBracket(s);
+            if (isProper(s)) {
                 answer++;
             }
         }
+
         return answer;
     }
 
-    private static boolean checkBracket(StringBuilder builder) {
-        char startBracket = builder.charAt(0);
-        char endBracket = builder.charAt(builder.length() - 1);
-        if (startBracket == ')' || startBracket == '}' || startBracket == ']' ||
-            endBracket == '(' || endBracket == '{' || endBracket == '[') {
-            return false;
-        } else {
-            for (int i = 1; i < builder.length(); i++) {
+    private static String rotationBracket(String s) {
+        return s.substring(1) + s.charAt(0);
+    }
 
+    private static boolean isProper(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '[' || s.charAt(i) == '(' || s.charAt(i) == '{') {
+                stack.push(s.charAt(i));
+            } else {
+                if (!stack.isEmpty()) {
+                    switch (s.charAt(i)) {
+                        case ']':
+                            isProperBracket(stack, '[');
+                            break;
+                        case ')':
+                            isProperBracket(stack, '(');
+                            break;
+                        case '}':
+                            isProperBracket(stack, '{');
+                            break;
+                    }
+                } else {
+                    stack.push(s.charAt(i));
+                }
             }
         }
-        return false;
+
+        return stack.isEmpty();
     }
+
+    private static void isProperBracket(Stack<Character> stack, char bracket) {
+        if (stack.peek() == bracket) {
+            stack.pop();
+        }
+    }
+
 }
 
