@@ -1,9 +1,6 @@
 package com.personal.mystudy;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Answer {
     static List<Map<Integer, Integer>> HANOI_LIST = new ArrayList<>();
@@ -114,4 +111,20 @@ public class Answer {
         return count;
     }
 
+    public static int[] capet(int brown, int yellow) {
+        int sum = brown + yellow;
+        int y = 0, x = 0;
+
+        for (int i = 1; i <= yellow; i++) {
+            if (yellow % i == 0) {
+                y = Math.min(i, yellow / i);
+                x = Math.max(i, yellow / i);
+                if ((y + 2) * (x + 2) == sum) {
+                    break;
+                }
+            }
+        }
+
+        return new int[] {x + 2, y + 2};
+    }
 }

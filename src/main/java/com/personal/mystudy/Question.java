@@ -39,4 +39,14 @@ public class Question {
         int[][] arr = {{123}};
         return Answer.quad(arr);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42842
+     * 카펫
+     */
+    public int[] capet() {
+        int brown = 50;
+        int yellow = 22;
+        return Answer.capet(brown, yellow);
+    }
 }

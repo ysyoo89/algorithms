@@ -18,4 +18,9 @@ public class QuestionTest {
     public void game() {
         assertThat(question.game()).isEqualTo("0111");
     }
+
+    @Test
+    public void capet() {
+        assertThat(question.capet()).isEqualTo(new int[] {24, 3});
+    }
 }
