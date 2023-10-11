@@ -18,4 +18,16 @@ public class Question {
         int n = 3;
         return Answer.triangle(n);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/17687
+     * n진수 게임
+     */
+    public String game() {
+        int n = 2;
+        int t = 4;
+        int m = 2;
+        int p = 1;
+        return Answer.game(n, t, m, p);
+    }
 }

@@ -68,4 +68,23 @@ public class Answer {
 
         return answer;
     }
+
+    public static String game(int n, int t, int m, int p) {
+        StringBuilder binary = new StringBuilder();
+        StringBuilder answer = new StringBuilder();
+        int number = 0;
+        while(m * t > binary.length()) {
+            binary.append(Integer.toString(number, n));
+            number++;
+        }
+
+        char[] temp = binary.toString().toCharArray();
+
+        for (int i = p - 1; i < m * t; i = i + m) {
+            answer.append(temp[i]);
+        }
+
+        return answer.toString().toUpperCase();
+    }
+
 }
