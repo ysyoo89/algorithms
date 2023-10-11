@@ -87,4 +87,31 @@ public class Answer {
         return answer.toString().toUpperCase();
     }
 
+    public static int[] quad(int[][] arr) {
+        return quadDfs(arr, 0, 0, arr.length, new int[2]);
+    }
+
+    private static int[] quadDfs(int[][] arr, int row, int col, int length, int[] count) {
+        int value = arr[row][col];
+        boolean match = true;
+
+        for (int i = row; match && i < row + length; i++) {
+            for (int j = col; match && j < col + length; j++) {
+                match &= value == arr[i][j];
+            }
+        }
+
+        if (match) {
+            count[value]++;
+        } else {
+            length /= 2;
+
+            quadDfs(arr, row, col, length, count);
+            quadDfs(arr, row + length, col, length, count);
+            quadDfs(arr, row, col + length, length, count);
+            quadDfs(arr, row + length, col + length, length, count);
+        }
+        return count;
+    }
+
 }

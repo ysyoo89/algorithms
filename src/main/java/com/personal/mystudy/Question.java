@@ -30,4 +30,13 @@ public class Question {
         int p = 1;
         return Answer.game(n, t, m, p);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/68936
+     * 쿼드압축
+     */
+    public int[] quad() {
+        int[][] arr = {{123}};
+        return Answer.quad(arr);
+    }
 }
