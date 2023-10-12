@@ -68,4 +68,14 @@ public class Question {
         int[] arr = {1};
         return Answer.lcm(arr);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/86971
+     * 전력망 나누기
+     */
+    public int electronic() {
+        int n = 9;
+        int[][] wires = {{1}};
+        return Answer.electronic(n, wires);
+    }
 }

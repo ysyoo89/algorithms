@@ -155,4 +155,44 @@ public class Answer {
         }
         return getGcd(b, a % b);
     }
+
+    static Map<Integer, Set<Integer>> ELEC_MAP = new HashMap<>();
+    static Set<Integer> ELEC_VISIT = new HashSet<>();
+    static int ALL_TREE_COUNT;
+    static int ELEC_MIN;
+    public static int electronic(int n, int[][] wires) {
+        elecInit(wires);
+        ELEC_MIN = n;
+        ALL_TREE_COUNT = n;
+
+        int count = treeCount(wires[0][0]);
+        if (ALL_TREE_COUNT != count) {
+            return 0;
+        }
+        return ELEC_MIN;
+    }
+
+    private static int treeCount(int root) {
+        ELEC_VISIT.add(root);
+        int count = 1;
+        for (Integer childNode : ELEC_MAP.get(root)) {
+            if (ELEC_VISIT.contains(childNode)) {
+                continue;
+            }
+            count += treeCount(childNode);
+        }
+        int otherTreeCount = ALL_TREE_COUNT - count;
+        ELEC_MIN = Math.min(ELEC_MIN, Math.abs(count - otherTreeCount));
+
+        return count;
+    }
+
+    private static void elecInit(int[][] wires) {
+        for (int[] wire : wires) {
+            ELEC_MAP.putIfAbsent(wire[0], new HashSet<>());
+            ELEC_MAP.putIfAbsent(wire[1], new HashSet<>());
+            ELEC_MAP.get(wire[0]).add(wire[1]);
+            ELEC_MAP.get(wire[1]).add(wire[0]);
+        }
+    }
 }
