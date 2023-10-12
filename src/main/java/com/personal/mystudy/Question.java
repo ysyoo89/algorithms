@@ -49,4 +49,23 @@ public class Question {
         int yellow = 22;
         return Answer.capet(brown, yellow);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12941
+     * 최소값 만들기
+     */
+    public int minimumNumber() {
+        int[] A = {1};
+        int[] B = {2};
+        return Answer.minimumNumber(A, B);
+    }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12953
+     * 최소공배수
+     */
+    public int lcm() {
+        int[] arr = {1};
+        return Answer.lcm(arr);
+    }
 }

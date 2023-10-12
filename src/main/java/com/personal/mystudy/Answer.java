@@ -127,4 +127,32 @@ public class Answer {
 
         return new int[] {x + 2, y + 2};
     }
+
+    public static int minimumNumber(int[] a, int[] b) {
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int answer = 0;
+        for (int i = 0; i < a.length; i++) {
+            answer += a[i] * b[a.length - 1 - i];
+        }
+        return answer;
+    }
+
+    public static int lcm(int[] arr) {
+        int gcd = getGcd(arr[0], arr[1]);
+        int lcm = (arr[0] * arr[1]) / gcd;
+
+        for (int i = 2; i < arr.length; i++) {
+            gcd = getGcd(lcm, arr[i]);
+            lcm = (lcm * arr[i]) / gcd;
+        }
+        return lcm;
+    }
+
+    private static int getGcd(int a, int b) {
+        if (a % b == 0) {
+            return b;
+        }
+        return getGcd(b, a % b);
+    }
 }
