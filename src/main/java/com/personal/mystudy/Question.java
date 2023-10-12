@@ -74,8 +74,8 @@ public class Question {
      * 전력망 나누기
      */
     public int electronic() {
-        int n = 9;
-        int[][] wires = {{1}};
+        int n = 4;
+        int[][] wires = {{1, 2}, {2, 3}, {3, 4}};
         return Answer.electronic(n, wires);
     }
 }

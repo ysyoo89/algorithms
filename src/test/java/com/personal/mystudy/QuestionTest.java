@@ -23,4 +23,9 @@ public class QuestionTest {
     public void capet() {
         assertThat(question.capet()).isEqualTo(new int[] {24, 3});
     }
+
+    @Test
+    public void electronic() {
+        assertThat(question.electronic()).isEqualTo(0);
+    }
 }
