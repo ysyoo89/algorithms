@@ -195,4 +195,10 @@ public class Answer {
             ELEC_MAP.get(wire[1]).add(wire[0]);
         }
     }
+
+    public static long maxRole(String expression) {
+        // 수식을 기준으로 나누기
+        // 나눈 수를 기준으로 계산하기 (재귀)
+        return 0;
+    }
 }

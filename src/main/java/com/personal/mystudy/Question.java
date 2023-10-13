@@ -78,4 +78,13 @@ public class Question {
         int[][] wires = {{1, 2}, {2, 3}, {3, 4}};
         return Answer.electronic(n, wires);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/67257
+     * 수식 최대화
+     */
+    public long maxRole() {
+        String expression = "";
+        return Answer.maxRole(expression);
+    }
 }
