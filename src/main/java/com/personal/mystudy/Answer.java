@@ -198,7 +198,34 @@ public class Answer {
 
     public static long maxRole(String expression) {
         // 수식을 기준으로 나누기
+        String[] num = expression.split("[^0-9]");
         // 나눈 수를 기준으로 계산하기 (재귀)
-        return 0;
+        long answer = 0;
+        answer = calculator(num, "*", "+", "-", answer);
+        answer = calculator(num, "*", "-", "+", answer);
+        answer = calculator(num, "+", "*", "-", answer);
+        answer = calculator(num, "+", "-", "*", answer);
+        answer = calculator(num, "-", "+", "*", answer);
+        answer = calculator(num, "-", "*", "+", answer);
+        return answer;
+    }
+
+    private static long calculator(String[] num, String fir, String second, String third, long answer) {
+        int index = 0;
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        for (String number : num) {
+            if (fir.equals(number)) {
+
+            } else if (second.equals(number)) {
+
+            } else if (third.equals(number)) {
+
+            }
+            index++;
+        }
+
+        return answer;
     }
 }
