@@ -261,4 +261,36 @@ public class Answer {
         result = Math.max(answer, Math.abs(result));
         return result;
     }
+
+    public static String[] openChat(String[] record) {
+        Map<String, String> map = new LinkedHashMap<>();
+        List<String> answer = new ArrayList<>();
+        for (String action : record) {
+            String[] temp = action.split(" ");
+            if (temp[0].equals("Enter")) {
+                map.put(temp[1], temp[2]);
+            } else if (temp[0].equals("Change")) {
+                map.put(temp[1], temp[2]);
+            }
+        }
+
+        for (String action : record) {
+            StringBuilder builder = new StringBuilder();
+            String[] temp = action.split(" ");
+            if (temp[0].equals("Enter")) {
+                builder.append(map.get(temp[1]));
+                builder.append("님이 들어왔습니다.");
+                answer.add(builder.toString());
+            } else if (temp[0].equals("Leave")) {
+                builder.append(map.get(temp[1]));
+                builder.append("님이 나갔습니다.");
+                answer.add(builder.toString());
+            }
+        }
+        String[] result = new String[answer.size()];
+        for (int i = 0; i < answer.size(); i++) {
+            result[i] = answer.get(i);
+        }
+        return result;
+    }
 }
