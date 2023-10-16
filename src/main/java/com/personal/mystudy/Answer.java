@@ -197,35 +197,68 @@ public class Answer {
     }
 
     public static long maxRole(String expression) {
-        // 수식을 기준으로 나누기
-        String[] num = expression.split("[^0-9]");
-        // 나눈 수를 기준으로 계산하기 (재귀)
         long answer = 0;
-        answer = calculator(num, "*", "+", "-", answer);
-        answer = calculator(num, "*", "-", "+", answer);
-        answer = calculator(num, "+", "*", "-", answer);
-        answer = calculator(num, "+", "-", "*", answer);
-        answer = calculator(num, "-", "+", "*", answer);
-        answer = calculator(num, "-", "*", "+", answer);
+        List<Long> num = new ArrayList<>();
+        List<String> cal = new ArrayList<>();
+
+        int numIndex = 0;
+        for (int i = 0; i < expression.length(); i++) {
+            char temp = expression.charAt(i);
+            if (temp == '*' || temp == '+' || temp == '-') {
+                cal.add(String.valueOf(expression.charAt(i)));
+                num.add(Long.parseLong(expression.substring(numIndex, i)));
+                numIndex = i + 1;
+            }
+        }
+        num.add(Long.parseLong(expression.substring(numIndex, expression.length())));
+
+        answer = calculator(num, cal, "*", "+", "-", answer);
+        answer = calculator(num, cal, "*", "-", "+", answer);
+        answer = calculator(num, cal, "+", "*", "-", answer);
+        answer = calculator(num, cal, "+", "-", "*", answer);
+        answer = calculator(num, cal, "-", "+", "*", answer);
+        answer = calculator(num, cal, "-", "*", "+", answer);
         return answer;
     }
 
-    private static long calculator(String[] num, String fir, String second, String third, long answer) {
-        int index = 0;
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        for (String number : num) {
-            if (fir.equals(number)) {
 
-            } else if (second.equals(number)) {
 
-            } else if (third.equals(number)) {
+    private static long calculator(List<Long> num, List<String> cal, String first, String second, String third, long answer) {
+        long result = 0;
 
+        int idx = 0;
+        List<Long> tempNum = new ArrayList<>(num);
+        List<String> tempCal = new ArrayList<>(cal);
+        while(!tempCal.isEmpty()) {
+            if (tempCal.indexOf(first) != -1) {
+                idx = tempCal.indexOf(first);
+            } else if (tempCal.indexOf(second) != -1) {
+                idx = tempCal.indexOf(second);
+            } else if (tempCal.indexOf(third) != -1) {
+                idx = tempCal.indexOf(third);
             }
-            index++;
+
+            if (idx == -1) break;
+
+            long f = tempNum.remove(idx);
+            long e = tempNum.remove(idx);
+            String c = tempCal.remove(idx);
+
+            switch (c) {
+                case "*":
+                    result = f * e;
+                    break;
+                case "+":
+                    result = f + e;
+                    break;
+                case "-":
+                    result = f - e;
+                    break;
+            }
+            tempNum.add(idx, result);
         }
 
-        return answer;
+        result = Math.max(answer, Math.abs(result));
+        return result;
     }
 }
