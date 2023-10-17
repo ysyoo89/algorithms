@@ -96,4 +96,15 @@ public class Question {
         String[] record = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
         return Answer.openChat(record);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/43163
+     * 단어 변환
+     */
+    public int wordChange() {
+        String begin= "";
+        String target = "";
+        String[] words = {};
+        return Answer.wordChange(begin, target, words);
+    }
 }

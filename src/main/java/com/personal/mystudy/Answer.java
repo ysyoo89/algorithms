@@ -293,4 +293,28 @@ public class Answer {
         }
         return result;
     }
+
+    public static int wordChange(String begin, String target, String[] words) {
+        int answer = 0;
+        if (target.equals(words[0])) {
+            return 1;
+        }
+        for (int i = 0; i < words.length; i++) {
+            if (target.equals(words[i])) {
+                begin = words[i];
+                break;
+            }
+            int wordCount = 0;
+            for (int j = 0; j < words[i].length(); j++) {
+                if (begin.charAt(j) == words[i].charAt(j)) {
+                    wordCount++;
+                }
+            }
+            if (wordCount == 2) {
+                answer++;
+                begin = words[i];
+            }
+        }
+        return begin.equals(target) ? answer : 0;
+    }
 }
