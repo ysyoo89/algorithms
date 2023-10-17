@@ -294,27 +294,48 @@ public class Answer {
         return result;
     }
 
+    static int WORD_ANSWER = Integer.MAX_VALUE;
     public static int wordChange(String begin, String target, String[] words) {
-        int answer = 0;
-        if (target.equals(words[0])) {
-            return 1;
+        boolean[] visited = new boolean[words.length];
+        dfsWordChange(0, 0, begin, target, words, visited);
+
+        return WORD_ANSWER == Integer.MAX_VALUE ? 0 : WORD_ANSWER;
+    }
+
+    private static void dfsWordChange(int idx, int count, String begin, String target, String[] words, boolean[] visited) {
+        if (idx >= words.length) {
+            return;
         }
+
+        if (begin.equals(target)) {
+            WORD_ANSWER = Math.min(WORD_ANSWER, count);
+            return;
+        }
+
+
         for (int i = 0; i < words.length; i++) {
-            if (target.equals(words[i])) {
-                begin = words[i];
-                break;
+            if (visited[i] || WORD_ANSWER <= count || !checkWord(begin, words[i])) {
+                continue;
             }
-            int wordCount = 0;
-            for (int j = 0; j < words[i].length(); j++) {
-                if (begin.charAt(j) == words[i].charAt(j)) {
-                    wordCount++;
+
+            visited[i] = true;
+            dfsWordChange(i, count + 1, words[i], target, words, visited);
+            visited[i] = false;
+        }
+    }
+
+    private static boolean checkWord(String begin, String target) {
+        int differentCount = 0;
+        for (int i = 0; i < begin.length(); i++) {
+            if (begin.charAt(i) != target.charAt(i)) {
+                differentCount++;
+
+                if (differentCount >= 2) {
+                    return false;
                 }
             }
-            if (wordCount == 2) {
-                answer++;
-                begin = words[i];
-            }
         }
-        return begin.equals(target) ? answer : 0;
+
+        return true;
     }
 }
