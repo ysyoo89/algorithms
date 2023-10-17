@@ -349,7 +349,7 @@ public class Answer {
         for (int i = 0; i < operations.length; i++) {
             String[] tempStr = operations[i].split(" ");
             int temp = Integer.valueOf(tempStr[1]);
-            if ("I".equals(tempStr)) {
+            if ("I".equals(tempStr[0])) {
                 minQueue.add(temp);
                 maxQueue.add(temp);
                 queue.add(temp);
@@ -373,6 +373,6 @@ public class Answer {
             maxAnswer = Math.max(maxAnswer, temp);
             minAnswer = Math.min(minAnswer, temp);
         }
-        return new int[] {minAnswer == Integer.MAX_VALUE ? 0 : minAnswer , maxAnswer == Integer.MIN_VALUE ? 0 : maxAnswer};
+        return new int[] {maxAnswer == Integer.MIN_VALUE ? 0 : maxAnswer, minAnswer == Integer.MAX_VALUE ? 0 : minAnswer};
     }
 }

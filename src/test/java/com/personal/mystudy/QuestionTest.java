@@ -33,4 +33,9 @@ public class QuestionTest {
     public void openChat() {
         assertThat(question.openChat()).isEqualTo(new String[] {"Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."});
     }
+
+    @Test
+    public void arrQueue() {
+        assertThat(question.arrQueue()).isEqualTo(new int[] {0, 0});
+    }
 }
