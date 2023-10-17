@@ -338,4 +338,41 @@ public class Answer {
 
         return true;
     }
+
+    public static int[] arrQueue(String[] operations) {
+        PriorityQueue<Integer> minQueue = new PriorityQueue<>();
+        PriorityQueue<Integer> maxQueue = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        int maxAnswer = Integer.MIN_VALUE;
+        int minAnswer = Integer.MAX_VALUE;
+
+        for (int i = 0; i < operations.length; i++) {
+            String[] tempStr = operations[i].split(" ");
+            int temp = Integer.valueOf(tempStr[1]);
+            if ("I".equals(tempStr)) {
+                minQueue.add(temp);
+                maxQueue.add(temp);
+                queue.add(temp);
+            } else {
+                if (queue.isEmpty()) {
+                    continue;
+                }
+
+                if (temp == 1) {
+                    int max = maxQueue.poll();
+                    queue.remove(max);
+                } else {
+                    int min = minQueue.poll();
+                    queue.remove(min);
+                }
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            int temp = queue.poll();
+            maxAnswer = Math.max(maxAnswer, temp);
+            minAnswer = Math.min(minAnswer, temp);
+        }
+        return new int[] {minAnswer == Integer.MAX_VALUE ? 0 : minAnswer , maxAnswer == Integer.MIN_VALUE ? 0 : maxAnswer};
+    }
 }

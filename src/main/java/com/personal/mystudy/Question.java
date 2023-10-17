@@ -107,4 +107,13 @@ public class Question {
         String[] words = {};
         return Answer.wordChange(begin, target, words);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42628
+     * 이중우선큐
+     */
+    public int[] arrQueue() {
+        String[] operations = {};
+        return Answer.arrQueue(operations);
+    }
 }
