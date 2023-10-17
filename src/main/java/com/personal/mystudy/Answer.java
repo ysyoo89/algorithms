@@ -360,9 +360,11 @@ public class Answer {
 
                 if (temp == 1) {
                     int max = maxQueue.poll();
+                    minQueue.remove(max);
                     queue.remove(max);
                 } else {
                     int min = minQueue.poll();
+                    maxQueue.remove(min);
                     queue.remove(min);
                 }
             }
