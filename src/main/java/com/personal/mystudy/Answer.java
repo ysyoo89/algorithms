@@ -377,4 +377,165 @@ public class Answer {
         }
         return new int[] {maxAnswer == Integer.MIN_VALUE ? 0 : maxAnswer, minAnswer == Integer.MAX_VALUE ? 0 : minAnswer};
     }
+
+    public static int test1(String s) {
+        int answer = 0;
+        int[] temp = new int[128];
+        for (int i = 0; i < s.length(); i++) {
+            temp[s.charAt(i)]++;
+        }
+
+        for (int val : temp) {
+            if (val % 2 == 1) {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    public static int test2(String p, String s) {
+        int answer = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char pNum = p.charAt(i);
+            char sNum = s.charAt(i);
+
+            int cal = Math.abs(pNum - sNum);
+            if (cal > 5) {
+                answer += 10 - cal;
+            } else {
+                answer += cal;
+            }
+        }
+        return answer;
+    }
+
+    public static int test3(int[][] atmos) {
+        int[] dust = {81, 151};
+        int[] ultraDust = {36, 76};
+        boolean useMask = false;
+        int useDay = 0;
+        int answer = 0;
+        for (int i = 0; i < atmos.length; i++) {
+
+            if (useDay >= 3) {
+                useMask = false;
+                useDay = 0;
+            } else if (useMask) {
+                useDay++;
+            }
+
+            if (!useMask && (atmos[i][0] >= dust[0] || atmos[i][1] >= ultraDust[0])) {
+                useMask = true;
+                useDay++;
+                answer++;
+            }
+
+            if (atmos[i][0] >= dust[1] && atmos[i][1] >= ultraDust[1]) {
+                useMask = false;
+                useDay = 0;
+            }
+        }
+        return answer;
+    }
+
+    public static int test4(String[] ip_addrs, String[] langs, int[] scores) {
+        int answer = 0;
+        Map<String, Integer> people = new LinkedHashMap<>();
+        Map<String, List<String>> lang = new LinkedHashMap<>();
+        Map<String, List<Integer>> score = new LinkedHashMap<>();
+
+        for (int i = 0; i < ip_addrs.length; i++) {
+            String ip = ip_addrs[i];
+            people.put(ip, people.getOrDefault(ip, 0) + 1);
+
+            List<String> langList = lang.getOrDefault(ip, new ArrayList<>());
+            langList.add(langs[i]);
+            lang.put(ip, langList);
+
+            List<Integer> scoreList = score.getOrDefault(ip, new ArrayList<>());
+            scoreList.add(scores[i]);
+            score.put(ip, scoreList);
+        }
+
+        for (String ip : people.keySet()) {
+            int peopleCount = people.get(ip);
+            
+            if (peopleCount >= 4) {
+                peopleCount = 0;
+            } else if (peopleCount == 3) {
+                List<String> tempLang = lang.get(ip);
+                if (condition2(tempLang, 3)) {
+                    peopleCount = 0;
+                }
+            } else if (peopleCount == 2) {
+                List<String> tempLang = lang.get(ip);
+                List<Integer> tempScore = score.get(ip);
+                if (condition2(tempLang, 2) && condition3(tempScore, 2)) {
+                    peopleCount = 0;
+                }
+            }
+            answer += peopleCount;
+        }
+        return answer;
+    }
+
+    private static boolean condition3(List<Integer> tempScore, int standard) {
+        int result = 1;
+        for (int i = 1; i < tempScore.size(); i++) {
+            if (tempScore.get(0).equals(tempScore.get(i))) {
+                result++;
+            }
+        }
+        return result == standard;
+    }
+
+    private static boolean condition2(List<String> tempLang, int standard) {
+        int result = 1;
+        for (int i = 1; i < tempLang.size(); i++) {
+            if ('C' == tempLang.get(0).charAt(0)) {
+                if (tempLang.get(0).charAt(0) == tempLang.get(i).charAt(0)) {
+                    result++;
+                }
+            } else {
+                if (tempLang.get(0).equals(tempLang.get(i))) {
+                    result++;
+                }
+            }
+        }
+        return result == standard;
+    }
+
+    public static int test5(int n, int[][] battery) {
+        int answer = Integer.MAX_VALUE;
+
+        for (int i = 0; i < battery.length; i++) {
+            answer = Math.min(answer, getCase(battery, n, 0, i));
+        }
+
+        return answer;
+    }
+
+    private static int getCase(int[][] battery, int n, int money, int idx) {
+        if (n <= 0 || idx >= battery.length) {
+            return Integer.MAX_VALUE;
+        }
+
+        if (n / battery[idx][0] == 0) {
+            money += battery[idx][1];
+            return money;
+        } else {
+            money += (n / battery[idx][0]) * battery[idx][1];
+            n = n % battery[idx][0];
+        }
+
+        if (n > 0) {
+            int temp = Integer.MAX_VALUE;
+            for (int i = 1; i < battery.length; i++) {
+                temp = Math.min(temp, getCase(battery, n, money, idx + i));
+            }
+            money = temp;
+        }
+
+        return money;
+    }
 }

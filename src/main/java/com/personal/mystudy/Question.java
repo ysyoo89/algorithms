@@ -116,4 +116,46 @@ public class Question {
         String[] operations = {"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
         return Answer.arrQueue(operations);
     }
+
+    public int test1() {
+        String s = "aabbbccd";
+        return Answer.test1(s);
+    }
+
+    public int test2() {
+        String p = "82195";
+        String s = "64723";
+        return Answer.test2(p, s);
+    }
+
+    public int test3() {
+        // int[][] atmos = {{80, 35}, {70, 38}, {100, 41}, {75, 30}, {160, 80}, {77, 29}, {181, 68}, {151, 76}};
+        int[][] atmos = {{140, 90}, {177, 75}, {95, 45}, {71, 31}, {150, 30}, {80, 35}, {72, 33}, {166, 81}, {151, 75}};
+        // int[][] atmos = {{30, 15}, {80, 35}};
+
+        return Answer.test3(atmos);
+    }
+
+    public int test4() {
+//        String[] ip_addrs = {"5.5.5.5", "155.123.124.111", "10.16.125.0", "155.123.124.111", "5.5.5.5", "155.123.124.111", "10.16.125.0", "10.16.125.0"};
+//        String[] langs = {"Java", "C++", "Python3", "C#", "Java", "C", "Python3", "Javascript"};
+//        int[] scores = {294, 197, 373, 45, 294, 62, 373, 373};
+
+//        String[] ip_addrs = {"7.124.10.0", "7.124.10.0", "0.0.0.0", "7.124.10.0", "0.0.0.0", "7.124.10.0"};
+//        String[] langs = {"C++", "Java", "C#", "C#", "C", "Python3"};
+//        int[] scores = {314, 225, 45, 0, 155, 400};
+
+        String[] ip_addrs = {"5.5.5.5", "155.123.124.111", "10.16.125.0"};
+        String[] langs = {"Java", "C++", "Python3"};
+        int[] scores = {294, 197, 373};
+        return Answer.test4(ip_addrs, langs, scores);
+    }
+
+    public int test5() {
+        int n = 50;
+        int[][] battery = {{10, 100000}, {4, 35000}, {1,15000}};
+//        int n = 20;
+//        int[][] battery = {{6, 30000}, {3, 18000}, {4,28000}, {1, 9500}};
+        return Answer.test5(n, battery);
+    }
 }

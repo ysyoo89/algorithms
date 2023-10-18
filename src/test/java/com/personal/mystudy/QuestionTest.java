@@ -38,4 +38,22 @@ public class QuestionTest {
     public void arrQueue() {
         assertThat(question.arrQueue()).isEqualTo(new int[] {0, 0});
     }
+
+    @Test
+    public void test3() {
+        assertThat(question.test3()).isEqualTo(4);
+    }
+
+    @Test
+    public void test4() {
+        //assertThat(question.test4()).isEqualTo(3);
+        //assertThat(question.test4()).isEqualTo(2);
+        assertThat(question.test4()).isEqualTo(3);
+    }
+
+    @Test
+    public void test5() {
+        assertThat(question.test5()).isEqualTo(450000);
+//        assertThat(question.test5()).isEqualTo(108000);
+    }
 }
