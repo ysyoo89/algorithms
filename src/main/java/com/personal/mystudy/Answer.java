@@ -538,4 +538,8 @@ public class Answer {
 
         return money;
     }
+
+    public static int network(int n, int[][] computers) {
+        return 0;
+    }
 }

@@ -158,4 +158,14 @@ public class Question {
 //        int[][] battery = {{6, 30000}, {3, 18000}, {4,28000}, {1, 9500}};
         return Answer.test5(n, battery);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/43162
+     * 네트워크
+     */
+    public int network() {
+        int n = 3;
+        int[][] computers = {{1}};
+        return Answer.network(n, computers);
+    }
 }
