@@ -540,6 +540,36 @@ public class Answer {
     }
 
     public static int network(int n, int[][] computers) {
-        return 0;
+        int answer = 0;
+        boolean[] visited = new boolean[n];
+        Queue<Integer> que = new LinkedList<>();
+
+        for (int i = 0; i < computers.length; i++) {
+            if (visited[i]) {
+                continue;
+            }
+
+            que.offer(i);
+            answer++;
+
+            while (!que.isEmpty()) {
+                int cur = que.poll();
+
+                if (visited[cur]) {
+                    continue;
+                }
+
+                visited[cur] = true;
+                int[] computer = computers[i];
+
+                for (int j = 0; j < computer.length; j++) {
+                    if (visited[j] || computer[j] == 0) {
+                        continue;
+                    }
+                    que.offer(j);
+                }
+            }
+        }
+        return answer;
     }
 }
