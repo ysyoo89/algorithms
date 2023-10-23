@@ -56,4 +56,9 @@ public class QuestionTest {
         assertThat(question.test5()).isEqualTo(450000);
 //        assertThat(question.test5()).isEqualTo(108000);
     }
+
+    @Test
+    public void money() {
+        assertThat(question.money()).isEqualTo(4);
+    }
 }

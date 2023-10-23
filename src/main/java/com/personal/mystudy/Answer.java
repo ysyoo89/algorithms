@@ -572,4 +572,40 @@ public class Answer {
         }
         return answer;
     }
+
+    public static int money(int n, int[] money) {
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+
+        for (int i = 0; i < money.length; i++) {
+            for (int j = money[i]; j <= n; j++) {
+                dp[j] += dp[j - money[i]];
+            }
+        }
+
+        return dp[n] % 1000000007;
+    }
+
+    private static int moneyDfs(int[] money, int n, int idx, int count) {
+        if (n == 0) {
+            return count;
+        }
+
+        int temp = n / money[idx];
+        n = n % money[idx];
+        if (n == 0) {
+            count++;
+        }
+
+        if (temp > 1 && n != 0) {
+            for (int i = idx - 1; i >= 0; i--) {
+                count = moneyDfs(money, n, i, count);
+            }
+            n += (temp - 1) * money[idx];
+            for (int i = idx - 1; i >= 0; i--) {
+                count = moneyDfs(money, n, i, count);
+            }
+        }
+        return count;
+    }
 }

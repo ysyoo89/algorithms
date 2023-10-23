@@ -168,4 +168,14 @@ public class Question {
         int[][] computers = {{1}};
         return Answer.network(n, computers);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12907
+     * 거스름돈
+     */
+    public int money() {
+        int n = 5;
+        int[] money = {1, 2, 5};
+        return Answer.money(n, money);
+    }
 }
