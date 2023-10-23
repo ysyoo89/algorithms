@@ -585,27 +585,4 @@ public class Answer {
 
         return dp[n] % 1000000007;
     }
-
-    private static int moneyDfs(int[] money, int n, int idx, int count) {
-        if (n == 0) {
-            return count;
-        }
-
-        int temp = n / money[idx];
-        n = n % money[idx];
-        if (n == 0) {
-            count++;
-        }
-
-        if (temp > 1 && n != 0) {
-            for (int i = idx - 1; i >= 0; i--) {
-                count = moneyDfs(money, n, i, count);
-            }
-            n += (temp - 1) * money[idx];
-            for (int i = idx - 1; i >= 0; i--) {
-                count = moneyDfs(money, n, i, count);
-            }
-        }
-        return count;
-    }
 }
