@@ -178,4 +178,14 @@ public class Question {
         int[] money = {1, 2, 5};
         return Answer.money(n, money);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/49191
+     * 순위
+     */
+    public int rank() {
+        int n = 5;
+        int[][] results = {{4,3}};
+        return Answer.rank(n, results);
+    }
 }

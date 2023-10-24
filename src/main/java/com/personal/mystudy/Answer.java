@@ -585,4 +585,9 @@ public class Answer {
 
         return dp[n] % 1000000007;
     }
+
+    public static int rank(int n, int[][] results) {
+
+        return 0;
+    }
 }
