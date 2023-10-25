@@ -188,4 +188,10 @@ public class Question {
         int[][] results = {{4,3}};
         return Answer.rank(n, results);
     }
+
+    public String exam() {
+        int N = 3;
+        int K = 2;
+        return Answer.exam(N, K);
+    }
 }

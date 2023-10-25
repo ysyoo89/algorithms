@@ -590,4 +590,32 @@ public class Answer {
 
         return 0;
     }
+
+    public static String exam(int n, int k) {
+        StringBuilder builder = new StringBuilder();
+        int count = 0;
+        char lastWord = 'a';
+        for (int i = 0; i < n / 2; i++) {
+            char word = 'a';
+            if (count < k) {
+                word = (char) (word + count);
+                count++;
+                lastWord = word;
+            }
+            builder.append(word);
+        }
+        if (count != k) {
+            lastWord = (char) (lastWord + (k - count));
+        }
+
+        StringBuilder reverse = new StringBuilder(builder);
+        if (n % 2 == 1) {
+            builder.append(lastWord);
+            builder.append(reverse.reverse());
+        } else {
+            builder.append(reverse.reverse());
+        }
+
+        return builder.toString();
+    }
 }

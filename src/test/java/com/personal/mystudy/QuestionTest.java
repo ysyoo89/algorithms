@@ -61,4 +61,9 @@ public class QuestionTest {
     public void money() {
         assertThat(question.money()).isEqualTo(4);
     }
+
+    @Test
+    public void exam() {
+        assertThat(question.exam()).isEqualTo("abccccba");
+    }
 }
