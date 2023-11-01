@@ -194,4 +194,13 @@ public class Question {
         int K = 2;
         return Answer.exam(N, K);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12929
+     * 괄호 개수 찾기
+     */
+    public int bracketCount() {
+        int n = 4;
+        return Answer.bracketCount(n);
+    }
 }

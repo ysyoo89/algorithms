@@ -652,4 +652,19 @@ public class Answer {
 
         return builder.toString();
     }
+
+    public static int bracketCount(int n) {
+        return bracketCountDfs(n, 0, 0);
+    }
+
+    private static int bracketCountDfs(int n, int l, int count) {
+        if (l < 0 || n < l) return 0;
+        if (n * 2 <= count) {
+            return l == 0 ? 1 : 0;
+        }
+        int result = 0;
+        result += bracketCountDfs(n, l + 1, count + 1) + bracketCountDfs(n , l -1, count+1);
+
+        return result;
+    }
 }
