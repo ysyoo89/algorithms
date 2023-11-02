@@ -658,7 +658,10 @@ public class Answer {
     }
 
     private static int bracketCountDfs(int n, int l, int count) {
-        if (l < 0 || n < l) return 0;
+        if (l < 0 || n < l) {
+            return 0;
+        }
+
         if (n * 2 <= count) {
             return l == 0 ? 1 : 0;
         }
