@@ -66,4 +66,9 @@ public class QuestionTest {
     public void exam() {
         assertThat(question.exam()).isEqualTo("abccccba");
     }
+
+    @Test
+    public void bracketCount() {
+        assertThat(question.bracketCount()).isEqualTo(14);
+    }
 }
