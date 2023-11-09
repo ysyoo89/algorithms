@@ -670,4 +670,52 @@ public class Answer {
 
         return result;
     }
+
+    static List<List<String>> USER_IDS = new ArrayList<>();
+    public static int badUser(String[] user_id, String[] banned_id) {
+        Boolean[] visited = new Boolean[user_id.length];
+        Arrays.fill(visited, false);
+        badUserDfs(user_id, banned_id, visited, 0, 0);
+        return USER_IDS.size();
+    }
+
+    private static void badUserDfs(String[] userId, String[] bannedId, Boolean[] visited, int start, int count) {
+        if (count == userId.length) {
+            List<String> list = new ArrayList<>();
+            for (int i = 0; i < visited.length; i++) {
+                if (visited[i]) {
+                    list.add(userId[i]);
+                }
+            }
+            if (!USER_IDS.contains(list)) {
+                USER_IDS.add(list);
+            }
+            return;
+        }
+
+        for (int i = start; i < bannedId.length; i++) {
+            for (int j = 0; j < userId.length; j++) {
+                String banned = bannedId[i];
+                String user = userId[j];
+                boolean checked = true;
+                if (banned.length() != user.length()) {
+                    checked = false;
+                } else {
+                    for (int k = 0; k < banned.length(); k++) {
+                        if (banned.charAt(k) == '*') continue;
+                        if (banned.charAt(k) != user.charAt(k)) {
+                            checked = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (checked && !visited[j]) {
+                    visited[j] = true;
+                    badUserDfs(userId, bannedId, visited, i + 1, count + 1);
+                    visited[j] = false;
+                }
+            }
+        }
+    }
 }

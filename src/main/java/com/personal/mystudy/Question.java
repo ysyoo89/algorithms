@@ -205,6 +205,12 @@ public class Question {
     }
 
     /**
-     *
+     * https://school.programmers.co.kr/learn/courses/30/lessons/64064
+     * 불량 사용자
      */
+    public int badUser() {
+        String[] user_id = {};
+        String[] banned_id = {};
+        return Answer.badUser(user_id, banned_id);
+    }
 }
