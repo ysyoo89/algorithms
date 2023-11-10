@@ -213,4 +213,16 @@ public class Question {
         String[] banned_id = {};
         return Answer.badUser(user_id, banned_id);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/17678
+     * 셔틀버스
+     */
+    public String bus() {
+        int n = 1;
+        int t = 2;
+        int m = 3;
+        String[] timetable = {"asd", "sad"};
+        return Answer.bus(n, t, m , timetable);
+    }
 }

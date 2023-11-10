@@ -718,4 +718,8 @@ public class Answer {
             }
         }
     }
+
+    public static String bus(int n, int t, int m, String[] timetable) {
+        return null;
+    }
 }
