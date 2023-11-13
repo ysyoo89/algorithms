@@ -225,4 +225,14 @@ public class Question {
         String[] timetable = {"asd", "sad"};
         return Answer.bus(n, t, m , timetable);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/42883
+     * 큰 수 만들기
+     */
+    public String maxNumber() {
+        String number = "1231234";
+        int k = 3;
+        return Answer.maxNumber(number, k);
+    }
 }

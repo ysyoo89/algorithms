@@ -753,4 +753,26 @@ public class Answer {
                 ((result % 60) < 10 ? "0" + (result % 60) :  (result % 60));
         return answer;
     }
+
+    public static String maxNumber(String number, int k) {
+        int size = number.length();
+        int index = 0;
+        int numberSize = k;
+        StringBuilder builder = new StringBuilder();
+        while (k != builder.length()) {
+            char stand = '0';
+            int tempIndex = 0;
+            for (int i = index; i <= size - numberSize; i++) {
+                char temp = number.charAt(i);
+                if (stand < temp) {
+                    stand = temp;
+                    tempIndex = i;
+                }
+            }
+            builder.append(stand);
+            index = tempIndex + 1;
+            numberSize--;
+        }
+        return builder.toString();
+    }
 }

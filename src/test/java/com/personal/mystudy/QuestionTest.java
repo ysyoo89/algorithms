@@ -71,4 +71,9 @@ public class QuestionTest {
     public void bracketCount() {
         assertThat(question.bracketCount()).isEqualTo(14);
     }
+
+    @Test
+    public void maxNumber() {
+        assertThat(question.maxNumber()).isEqualTo("3234");
+    }
 }
