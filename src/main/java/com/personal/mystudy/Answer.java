@@ -749,7 +749,8 @@ public class Answer {
         } else {
             result = times[index - 1] - 1;
         }
-        answer = ((result / 60) < 10 ? "0" + (result / 60) :  (result / 60)) + ":" + ((result % 60) < 10 ? "0" + (result % 60) :  (result % 60));
+        answer = ((result / 60) < 10 ? "0" + (result / 60) :  (result / 60)) + ":" +
+                ((result % 60) < 10 ? "0" + (result % 60) :  (result % 60));
         return answer;
     }
 }
