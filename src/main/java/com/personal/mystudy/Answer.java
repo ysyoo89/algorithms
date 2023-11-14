@@ -770,4 +770,8 @@ public class Answer {
         }
         return new String(result);
     }
+
+    public static int[] best(int n, int s) {
+        return new int[0];
+    }
 }

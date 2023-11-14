@@ -235,4 +235,14 @@ public class Question {
         int k = 3;
         return Answer.maxNumber(number, k);
     }
+
+    /**
+     * https://school.programmers.co.kr/learn/courses/30/lessons/12938
+     * 최고의 집합
+     */
+    public int[] best() {
+        int n = 2;
+        int s = 9;
+        return Answer.best(n, s);
+    }
 }
