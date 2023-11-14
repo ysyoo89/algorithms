@@ -755,24 +755,19 @@ public class Answer {
     }
 
     public static String maxNumber(String number, int k) {
-        int size = number.length();
-        int index = 0;
-        int numberSize = k;
-        StringBuilder builder = new StringBuilder();
-        while (k != builder.length()) {
-            char stand = '0';
-            int tempIndex = 0;
-            for (int i = index; i <= size - numberSize; i++) {
-                char temp = number.charAt(i);
-                if (stand < temp) {
-                    stand = temp;
-                    tempIndex = i;
-                }
+        char[] result = new char[number.length() - k];
+        Stack<Character> stack = new Stack<>();
+
+        for (int i=0; i<number.length(); i++) {
+            char c = number.charAt(i);
+            while (!stack.isEmpty() && stack.peek() < c && k-- > 0) {
+                stack.pop();
             }
-            builder.append(stand);
-            index = tempIndex + 1;
-            numberSize--;
+            stack.push(c);
         }
-        return builder.toString();
+        for (int i=0; i<result.length; i++) {
+            result[i] = stack.get(i);
+        }
+        return new String(result);
     }
 }
