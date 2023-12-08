@@ -76,4 +76,14 @@ public class QuestionTest {
     public void maxNumber() {
         assertThat(question.maxNumber()).isEqualTo("3234");
     }
+
+    @Test
+    public void test() {
+        assertThat(question.test()).isEqualTo(new int[] {3, 2, 4, 1});
+    }
+
+    @Test
+    public void skillCheck() {
+        assertThat(question.skillCheck()).isEqualTo(3);
+    }
 }

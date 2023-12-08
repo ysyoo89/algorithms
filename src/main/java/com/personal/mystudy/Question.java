@@ -245,4 +245,17 @@ public class Question {
         int s = 9;
         return Answer.best(n, s);
     }
+
+    public int[] test() {
+//        return Answer.test("{{4,2,3},{3},{2,3,4,1},{2,3}}");
+//        return Answer.test("{{123}}");
+        return Answer.test("{{110}, {110,20}}");
+    }
+
+    public int skillCheck() {
+        String[] want = {"banana", "apple", "rice", "pork", "pot"};
+        int[] number = {3, 2, 2, 2, 1};
+        String[] discount = {"chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"};
+        return Answer.test3(want, number, discount);
+    }
 }

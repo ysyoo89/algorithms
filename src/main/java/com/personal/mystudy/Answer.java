@@ -774,4 +774,96 @@ public class Answer {
     public static int[] best(int n, int s) {
         return new int[0];
     }
+
+    public static int[] test(String s) {
+        List<List<Integer>> list = new ArrayList<>();
+        String tempS = s.substring(1, s.length() - 1);
+        boolean start = false;
+        List<Integer> tempList = new ArrayList<>();
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < tempS.length(); i++) {
+            char temp = tempS.charAt(i);
+            if (temp == '{') {
+                start = true;
+                continue;
+            } else if (temp == '}') {
+                start = false;
+                tempList.add(Integer.parseInt(builder.toString()));
+                list.add(tempList);
+                tempList = new ArrayList<>();
+                builder = new StringBuilder();
+                continue;
+            }
+
+            if (start && temp != ',') {
+                builder.append(temp);
+            } else if (start && temp == ',') {
+                tempList.add(Integer.parseInt(builder.toString()));
+                builder = new StringBuilder();
+            }
+        }
+
+        Collections.sort(list, (o1, o2) -> o1.size() - o2.size());
+        int[] answer = new int[list.size()];
+        int idx = 0;
+        for (List<Integer> val : list) {
+            for (int i = 0; i < val.size(); i++) {
+                int check = val.get(i);
+                if (!Arrays.stream(answer).anyMatch(a -> a == check)) {
+                    answer[idx] = check;
+                }
+            }
+            idx++;
+        }
+        return answer;
+    }
+
+    public int[] test2 (String s) {
+        int repeat = 0;
+        String temp = s;
+        int zeroCount = 0;
+        while(!"1".equals(temp)) {
+            int zero = 0;
+            int one = 0;
+            for (int i = 0; i < temp.length(); i++) {
+                if (temp.charAt(i) == '0') {
+                    one++;
+                } else {
+                    zero++;
+                }
+            }
+            temp = Integer.toString(one, 2);
+            repeat++;
+            zeroCount += zero;
+        }
+        return new int[]{repeat, zeroCount};
+    }
+
+    public static int test3(String[] want, int[] number, String[] discount) {
+        int answer = 0;
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < want.length; i++) {
+            map.put(want[i], number[i]);
+        }
+
+        int start = 0;
+        while(discount.length - start >= 10) {
+            Map<String, Integer> temp = new HashMap<>();
+            temp.putAll(map);
+            for (int i = start; i < start + 10; i++) {
+                String item = discount[i];
+                if (temp.containsKey(item)) {
+                    temp.put(item, temp.get(item) - 1);
+                } else {
+                    break;
+                }
+            }
+            int count = temp.values().stream().filter(m -> m > 0).findAny().orElse(0);
+            if (count == 0) {
+                answer++;
+            }
+            start++;
+        }
+        return answer;
+    }
 }
