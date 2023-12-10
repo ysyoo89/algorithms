@@ -86,4 +86,9 @@ public class QuestionTest {
     public void skillCheck() {
         assertThat(question.skillCheck()).isEqualTo(3);
     }
+
+    @Test
+    public void music() {
+        assertThat(question.music()).isEqualTo("Song");
+    }
 }

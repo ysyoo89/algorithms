@@ -258,4 +258,10 @@ public class Question {
         String[] discount = {"chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"};
         return Answer.test3(want, number, discount);
     }
+
+    public String music() {
+        String m = "A";
+        String[] musicinfos = {"12:00,12:01,Sing,A", "12:00,12:02,Song,A"};
+        return Answer.music(m, musicinfos);
+    }
 }
