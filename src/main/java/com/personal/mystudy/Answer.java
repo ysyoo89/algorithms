@@ -871,9 +871,19 @@ public class Answer {
 
     public static String music(String m, String[] musicinfos) {
         String answer = "(None)";
+        String tempM = m.replace("C#", "c")
+                .replace("D#", "d")
+                .replace("F#", "f")
+                .replace("G#", "g")
+                .replace("A#", "a");
         for (int i = 0; i < musicinfos.length; i++) {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
             String[] sp = musicinfos[i].split(",");
+            sp[3] = sp[3].replace("C#", "c")
+                    .replace("D#", "d")
+                    .replace("F#", "f")
+                    .replace("G#", "g")
+                    .replace("A#", "a");
             try {
                 Date date1 = sdf.parse(sp[0]);
                 Date date2 = sdf.parse(sp[1]);
@@ -889,12 +899,11 @@ public class Answer {
                     builder.append(sp[3].charAt(j % playTime));
                 }
                 String builderStr = builder.toString();
-                if (builderStr.indexOf(m) > -1) {
-                    int idx = builderStr.indexOf(m);
-                    String temp1 = builderStr.substring(idx, idx + m.length());
-                    String temp2 = builderStr.substring(idx + m.length(), idx + m.length() + 1);
+                if (builderStr.indexOf(tempM) > -1) {
+                    int idx = builderStr.indexOf(tempM);
+                    String temp = builderStr.substring(idx, idx + tempM.length());
 
-                    if (temp1.equals(m) && !temp2.equals("#")) {
+                    if (temp.equals(tempM)) {
                         answer = sp[2];
                     }
                 }
