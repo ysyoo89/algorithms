@@ -91,4 +91,9 @@ public class QuestionTest {
     public void music() {
         assertThat(question.music()).isEqualTo("Song");
     }
+
+    @Test
+    public void dungeons() {
+        assertThat(question.dungeons()).isEqualTo(3);
+    }
 }

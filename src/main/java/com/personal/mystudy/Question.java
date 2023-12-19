@@ -264,4 +264,10 @@ public class Question {
         String[] musicinfos = {"12:00,12:01,Sing,A", "12:00,12:02,Song,A"};
         return Answer.music(m, musicinfos);
     }
+
+    public int dungeons() {
+        int k = 80;
+        int[][] dungeons = {{80,20}, {50,40}, {30,10}};
+        return Answer.dungeons(k, dungeons);
+    }
 }
