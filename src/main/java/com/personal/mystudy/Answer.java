@@ -944,6 +944,4 @@ public class Answer {
             }
         }
     }
-
-
 }

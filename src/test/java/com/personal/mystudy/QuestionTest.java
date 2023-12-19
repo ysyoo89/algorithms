@@ -96,4 +96,5 @@ public class QuestionTest {
     public void dungeons() {
         assertThat(question.dungeons()).isEqualTo(3);
     }
+
 }
