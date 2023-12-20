@@ -270,4 +270,9 @@ public class Question {
         int[][] dungeons = {{80,20}, {50,40}, {30,10}};
         return Answer.dungeons(k, dungeons);
     }
+
+    public int codeChallenge() {
+        String s = "[](){}";
+        return Answer.codeChallenge(s);
+    }
 }

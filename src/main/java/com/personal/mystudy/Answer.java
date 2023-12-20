@@ -944,4 +944,46 @@ public class Answer {
             }
         }
     }
+
+    public static int codeChallenge(String s) {
+        int answer = 0;
+        StringBuilder builder = new StringBuilder(s);
+
+        for (int i = 0; i < s.length(); i++) {
+            Stack<Character> stack = new Stack<>();
+            for (int j = 0; j < s.length(); j++) {
+                if (builder.charAt(j) == '[' || builder.charAt(j) == '{' || builder.charAt(j) == '(') {
+                    stack.push(builder.charAt(j));
+                } else {
+                    if (!stack.isEmpty()) {
+                        switch (builder.charAt(j)) {
+                            case ']' :
+                                isBracket(stack, '[');
+                                break;
+                            case '}':
+                                isBracket(stack, '{');
+                                break;
+                            case ')':
+                                isBracket(stack, '(');
+                                break;
+                        }
+                    } else {
+                        stack.push(builder.charAt(j));
+                    }
+                }
+            }
+            if (stack.isEmpty()) {
+                answer++;
+            }
+            builder.append(builder.charAt(0));
+            builder.deleteCharAt(0);
+        }
+        return answer;
+    }
+
+    private static void isBracket(Stack<Character> stack, char c) {
+        if (stack.peek() == c) {
+            stack.pop();
+        }
+    }
 }
