@@ -986,4 +986,22 @@ public class Answer {
             stack.pop();
         }
     }
+
+    public static int[] choice(int[] numbers) {
+        Set<Integer> st = new HashSet<>();
+        for (int i = 0; i < numbers.length; i++) {
+            int fir = numbers[i];
+            for (int j = i + 1; j < numbers.length; j++) {
+                st.add(fir + numbers[j]);
+            }
+        }
+        int[] answer = new int[st.size()];
+        int idx = 0;
+        for (Integer val : st) {
+            answer[idx] = val;
+            idx++;
+        }
+        Arrays.sort(answer);
+        return answer;
+    }
 }

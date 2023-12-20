@@ -97,4 +97,8 @@ public class QuestionTest {
         assertThat(question.dungeons()).isEqualTo(3);
     }
 
+    @Test
+    public void choice() {
+        assertThat(question.choice()).isEqualTo(3);
+    }
 }

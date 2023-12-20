@@ -275,4 +275,9 @@ public class Question {
         String s = "[](){}";
         return Answer.codeChallenge(s);
     }
+
+    public int[] choice() {
+        int[] numbers = {2,3,4,1,5};
+        return Answer.choice(numbers);
+    }
 }
